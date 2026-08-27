@@ -1,0 +1,556 @@
+/* ==========================================================================
+   CLARENCE THUNDER 12U — SITE CONTENT
+   --------------------------------------------------------------------------
+   THIS IS THE ONLY FILE YOU NEED TO EDIT FOR DAY-TO-DAY UPDATES.
+   Every page reads from the objects below. Nothing is hard-coded elsewhere.
+
+   Quick edits you'll make most often:
+     - fundraisingData.raised .......... update the money raised
+     - scheduleData.games .............. add games / add results
+     - resultsData.record .............. season record
+     - sponsorData.sponsors ............ add a sponsor as they sign
+     - newsData ........................ add a team update
+     - teamData.players ................ roster + player photos
+
+   Dates use "YYYY-MM-DD". Times use 24-hour "HH:MM" (18:30 = 6:30 PM).
+
+   Roster, coaches, sponsorship levels, campaign goal and contact details below
+   come from the 2027 Clarence Thunder Sponsorship Package. Anything still made
+   up is marked TODO.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. SITE CONFIG — team identity, contact info, social links, payment links
+   -------------------------------------------------------------------------- */
+const siteConfig = {
+  teamName: "Clarence Thunder 12U",
+  shortName: "Thunder",
+  orgName: "Clarence Thunder Baseball",
+  ageGroup: "12U",
+  season: "2026-2027",
+  city: "Clarence",
+  state: "NY",
+  location: "Clarence, New York",
+
+  tagline: "One team. One goal. One unforgettable season.",
+  missionLine: "Road to Cooperstown 2027",
+
+  // The team mark, recoloured so the C reads on this site's dark background.
+  // assets/img/logo-on-light.png is the original black version for print.
+  logo: "assets/img/logo.png",
+
+  // Team contact (from the sponsorship package)
+  contactName: "Heidi Burke",
+  contactRole: "Team Treasurer & Authorized Signer",
+  email: "hfmelancon@gmail.com",
+  phone: "585-737-6756",
+
+  // Social links. Set to "" (empty string) to hide an icon.
+  // TODO: swap in the team's real pages.
+  social: {
+    facebook: "https://facebook.com",
+    instagram: "https://instagram.com",
+    x: "",
+    youtube: ""
+  },
+
+  // Payment / donation links.
+  payments: {
+    venmoHandle: "@ClarenceThunder",       // the team account
+    venmoLink: "",                         // e.g. "https://venmo.com/u/ClarenceThunder"
+    paypalLink: "",
+    otherLink: "",
+    otherLabel: "Donate Online",
+    checkPayableTo: "Heidi Burke (Team Treasurer & Authorized Signer)",
+    // Drop a Venmo QR code image here (e.g. "assets/img/venmo-qr.png") to show it.
+    qrImage: ""
+  },
+
+  // Where contact + sponsorship forms are sent.
+  // EASIEST OPTION: create a free form at https://formspree.io and paste the
+  // endpoint here (looks like "https://formspree.io/f/abcdwxyz").
+  // If left empty, forms open the visitor's email app pre-filled instead.
+  formEndpoint: "",
+
+  // Photography credit shown on the gallery.
+  photoCredit: {
+    name: "Matthew Tyree Photography",
+    url: "https://matthewtyreephotography.zenfoliosite.com/clarence-thunder-11u"
+  },
+
+  // Used for SEO / structured data. Update after you pick a domain.
+  siteUrl: "https://clarencethunder12u.com"
+};
+
+/* --------------------------------------------------------------------------
+   2. COOPERSTOWN — tournament details + the live countdown
+   -------------------------------------------------------------------------- */
+const cooperstownConfig = {
+  // TODO: confirm the official week/dates with the tournament, then update.
+  tournamentName: "Cooperstown",
+  week: "",
+  startDate: "2027-07-10",
+  endDate: "2027-07-16",
+  location: "Cooperstown, New York",
+  displayDates: "Summer 2027",
+
+  intro:
+    "In summer 2027, our boys will travel to Cooperstown, New York - the home of " +
+    "the National Baseball Hall of Fame - to compete on the same fields where " +
+    "baseball's history was made.",
+
+  description:
+    "A Cooperstown tournament is more than a baseball trip - it's a milestone. For " +
+    "many of these players, it will be their first time competing on a national " +
+    "stage, staying with their team for a full week, and experiencing the traditions " +
+    "and history of the sport they love. It's an experience that shapes character as " +
+    "much as it does skill.",
+
+  // Exactly what sponsorship dollars cover (from the sponsorship package).
+  costBreakdown: [
+    { label: "Player room and board", detail: "The full week in Cooperstown for every player on the roster" },
+    { label: "Coach room and board", detail: "Our volunteer coaches for the full week" },
+    { label: "Umpire fees", detail: "Required umpire fees for tournament play" },
+    { label: "Team trading pins", detail: "A Cooperstown tradition - every team trades them all week" },
+    { label: "Contingency reserve", detail: "So no family is caught short by an unexpected cost" }
+  ],
+
+  // The journey timeline. Set done:true as milestones are completed.
+  timeline: [
+    { date: "2026 Season", title: "Championship Season", desc: "The Thunder close out 2026 with a 14-1 championship win over the Hamburg Dawgs.", done: true },
+    { date: "Fall 2026", title: "The Campaign Opens", desc: "Sponsorship packages go out to Clarence-area businesses and fundraising begins.", done: true },
+    { date: "Winter 2026-27", title: "Off-Season Work", desc: "Off-season practices and training while the campaign keeps building.", done: false },
+    { date: "March 1, 2027", title: "Fundraising Deadline", desc: "Our $25,000 campaign goal needs to be met so the trip is fully covered.", done: false },
+    { date: "Summer 2027", title: "Cooperstown", desc: "A full week at the home of baseball - the one we've been working toward.", done: false }
+  ]
+};
+
+/* --------------------------------------------------------------------------
+   3. FUNDRAISING — the goal, the money raised, and every active fundraiser
+   -------------------------------------------------------------------------- */
+const fundraisingData = {
+  goal: 25000,        // campaign goal from the sponsorship package
+  raised: 0,          // <-- TODO: SET THIS to the real amount raised so far
+  deadline: "2027-03-01",
+  deadlineLabel: "Campaign closes March 1, 2027",
+  lastUpdated: "2026-08-27",
+
+  headline: "Cooperstown Fundraising Goal",
+  blurb:
+    "Sponsorship dollars go directly toward team-level costs for the trip - not " +
+    "general operating expenses - and toward making sure no family is caught short.",
+
+  // status: "live" | "soon" | "closed"
+  fundraisers: [
+    {
+      id: "sponsorship",
+      name: "Business Sponsorship",
+      status: "live",
+      image: "assets/img/photos/thumb/gallery-19.jpg",
+      description:
+        "The biggest lever we have. Local businesses get banner, jersey, social, and " +
+        "website recognition all season long - and their name travels with us to " +
+        "Cooperstown.",
+      deadline: "2027-03-01",
+      deadlineLabel: "Open until March 1, 2027",
+      goal: 0,
+      raised: 0,
+      cta: "See Sponsorship Levels",
+      link: "sponsors.html"
+    },
+    {
+      id: "bills-squares",
+      name: "Bills Season Squares",
+      status: "live",
+      image: "assets/img/photos/thumb/gallery-16.jpg",
+      description:
+        "100 squares per game board across the entire Bills season - win cash on " +
+        "every game while backing the Thunder.",
+      deadline: "",
+      deadlineLabel: "Boards open now",
+      goal: 0,     // set a goal (e.g. 6000) to show a progress bar on this card
+      raised: 0,
+      cta: "Claim Your Squares",
+      link: ""     // leave "" and the button opens the contact form
+    },
+    {
+      id: "direct-donation",
+      name: "Direct Donation",
+      status: "live",
+      image: "assets/img/photos/thumb/gallery-02.jpg",
+      description:
+        "No squares, no raffle, no order form - just a straight contribution to the " +
+        "team. Venmo @ClarenceThunder, or a check made out to our team treasurer.",
+      deadline: "2027-03-01",
+      deadlineLabel: "Open all campaign",
+      goal: 0,
+      raised: 0,
+      cta: "Donate Now",
+      link: "fundraising.html#donate"
+    }
+
+    /* Add more fundraisers here as you run them. Format:
+    {
+      id: "basket-raffle",
+      name: "Holiday Basket Raffle",
+      status: "soon",                                   // live | soon | closed
+      image: "assets/img/photos/thumb/gallery-13.jpg",
+      description: "What it is and why someone should care.",
+      deadline: "2026-12-12",
+      deadlineLabel: "Drawing December 12",
+      goal: 2000,                                       // 0 = hide progress bar
+      raised: 0,
+      cta: "Buy Tickets",
+      link: ""
+    },
+    */
+  ]
+};
+
+/* --------------------------------------------------------------------------
+   4. TEAM — roster + coaching staff
+   --------------------------------------------------------------------------
+   PLAYER PHOTOS: drop a photo in assets/img/players/ and set `photo` to
+   "assets/img/players/lastname.jpg". Portrait (3:4) crops look best.
+   Leave photo:"" and a branded placeholder is shown instead.
+
+   bats / throws / favPlayer / favTeam / funFact are blank on purpose - fill in
+   whatever the players want to share and it appears in their profile card.
+   Anything left blank is simply hidden.
+   -------------------------------------------------------------------------- */
+const teamData = {
+  players: [
+    { number: 2,  first: "Leo",      last: "Siejak",      pos1: "1B", pos2: "LF", bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "assets/img/players/siejak.jpg" },
+    { number: 8,  first: "Will",     last: "Pelkey",      pos1: "C",  pos2: "2B", bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "" },
+    { number: 10, first: "Brayden",  last: "McKenna",     pos1: "SS", pos2: "",   bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "assets/img/players/mckenna.jpg" },
+    { number: 11, first: "Michael",  last: "Marranca",    pos1: "2B", pos2: "RF", bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "assets/img/players/marranca.jpg" },
+    { number: 16, first: "Luke",     last: "Johnson",     pos1: "P",  pos2: "C",  bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "assets/img/players/johnson.jpg" },
+    { number: 19, first: "Nolan",    last: "Olewnik",     pos1: "2B", pos2: "P",  bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "assets/img/players/olewnik.jpg" },
+    { number: 29, first: "Will",     last: "Shine",       pos1: "LF", pos2: "2B", bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "assets/img/players/shine.jpg" },
+    { number: 35, first: "Ethan",    last: "Kozel",       pos1: "P",  pos2: "C",  bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "assets/img/players/kozel.jpg" },
+    { number: 42, first: "Jonathan", last: "Cooper",      pos1: "C",  pos2: "P",  bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "assets/img/players/cooper.jpg" },
+    { number: 56, first: "Ivan",     last: "Burke",       pos1: "3B", pos2: "P",  bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "assets/img/players/burke.jpg" },
+    { number: 86, first: "Phoenix",  last: "Fredericks",  pos1: "P",  pos2: "C",  bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "" }
+  ],
+
+  // bio is optional - add a line about each coach and it shows on their card.
+  coaches: [
+    { role: "Head Coach",     name: "Jon Cooper",      bio: "", photo: "assets/img/coaches/cooper.jpg" },
+    { role: "Assistant Coach", name: "Eric Johnson",   bio: "", photo: "assets/img/coaches/johnson.jpg" },
+    { role: "Assistant Coach", name: "Matt Cardona",   bio: "", photo: "assets/img/coaches/cardona.jpg" },
+    { role: "Assistant Coach", name: "Brett McKenna",  bio: "", photo: "assets/img/coaches/mckenna.jpg" },
+    { role: "Team Manager",    name: "Clairice Cooper", bio: "", photo: "" }
+  ]
+};
+
+/* --------------------------------------------------------------------------
+   5. SCHEDULE — games and tournaments
+   --------------------------------------------------------------------------
+   status: "upcoming" | "final"
+   For finals, fill in result: { us: 14, them: 1 }  (W/L/T is worked out for you)
+   Set `tournament: true` to have it show under the Tournaments filter.
+
+   TODO: the upcoming games below are EXAMPLES so you can see how the page works.
+   Replace them with the real fall/spring schedule.
+   -------------------------------------------------------------------------- */
+const scheduleData = {
+  games: [
+    /* ---------- COMPLETED (real) ---------- */
+    {
+      date: "2026-07-30",
+      time: "10:00",
+      opponent: "Hamburg Dawgs",
+      event: "2026 Championship",
+      field: "Clarence Town Park",
+      city: "Clarence, NY",
+      home: true,
+      status: "final",
+      tournament: true,
+      result: { us: 14, them: 1 }
+    },
+
+    /* ---------- UPCOMING (examples - replace with the real schedule) ---------- */
+    { date: "2026-09-12", time: "10:00", opponent: "TBD", event: "Fall Ball", field: "Clarence Town Park", city: "Clarence, NY", home: true,  status: "upcoming", tournament: false },
+    { date: "2026-09-19", time: "09:00", opponent: "TBD", event: "Fall Tournament", field: "TBD", city: "Western New York", home: false, status: "upcoming", tournament: true },
+    { date: "2026-09-26", time: "12:00", opponent: "TBD", event: "Fall Ball", field: "Clarence Town Park", city: "Clarence, NY", home: true,  status: "upcoming", tournament: false }
+  ],
+
+  // Featured tournaments (shown as cards on the schedule page)
+  tournaments: [
+    {
+      name: "Cooperstown",
+      dates: "Summer 2027",
+      location: "Cooperstown, NY",
+      image: "assets/img/photos/thumb/hero-cooperstown.jpg",
+      note: "The one we've been working toward. A full week at the home of baseball."
+    }
+
+    /* Add tournaments as they're booked:
+    {
+      name: "Queen City Fall Classic",
+      dates: "September 19-20, 2026",
+      location: "Cheektowaga, NY",
+      image: "assets/img/photos/thumb/gallery-23.jpg",
+      note: "Eight-team bracket."
+    },
+    */
+  ]
+};
+
+/* --------------------------------------------------------------------------
+   6. RESULTS — season record
+   --------------------------------------------------------------------------
+   autoCalculate:true  -> the record is worked out from the completed games above
+   autoCalculate:false -> type the numbers in manually below
+
+   Right now this is set to auto, so it only reflects games you've entered.
+   Switch to false and fill in `record` if you'd rather show the full season.
+   -------------------------------------------------------------------------- */
+const resultsData = {
+  seasonLabel: "2026 Season",
+
+  // TODO: fill in the real 2026 season numbers below and the record section goes live.
+  // Until then the site shows a "coming soon" state rather than a misleading part-record.
+  // (The team played roughly 25 games in 2026 - only the championship is entered above,
+  //  so leaving this on auto would show "1-0" and undersell the season.)
+  autoCalculate: false,
+  record: {
+    wins: 0,
+    losses: 0,
+    ties: 0,
+    runsScored: 0,
+    runsAllowed: 0
+  },
+  note: "Includes league play and tournament results from the 2026 season."
+};
+
+/* --------------------------------------------------------------------------
+   7. SPONSORS — sponsorship levels + the sponsor wall
+   --------------------------------------------------------------------------
+   Levels below match the 2027 Clarence Thunder Sponsorship Package.
+
+   To add a sponsor, add an object to `sponsors`:
+     { name: "Business Name", tier: "grand-slam", url: "https://...",
+       logo: "assets/img/sponsors/business.png", tagline: "What they do" }
+   `tier` must match one of the level `id` values below.
+   `logo` is optional - without it we render the business name in type.
+   -------------------------------------------------------------------------- */
+const sponsorData = {
+  footnote: "Sponsorships of any amount are welcome and appreciated - these tiers are a guide, not a limit.",
+
+  levels: [
+    {
+      id: "thunder-champion",
+      name: "Thunder Champion",
+      price: 2500,
+      featured: true,
+      note: "Our top level of support",
+      benefits: [
+        "Large logo on the team banner",
+        "Featured social media post",
+        "Recognition at every event",
+        "Prominent logo on the practice jersey sleeve (first 2 sponsors at this level only)",
+        "Shout-out on our social media and website"
+      ]
+    },
+    {
+      id: "grand-slam",
+      name: "Grand Slam",
+      price: 1000,
+      featured: false,
+      note: "",
+      benefits: [
+        "Medium logo on the team banner",
+        "Social media recognition",
+        "Logo on the practice jersey"
+      ]
+    },
+    {
+      id: "home-run",
+      name: "Home Run",
+      price: 500,
+      featured: false,
+      note: "",
+      benefits: [
+        "Logo on the team banner",
+        "Social media mention"
+      ]
+    },
+    {
+      id: "triple",
+      name: "Triple",
+      price: 250,
+      featured: false,
+      note: "",
+      benefits: [
+        "Name on the team banner"
+      ]
+    },
+    {
+      id: "double",
+      name: "Double",
+      price: 100,
+      featured: false,
+      note: "Great for small and family-run businesses",
+      benefits: [
+        "Named recognition in our final campaign thank-you report"
+      ]
+    }
+  ],
+
+  /* Add real sponsors here as they sign. Example of the format:
+
+     {
+       name: "Clarence Auto Works",
+       tier: "grand-slam",
+       url: "https://clarenceautoworks.com",
+       logo: "assets/img/sponsors/clarence-auto-works.png",
+       tagline: "Full-service auto repair - Main Street, Clarence"
+     },
+  */
+  sponsors: []
+};
+
+/* --------------------------------------------------------------------------
+   8. NEWS — team updates
+   --------------------------------------------------------------------------
+   `body` is an array. Each item is either a plain string (a paragraph),
+   or { h: "A subheading" }, or { quote: "A pull quote" },
+   or { list: ["item one", "item two"] }.
+   -------------------------------------------------------------------------- */
+const newsData = [
+  {
+    slug: "cooperstown-2027",
+    title: "Thunder Are Headed to Cooperstown in 2027",
+    date: "2026-08-18",
+    category: "Cooperstown",
+    image: "assets/img/photos/team-photo.jpg",
+    excerpt:
+      "In summer 2027, eleven Clarence boys will play a full week at the home of baseball. Here's what it takes to get them there.",
+    body: [
+      "In summer 2027, Clarence Thunder 12U will travel to Cooperstown, New York - the home of the National Baseball Hall of Fame - to compete on the same fields where baseball's history was made.",
+      "Our 12U roster is made up of eleven dedicated young athletes, every one of them from Clarence, coached by volunteers who invest their own time to develop these players both on and off the field.",
+      { h: "Why It Matters" },
+      "A Cooperstown tournament is more than a baseball trip - it's a milestone. For many of these players, it will be their first time competing on a national stage, staying with their team for a full week, and experiencing the traditions and history of the sport they love.",
+      { h: "What It Takes" },
+      "Our campaign goal is $25,000, to be raised between now and March 1, 2027. Sponsorship dollars go directly toward team-level costs for the trip - not general operating expenses:",
+      { list: [
+        "Player room and board for the week in Cooperstown",
+        "Required umpire fees for tournament play",
+        "Coach room and board for the week",
+        "Team trading pins - a Cooperstown tradition",
+        "A contingency reserve so no family is caught short"
+      ]},
+      { quote: "Partner with us to send eleven boys to the home of baseball." },
+      "If you're a local business owner, or you just want to help these kids get there, we'd love to talk."
+    ]
+  },
+  {
+    slug: "2026-championship",
+    title: "Thunder Win the 2026 Championship",
+    date: "2026-07-30",
+    category: "Game Recap",
+    image: "assets/img/photos/gallery-16.jpg",
+    excerpt:
+      "A 14-1 win over the Hamburg Dawgs closed out the 2026 season with a championship.",
+    body: [
+      "The Thunder closed out the 2026 season the right way, beating the Hamburg Dawgs 14-1 to take the championship.",
+      "It's the kind of result that comes from years of practice, teamwork, and a group of kids who have grown up playing the game together.",
+      "It's a good note to end the season on, and a good sign heading into a long off-season of work before the 2027 season - and Cooperstown."
+    ]
+  },
+  {
+    slug: "sponsorship-open",
+    title: "Sponsorship Is Open for the Cooperstown Campaign",
+    date: "2026-08-04",
+    category: "Sponsors",
+    image: "assets/img/photos/gallery-19.jpg",
+    excerpt:
+      "Five levels of support, from $100 to $2,500 - with banner, jersey, social, and website recognition all season long.",
+    body: [
+      "Sponsorship for the Clarence Thunder Cooperstown campaign is officially open, and we're looking for local businesses to put their name behind this team.",
+      "Our team plays approximately 25 games this season, plus off-season and in-season practices - and practice jerseys are also worn during school spirit days, giving sponsor logos regular, ongoing visibility.",
+      { h: "Where the Money Goes" },
+      "Sponsorship dollars go directly toward team-level costs for the Cooperstown trip - player and coach room and board, umpire fees, team trading pins, and a contingency reserve. Not general operating expenses.",
+      "Levels run from $100 to $2,500, and sponsorships of any amount are welcome. These tiers are a guide, not a limit - if you have something else in mind, tell us and we'll build it."
+    ]
+  }
+];
+
+/* --------------------------------------------------------------------------
+   9. GALLERY — photos and videos
+   --------------------------------------------------------------------------
+   category must be one of the `categories` ids below.
+   For a video, use: { type:"video", videoUrl:"https://www.youtube.com/embed/XXXX",
+                       thumb:"assets/img/photos/thumb/xxx.jpg", caption:"..." }
+   -------------------------------------------------------------------------- */
+const galleryData = {
+  categories: [
+    { id: "all",         label: "All" },
+    { id: "games",       label: "Games" },
+    { id: "tournaments", label: "Tournaments" },
+    { id: "practices",   label: "Practices" },
+    { id: "team",        label: "Team Events" },
+    { id: "cooperstown", label: "Cooperstown Journey" }
+  ],
+  items: [
+    { src: "gallery-16", category: "games",       caption: "Celebrating at the plate after a three-run inning" },
+    { src: "gallery-03", category: "games",       caption: "Ball in the glove, waiting on the sign" },
+    { src: "gallery-15", category: "games",       caption: "Head-first into third" },
+    { src: "gallery-09", category: "games",       caption: "Framing behind the plate" },
+    { src: "gallery-23", category: "tournaments", caption: "Dug in at the plate" },
+    { src: "gallery-05", category: "games",       caption: "Leg kick on the mound" },
+    { src: "gallery-01", category: "team",        caption: "High five with the coach after a big hit" },
+    { src: "gallery-27", category: "tournaments", caption: "Shades on, game face ready" },
+    { src: "gallery-11", category: "games",       caption: "Catcher up and throwing" },
+    { src: "gallery-14", category: "games",       caption: "Delivery, in black and white" },
+    { src: "gallery-21", category: "games",       caption: "Coming home to score" },
+    { src: "gallery-07", category: "games",       caption: "Calling for it in the infield" },
+    { src: "gallery-25", category: "games",       caption: "Dust flying into second" },
+    { src: "gallery-19", category: "team",        caption: "Coaches watching from the fence" },
+    { src: "gallery-04", category: "games",       caption: "Fielding a hot shot up the middle" },
+    { src: "gallery-18", category: "games",       caption: "Gear on, glove up" },
+    { src: "gallery-13", category: "games",       caption: "Slide into third, safe" },
+    { src: "gallery-29", category: "tournaments", caption: "Setting up in the box" },
+    { src: "gallery-08", category: "games",       caption: "Throw across the diamond" },
+    { src: "gallery-26", category: "team",        caption: "Teammates on deck, waiting to hit" },
+    { src: "gallery-12", category: "games",       caption: "Follow-through off the mound" },
+    { src: "gallery-24", category: "games",       caption: "Play at the plate" },
+    { src: "gallery-02", category: "team",        caption: "Dugout celebration" },
+    { src: "gallery-17", category: "practices",   caption: "Bat in hand, waiting on deck" },
+    { src: "gallery-30", category: "team",        caption: "Clarence Thunder, front and center" },
+    { src: "gallery-20", category: "games",       caption: "Winding up" },
+    { src: "gallery-06", category: "games",       caption: "Eyes on the ball" },
+    { src: "gallery-28", category: "games",       caption: "Blocking in the dirt" },
+    { src: "gallery-22", category: "games",       caption: "Balanced and ready to swing" },
+    { src: "gallery-10", category: "practices",   caption: "Working through a bullpen" },
+    { src: "team-photo", category: "team",        caption: "Clarence Thunder - 2026 team photo" },
+    { src: "coaches",    category: "team",        caption: "The coaching staff at work" }
+
+    /* Add a video like this:
+    { type: "video", videoUrl: "https://www.youtube.com/embed/VIDEO_ID",
+      thumb: "assets/img/photos/thumb/gallery-01.jpg",
+      category: "games", caption: "Highlight reel - 2026 championship" },
+    */
+  ]
+};
+
+/* --------------------------------------------------------------------------
+   10. NAVIGATION — the site menu (used by every page's header and footer)
+   -------------------------------------------------------------------------- */
+const navData = [
+  { label: "Home",        href: "index.html" },
+  { label: "Team",        href: "team.html" },
+  { label: "Schedule",    href: "schedule.html" },
+  { label: "Cooperstown", href: "cooperstown.html" },
+  { label: "Fundraising", href: "fundraising.html" },
+  { label: "Sponsors",    href: "sponsors.html" },
+  { label: "News",        href: "news.html" },
+  { label: "Contact",     href: "contact.html" }
+];
+
+// Extra pages that appear in the mobile menu and footer but not the top nav.
+const navExtras = [
+  { label: "About the Thunder", href: "about.html" },
+  { label: "Photo Gallery",     href: "gallery.html" }
+];
