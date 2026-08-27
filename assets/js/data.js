@@ -250,7 +250,7 @@ const teamData = {
     { role: "Assistant Coach", name: "Eric Johnson",   bio: "", photo: "assets/img/coaches/johnson.jpg" },
     { role: "Assistant Coach", name: "Matt Cardona",   bio: "", photo: "assets/img/coaches/cardona.jpg" },
     { role: "Assistant Coach", name: "Brett McKenna",  bio: "", photo: "assets/img/coaches/mckenna.jpg" },
-    { role: "Team Manager",    name: "Clairice Cooper", bio: "", photo: "" }
+    { role: "Team Manager",    name: "Clairice Cooper", bio: "", photo: "assets/img/coaches/cooper-clairice.jpg" }
   ]
 };
 
