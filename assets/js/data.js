@@ -25,7 +25,7 @@
 const siteConfig = {
   // Bump this whenever you REPLACE a player/coach photo but keep the same
   // filename - it forces browsers to fetch the new image instead of a cached one.
-  assetVersion: "20260827i",
+  assetVersion: "20260827j",
   teamName: "Clarence Thunder 12U",
   shortName: "Thunder",
   orgName: "Clarence Thunder Baseball",
@@ -269,21 +269,77 @@ const teamData = {
    -------------------------------------------------------------------------- */
 const scheduleData = {
   games: [
-    /* ---------- COMPLETED (real) ---------- */
-    {
-      date: "2026-07-30",
-      time: "10:00",
-      opponent: "Hamburg Dawgs",
-      event: "2026 Championship",
-      field: "Clarence Town Park",
-      city: "Clarence, NY",
-      home: true,
-      status: "final",
-      tournament: true,
-      result: { us: 14, them: 1 }
-    },
+    /* ---------- COMPLETED - 2026 716 Independence League season ----------
+       Pulled from GameChanger (2026 Summer Clarence Thunder 11U). League play
+       only - the fall 2025 game and the three tournament weekends are not here. */
+    { date: "2026-03-13", time: "", opponent: "MMB Bandits Silver", event: "716 Independence League",
+      field: "", city: "", home: true , status: "final", tournament: false,
+      result: { us: 11, them: 4 } },
+    { date: "2026-03-29", time: "", opponent: "Southline Shamrocks", event: "716 Independence League",
+      field: "", city: "", home: false, status: "final", tournament: false,
+      result: { us: 3, them: 19 } },
+    { date: "2026-04-12", time: "", opponent: "Eden Raiders", event: "716 Independence League",
+      field: "", city: "", home: false, status: "final", tournament: false,
+      result: { us: 10, them: 6 } },
+    { date: "2026-05-03", time: "", opponent: "Lewiston Cannons", event: "716 Independence League",
+      field: "6200 Kraus Rd", city: "Clarence, NY", home: true , status: "final", tournament: false,
+      result: { us: 4, them: 7 } },
+    { date: "2026-05-03", time: "", opponent: "Southline Shamrocks Green", event: "716 Independence League",
+      field: "6200 Kraus Rd", city: "Clarence, NY", home: true , status: "final", tournament: false,
+      result: { us: 5, them: 3 } },
+    { date: "2026-05-09", time: "", opponent: "Blaze Grey", event: "716 Independence League",
+      field: "15 Shoshone St", city: "", home: false, status: "final", tournament: false,
+      result: { us: 10, them: 7 } },
+    { date: "2026-05-30", time: "", opponent: "NT Americans Blue", event: "716 Independence League",
+      field: "", city: "", home: false, status: "final", tournament: false,
+      result: { us: 10, them: 11 } },
+    { date: "2026-05-31", time: "", opponent: "Central Amherst Yetis", event: "716 Independence League",
+      field: "6200 Kraus Rd", city: "Clarence, NY", home: true , status: "final", tournament: false,
+      result: { us: 15, them: 13 } },
+    { date: "2026-05-31", time: "", opponent: "Grand Island Vikings", event: "716 Independence League",
+      field: "", city: "", home: true , status: "final", tournament: false,
+      result: { us: 18, them: 12 } },
+    { date: "2026-06-05", time: "", opponent: "Lewiston Cannons", event: "716 Independence League",
+      field: "", city: "", home: false, status: "final", tournament: false,
+      result: { us: 18, them: 12 } },
+    { date: "2026-06-06", time: "", opponent: "MMB Bandits Silver", event: "716 Independence League",
+      field: "", city: "", home: false, status: "final", tournament: false,
+      result: { us: 13, them: 0 } },
+    { date: "2026-06-07", time: "", opponent: "Cement City Grizzlies", event: "716 Independence League",
+      field: "", city: "", home: true , status: "final", tournament: false,
+      result: { us: 20, them: 0 } },
+    { date: "2026-06-07", time: "", opponent: "Cement City Grizzlies", event: "716 Independence League",
+      field: "", city: "Clarence, NY", home: false, status: "final", tournament: false,
+      result: { us: 30, them: 0 } },
+    { date: "2026-06-21", time: "", opponent: "Hamburg Dawgs Purple", event: "716 Independence League",
+      field: "", city: "", home: true , status: "final", tournament: false,
+      result: { us: 10, them: 11 } },
+    { date: "2026-06-28", time: "", opponent: "Lake Erie Lightning", event: "716 Independence League",
+      field: "", city: "", home: true , status: "final", tournament: false,
+      result: { us: 5, them: 20 } },
+    { date: "2026-06-28", time: "", opponent: "Lake Erie Lightning", event: "716 Independence League",
+      field: "", city: "", home: false, status: "final", tournament: false,
+      result: { us: 12, them: 1 } },
+    { date: "2026-06-30", time: "", opponent: "Buffalo Bomb Squad", event: "716 Independence League",
+      field: "6570 Campbell Blvd", city: "", home: false, status: "final", tournament: false,
+      result: { us: 13, them: 8 } },
+    { date: "2026-07-07", time: "", opponent: "Buffalo Bomb Squad", event: "716 Independence League",
+      field: "6200 Kraus Rd", city: "Clarence, NY", home: true , status: "final", tournament: false,
+      result: { us: 12, them: 8 } },
+    { date: "2026-07-14", time: "", opponent: "Grand Island Vikings", event: "716 Independence League",
+      field: "Grand Island Little League", city: "Grand Island, NY", home: false, status: "final", tournament: false,
+      result: { us: 17, them: 8 } },
+    { date: "2026-07-19", time: "", opponent: "Buffalo Bomb Squad", event: "716 Independence League",
+      field: "6200 Kraus Rd", city: "Clarence, NY", home: true , status: "final", tournament: false,
+      result: { us: 11, them: 9 } },
+    { date: "2026-07-23", time: "", opponent: "Lewiston Cannons", event: "716 Independence League",
+      field: "", city: "", home: true , status: "final", tournament: false,
+      result: { us: 14, them: 2 } },
+    { date: "2026-07-30", time: "", opponent: "Hamburg Dawgs Purple", event: "716 Independence League Championship",
+      field: "", city: "", home: false, status: "final", tournament: false,
+      result: { us: 14, them: 1 } },
 
-    /* ---------- UPCOMING (examples - replace with the real schedule) ---------- */
+    /* ---------- UPCOMING (placeholders - replace with the real 12U schedule) ---------- */
     { date: "2026-09-12", time: "10:00", opponent: "TBD", event: "Fall Ball", field: "Clarence Town Park", city: "Clarence, NY", home: true,  status: "upcoming", tournament: false },
     { date: "2026-09-19", time: "09:00", opponent: "TBD", event: "Fall Tournament", field: "TBD", city: "Western New York", home: false, status: "upcoming", tournament: true },
     { date: "2026-09-26", time: "12:00", opponent: "TBD", event: "Fall Ball", field: "Clarence Town Park", city: "Clarence, NY", home: true,  status: "upcoming", tournament: false }
@@ -323,19 +379,17 @@ const scheduleData = {
 const resultsData = {
   seasonLabel: "2026 Season",
 
-  // TODO: fill in the real 2026 season numbers below and the record section goes live.
-  // Until then the site shows a "coming soon" state rather than a misleading part-record.
-  // (The team played roughly 25 games in 2026 - only the championship is entered above,
-  //  so leaving this on auto would show "1-0" and undersell the season.)
+  // 716 Independence League play only, from GameChanger. Tournament weekends
+  // and the fall 2025 game are not included in this record.
   autoCalculate: false,
   record: {
-    wins: 0,
-    losses: 0,
+    wins: 17,
+    losses: 5,
     ties: 0,
-    runsScored: 0,
-    runsAllowed: 0
+    runsScored: 275,
+    runsAllowed: 162
   },
-  note: "Includes league play and tournament results from the 2026 season."
+  note: "716 Independence League play. Tournament results are not included."
 };
 
 /* --------------------------------------------------------------------------
