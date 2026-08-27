@@ -535,6 +535,19 @@ const galleryData = {
     { src: "gallery-22", category: "games",       caption: "Balanced and ready to swing" },
     { src: "gallery-10", category: "practices",   caption: "Working through a bullpen" },
     { src: "champions-2026", category: "team",   caption: "2026 League Champions - medals and number ones" },
+
+    /* Monroeville tournament weekend, July 2026 - the team took in a Pirates
+       game at PNC Park between games. */
+    { src: "event-pittsburgh-01", category: "tournaments", caption: "PNC Park during the Monroeville tournament weekend, July 2026" },
+    { src: "event-pittsburgh-02", category: "tournaments", caption: "Thunder at the rail, Pittsburgh skyline behind them" },
+    { src: "event-pittsburgh-03", category: "tournaments", caption: "Taking in a Pirates game between tournament games" },
+    { src: "event-pittsburgh-04", category: "tournaments", caption: "The whole crew in the stands at PNC Park" },
+
+    /* Team bowling party, August 2026 */
+    { src: "event-bowling-01",    category: "team",        caption: "Team bowling party, August 2026" },
+    { src: "event-bowling-02",    category: "team",        caption: "Ready to roll at the team bowling party" },
+    { src: "event-bowling-03",    category: "team",        caption: "Handing out the end-of-season awards" },
+    { src: "event-bowling-04",    category: "team",        caption: "Cheering on a strike" },
     { src: "team-photo", category: "team",        caption: "Clarence Thunder - 2026 team photo" },
     { src: "coaches",    category: "team",        caption: "The coaching staff at work" }
 
