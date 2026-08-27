@@ -241,7 +241,7 @@ const teamData = {
     { number: 35, first: "Ethan",    last: "Kozel",       pos1: "P",  pos2: "C",  bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "assets/img/players/kozel.jpg" , favoriteMemory: "", sponsoredBy: "" },
     { number: 42, first: "Jonathan", last: "Cooper",      pos1: "C",  pos2: "P",  bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "assets/img/players/cooper.jpg" , favoriteMemory: "", sponsoredBy: "" },
     { number: 56, first: "Ivan",     last: "Burke",       pos1: "3B", pos2: "P",  bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "assets/img/players/burke.jpg" , favoriteMemory: "", sponsoredBy: "" },
-    { number: 86, first: "Phoenix",  last: "Fredericks",  pos1: "P",  pos2: "C",  bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "" , favoriteMemory: "", sponsoredBy: "" }
+    { number: 86, first: "Phoenix",  last: "Fredericks",  pos1: "P",  pos2: "C",  bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "assets/img/players/fredericks.jpg" , favoriteMemory: "", sponsoredBy: "" }
   ],
 
   // bio is optional - add a line about each coach and it shows on their card.
