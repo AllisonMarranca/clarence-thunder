@@ -133,7 +133,7 @@ const cooperstownConfig = {
    -------------------------------------------------------------------------- */
 const fundraisingData = {
   goal: 25000,        // campaign goal from the sponsorship package
-  raised: 0,          // <-- TODO: SET THIS to the real amount raised so far
+  raised: 5200,       // <-- UPDATE THIS as money comes in
   deadline: "2027-03-01",
   deadlineLabel: "Campaign closes March 1, 2027",
   lastUpdated: "2026-08-27",
