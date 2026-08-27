@@ -268,6 +268,12 @@ strong{color:var(--white);font-weight:700}
 .nav a[aria-current="page"]::after{transform:scaleX(1)}
 
 .header__cta{display:flex;align-items:center;gap:10px}
+/* The one primary action in the header - deliberately louder than the nav links */
+.header__cta .btn{
+  letter-spacing:.11em;padding:0 22px;
+  box-shadow:0 6px 20px rgba(255,199,44,.3);
+}
+.header__cta .btn:hover{box-shadow:0 10px 26px rgba(255,199,44,.45)}
 .nav-toggle{
   display:none;width:50px;height:50px;border:1px solid rgba(255,255,255,.18);
   background:rgba(255,255,255,.05);border-radius:12px;cursor:pointer;
@@ -458,6 +464,49 @@ body.nav-open{overflow:hidden}
 .progress__meta{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:14px;font-size:.9rem;color:var(--ice-300)}
 .progress__meta b{color:var(--white)}
 .progress-bar--sm{height:12px}
+.progress-bar--lg{height:26px}
+
+/* --- "Road to $25,000" headline block (homepage) --- */
+.progress-hero{
+  background:linear-gradient(150deg,var(--navy-700) 0%,var(--navy-900) 55%,var(--navy-950) 100%);
+  border:1px solid rgba(255,199,44,.28);
+  border-radius:var(--radius-xl);
+  padding:clamp(26px,4vw,52px) clamp(20px,4vw,52px);
+  position:relative;overflow:hidden;text-align:center;
+}
+.progress-hero::before{
+  content:"";position:absolute;top:-55%;left:50%;transform:translateX(-50%);
+  width:90%;height:180%;pointer-events:none;
+  background:radial-gradient(circle,rgba(255,199,44,.16),transparent 62%);
+}
+.progress-hero > *{position:relative}
+.progress-hero__head h2{font-size:clamp(2.1rem,6vw,3.6rem);line-height:.95}
+.progress-hero__figure{
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  margin:clamp(18px,3vw,28px) 0 clamp(14px,2vw,20px);
+}
+.progress-hero__raised{
+  font-family:var(--font-display);font-weight:800;line-height:.9;color:var(--gold);
+  font-size:clamp(3rem,12vw,6rem);font-variant-numeric:tabular-nums;
+}
+.progress-hero__of{
+  font-size:clamp(.95rem,2vw,1.15rem);color:var(--ice-200);font-weight:600;
+  letter-spacing:.04em;
+}
+.progress-hero__pct{
+  margin:16px auto 0;font-size:clamp(1rem,2.2vw,1.25rem);color:var(--ice-200);
+}
+.progress-hero__pct b{color:var(--white);font-family:var(--font-display);font-size:1.3em;letter-spacing:.02em}
+.progress-hero__meta{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:10px 26px;
+  margin-top:14px;font-size:.92rem;color:var(--ice-300);
+}
+.progress-hero__meta b{color:var(--white)}
+.progress-hero__cta{margin-top:clamp(24px,3.5vw,34px)}
+@media (max-width:560px){
+  .progress-hero__cta{flex-direction:column;align-items:stretch}
+  .progress-hero__cta .btn{width:100%}
+}
 
 /* ==========================================================================
    PLAYERS
@@ -745,19 +794,48 @@ body.nav-open{overflow:hidden}
 .sponsor-grid--4{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
 
 .sponsor-card{
-  display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;
+  display:flex;align-items:center;justify-content:flex-start;flex-direction:column;gap:8px;
   background:rgba(255,255,255,.96);border-radius:var(--radius);
-  padding:22px;min-height:120px;text-align:center;
+  padding:22px 20px;min-height:140px;text-align:center;
   transition:transform .28s var(--ease),box-shadow .28s var(--ease);
   border:1px solid rgba(255,255,255,.14);
 }
 .sponsor-card:hover{transform:translateY(-5px) scale(1.02);box-shadow:0 16px 34px rgba(0,0,0,.4)}
+.sponsor-card__mark{display:flex;align-items:center;justify-content:center;min-height:56px;margin-bottom:2px}
 .sponsor-card img{max-height:78px;width:auto;object-fit:contain}
 .sponsor-card--1 img{max-height:118px}
-.sponsor-card--1{min-height:190px}
-.sponsor-card--2{min-height:150px}
+.sponsor-card--1{min-height:210px}
+.sponsor-card--2{min-height:175px}
 .sponsor-card__name{font-family:var(--font-display);font-weight:800;text-transform:uppercase;color:var(--navy-900);font-size:1.15rem;line-height:1.1}
-.sponsor-card__tag{font-size:.76rem;color:var(--ice-500);letter-spacing:.06em}
+.sponsor-card__biz{font-family:var(--font-display);font-weight:800;text-transform:uppercase;color:var(--navy-900);font-size:1rem;line-height:1.1}
+.sponsor-card__cat{
+  font-size:.68rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--red);background:rgba(200,16,46,.09);
+  padding:4px 10px;border-radius:999px;
+}
+.sponsor-card__tag{font-size:.82rem;color:var(--ice-500);line-height:1.45;max-width:32ch}
+.sponsor-card__cta{
+  margin-top:auto;padding-top:8px;
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:var(--font-display);font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  font-size:.76rem;color:var(--red);
+}
+.sponsor-card__cta svg{width:14px;height:14px;transition:transform .22s var(--ease)}
+.sponsor-card:hover .sponsor-card__cta svg{transform:translateX(4px)}
+
+/* --- fundraiser card detail bullets --- */
+.fund-card__details{display:flex;flex-direction:column;gap:7px;margin:2px 0 4px}
+.fund-card__details li{display:flex;gap:9px;align-items:flex-start;font-size:.88rem;color:var(--ice-200);line-height:1.45}
+.fund-card__details svg{width:15px;height:15px;flex:none;color:var(--gold);margin-top:2px}
+
+/* --- "Sponsored by" line on a player card --- */
+.player-modal__sponsor{
+  margin-top:22px;padding:14px 18px;border-radius:12px;
+  background:rgba(200,16,46,.1);border:1px solid rgba(200,16,46,.3);
+  display:flex;flex-wrap:wrap;align-items:baseline;gap:8px;
+}
+.player-modal__sponsor .l{font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ice-300);font-weight:800}
+.player-modal__sponsor b{font-family:var(--font-display);font-size:1.15rem;color:var(--white);text-transform:uppercase}
 
 .sponsor-empty{
   display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;

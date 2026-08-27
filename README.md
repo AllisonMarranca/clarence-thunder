@@ -46,6 +46,13 @@ You do not need to touch any HTML to update content.
 | Update the roster | `teamData.players` |
 | Change the Cooperstown date | `cooperstownConfig.startDate` |
 | Change email / phone / socials | `siteConfig` |
+| Sponsorship prices, benefits, CTA | `sponsorData.levels` |
+| Which level is "Most Popular" | `sponsorData.levels[].featured` + `.flag` |
+| Player count shown on the site | derived from `teamData.players` - nothing to edit |
+
+**Cache note:** browsers hold on to CSS and JS. If you edit a file and don't see the
+change, bump the `?v=` number on the `styles.css` and `.js` links in the HTML files
+(they're all set to the same value) and everyone picks it up on their next visit.
 
 **Posting a game result:** find the game in `scheduleData.games`, change
 `status: "upcoming"` to `status: "final"`, and add `result: { us: 14, them: 1 }`.

@@ -35,7 +35,7 @@ const siteConfig = {
   tagline: "One team. One goal. One unforgettable season.",
   missionLine: "Road to Cooperstown 2027",
 
-  // The team mark, recoloured so the C reads on this site's dark background.
+  // The team mark, recolored so the C reads on this site's dark background.
   // assets/img/logo-on-light.png is the original black version for print.
   logo: "assets/img/logo.png",
 
@@ -143,70 +143,73 @@ const fundraisingData = {
     "Sponsorship dollars go directly toward team-level costs for the trip - not " +
     "general operating expenses - and toward making sure no family is caught short.",
 
-  // status: "live" | "soon" | "closed"
+  // status: "live" | "soon" | "closed"  ("soon" shows a COMING SOON badge)
+  // details[] are the short scannable bullets on each card.
   fundraisers: [
-    {
-      id: "sponsorship",
-      name: "Business Sponsorship",
-      status: "live",
-      image: "assets/img/photos/thumb/gallery-19.jpg",
-      description:
-        "The biggest lever we have. Local businesses get banner, jersey, social, and " +
-        "website recognition all season long - and their name travels with us to " +
-        "Cooperstown.",
-      deadline: "2027-03-01",
-      deadlineLabel: "Open until March 1, 2027",
-      goal: 0,
-      raised: 0,
-      cta: "See Sponsorship Levels",
-      link: "sponsors.html"
-    },
     {
       id: "bills-squares",
       name: "Bills Season Squares",
       status: "live",
       image: "assets/img/photos/thumb/gallery-16.jpg",
       description:
-        "100 squares per game board across the entire Bills season - win cash on " +
-        "every game while backing the Thunder.",
+        "Pick your square once and keep it for the whole Bills season. Cash payouts " +
+        "every game - and the team's proceeds go straight to Cooperstown.",
+      details: ["17 game boards", "Same square all season", "Cash payout every game"],
       deadline: "",
       deadlineLabel: "Boards open now",
-      goal: 0,     // set a goal (e.g. 6000) to show a progress bar on this card
+      goal: 0,
       raised: 0,
-      cta: "Claim Your Squares",
+      cta: "Buy a Square",
       link: ""     // leave "" and the button opens the contact form
     },
     {
+      id: "restaurant-night",
+      name: "Thunder Night Out",
+      status: "soon",
+      image: "assets/img/photos/thumb/gallery-19.jpg",
+      description:
+        "Eat out, back the team. A Clarence-area restaurant donates a share of the " +
+        "night's sales to the Thunder. Bring the whole family.",
+      details: ["Date to be announced", "Clarence-area restaurant", "Dine in or take out"],
+      deadline: "",
+      deadlineLabel: "Date coming soon",
+      goal: 0,
+      raised: 0,
+      cta: "Get Details",
+      link: ""
+    },
+    {
+      id: "team-apparel",
+      name: "Thunder Apparel",
+      status: "soon",
+      image: "assets/img/photos/thumb/gallery-26.jpg",
+      description:
+        "Hoodies, tees and hats for players, parents and grandparents. Wear the bolt " +
+        "and send a piece of every order to Cooperstown.",
+      details: ["Store opening soon", "Youth and adult sizes", "Proceeds to the trip"],
+      deadline: "",
+      deadlineLabel: "Store opening soon",
+      goal: 0,
+      raised: 0,
+      cta: "Shop Thunder Gear",
+      link: ""
+    },
+    {
       id: "direct-donation",
-      name: "Direct Donation",
+      name: "Make a Donation",
       status: "live",
       image: "assets/img/photos/thumb/gallery-02.jpg",
       description:
-        "No squares, no raffle, no order form - just a straight contribution to the " +
-        "team. Venmo @ClarenceThunder, or a check made out to our team treasurer.",
+        "No squares, no raffle, no order form. A direct contribution goes straight " +
+        "into the Cooperstown fund - and any amount genuinely helps.",
+      details: ["Venmo @ClarenceThunder", "Checks welcome", "Any amount helps"],
       deadline: "2027-03-01",
       deadlineLabel: "Open all campaign",
       goal: 0,
       raised: 0,
-      cta: "Donate Now",
+      cta: "Donate",
       link: "fundraising.html#donate"
     }
-
-    /* Add more fundraisers here as you run them. Format:
-    {
-      id: "basket-raffle",
-      name: "Holiday Basket Raffle",
-      status: "soon",                                   // live | soon | closed
-      image: "assets/img/photos/thumb/gallery-13.jpg",
-      description: "What it is and why someone should care.",
-      deadline: "2026-12-12",
-      deadlineLabel: "Drawing December 12",
-      goal: 2000,                                       // 0 = hide progress bar
-      raised: 0,
-      cta: "Buy Tickets",
-      link: ""
-    },
-    */
   ]
 };
 
@@ -217,23 +220,28 @@ const fundraisingData = {
    "assets/img/players/lastname.jpg". Portrait (3:4) crops look best.
    Leave photo:"" and a branded placeholder is shown instead.
 
-   bats / throws / favPlayer / favTeam / funFact are blank on purpose - fill in
-   whatever the players want to share and it appears in their profile card.
-   Anything left blank is simply hidden.
+   Optional fields - fill in whatever each player wants to share and it appears
+   on their profile card. Anything left blank is simply hidden:
+     bats, throws, favPlayer, favTeam, funFact, favoriteMemory
+
+   sponsoredBy: if a business sponsors a player, put the business name here and
+   a "Sponsored by ..." line appears on that player's card. Leave "" for none.
+
+   Keep it baseball only - no schools, addresses, birthdays or contact details.
    -------------------------------------------------------------------------- */
 const teamData = {
   players: [
-    { number: 2,  first: "Leo",      last: "Siejak",      pos1: "1B", pos2: "LF", bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "assets/img/players/siejak.jpg" },
-    { number: 8,  first: "Will",     last: "Pelkey",      pos1: "C",  pos2: "2B", bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "" },
-    { number: 10, first: "Brayden",  last: "McKenna",     pos1: "SS", pos2: "",   bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "assets/img/players/mckenna.jpg" },
-    { number: 11, first: "Michael",  last: "Marranca",    pos1: "2B", pos2: "RF", bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "assets/img/players/marranca.jpg" },
-    { number: 16, first: "Luke",     last: "Johnson",     pos1: "P",  pos2: "C",  bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "assets/img/players/johnson.jpg" },
-    { number: 19, first: "Nolan",    last: "Olewnik",     pos1: "2B", pos2: "P",  bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "assets/img/players/olewnik.jpg" },
-    { number: 29, first: "Will",     last: "Shine",       pos1: "LF", pos2: "2B", bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "assets/img/players/shine.jpg" },
-    { number: 35, first: "Ethan",    last: "Kozel",       pos1: "P",  pos2: "C",  bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "assets/img/players/kozel.jpg" },
-    { number: 42, first: "Jonathan", last: "Cooper",      pos1: "C",  pos2: "P",  bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "assets/img/players/cooper.jpg" },
-    { number: 56, first: "Ivan",     last: "Burke",       pos1: "3B", pos2: "P",  bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "assets/img/players/burke.jpg" },
-    { number: 86, first: "Phoenix",  last: "Fredericks",  pos1: "P",  pos2: "C",  bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "" }
+    { number: 2,  first: "Leo",      last: "Siejak",      pos1: "1B", pos2: "LF", bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "assets/img/players/siejak.jpg" , favoriteMemory: "", sponsoredBy: "" },
+    { number: 8,  first: "Will",     last: "Pelkey",      pos1: "C",  pos2: "2B", bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "" , favoriteMemory: "", sponsoredBy: "" },
+    { number: 10, first: "Brayden",  last: "McKenna",     pos1: "SS", pos2: "",   bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "assets/img/players/mckenna.jpg" , favoriteMemory: "", sponsoredBy: "" },
+    { number: 11, first: "Michael",  last: "Marranca",    pos1: "2B", pos2: "RF", bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "assets/img/players/marranca.jpg" , favoriteMemory: "", sponsoredBy: "" },
+    { number: 16, first: "Luke",     last: "Johnson",     pos1: "P",  pos2: "C",  bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "assets/img/players/johnson.jpg" , favoriteMemory: "", sponsoredBy: "" },
+    { number: 19, first: "Nolan",    last: "Olewnik",     pos1: "2B", pos2: "P",  bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "assets/img/players/olewnik.jpg" , favoriteMemory: "", sponsoredBy: "" },
+    { number: 29, first: "Will",     last: "Shine",       pos1: "LF", pos2: "2B", bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "assets/img/players/shine.jpg" , favoriteMemory: "", sponsoredBy: "" },
+    { number: 35, first: "Ethan",    last: "Kozel",       pos1: "P",  pos2: "C",  bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "assets/img/players/kozel.jpg" , favoriteMemory: "", sponsoredBy: "" },
+    { number: 42, first: "Jonathan", last: "Cooper",      pos1: "C",  pos2: "P",  bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "assets/img/players/cooper.jpg" , favoriteMemory: "", sponsoredBy: "" },
+    { number: 56, first: "Ivan",     last: "Burke",       pos1: "3B", pos2: "P",  bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "assets/img/players/burke.jpg" , favoriteMemory: "", sponsoredBy: "" },
+    { number: 86, first: "Phoenix",  last: "Fredericks",  pos1: "P",  pos2: "C",  bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "" , favoriteMemory: "", sponsoredBy: "" }
   ],
 
   // bio is optional - add a line about each coach and it shows on their card.
@@ -346,7 +354,9 @@ const sponsorData = {
       id: "thunder-champion",
       name: "Thunder Champion",
       price: 2500,
-      featured: true,
+      featured: false,
+      flag: "",
+      cta: "Reserve This Level",
       note: "Our top level of support",
       benefits: [
         "Top-billed logo on the website sponsor wall - largest placement, listed first",
@@ -362,8 +372,10 @@ const sponsorData = {
       id: "grand-slam",
       name: "Grand Slam",
       price: 1000,
-      featured: false,
-      note: "",
+      featured: true,          // <- the visually highlighted card
+      flag: "Most Popular",
+      cta: "Choose Grand Slam",
+      note: "The one most businesses pick",
       benefits: [
         "Large logo on the website sponsor wall",
         "Featured on the website homepage and the Cooperstown page",
@@ -377,6 +389,8 @@ const sponsorData = {
       name: "Home Run",
       price: 500,
       featured: false,
+      flag: "",
+      cta: "Choose Home Run",
       note: "",
       benefits: [
         "Logo on the website sponsor wall",
@@ -389,6 +403,8 @@ const sponsorData = {
       name: "Triple",
       price: 250,
       featured: false,
+      flag: "",
+      cta: "Choose Triple",
       note: "",
       benefits: [
         "Name on the website sponsor wall",
@@ -400,6 +416,8 @@ const sponsorData = {
       name: "Double",
       price: 100,
       featured: false,
+      flag: "",
+      cta: "Choose Double",
       note: "Great for small and family-run businesses",
       benefits: [
         "Name in the website supporters list",
@@ -408,14 +426,16 @@ const sponsorData = {
     }
   ],
 
-  /* Add real sponsors here as they sign. Example of the format:
+  /* Add real sponsors here as they sign. Every field except `name` and `tier`
+     is optional - anything you leave out is simply hidden on the card.
 
      {
-       name: "Clarence Auto Works",
-       tier: "grand-slam",
-       url: "https://clarenceautoworks.com",
-       logo: "assets/img/sponsors/clarence-auto-works.png",
-       tagline: "Full-service auto repair - Main Street, Clarence"
+       name: "Clarence Auto Works",          // required
+       tier: "grand-slam",                   // required - must match a level id above
+       category: "Auto Repair",              // short business category
+       tagline: "Full-service auto repair on Main Street, Clarence",
+       url: "https://clarenceautoworks.com", // makes the whole card clickable
+       logo: "assets/img/sponsors/clarence-auto-works.png"
      },
   */
   sponsors: []

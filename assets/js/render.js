@@ -19,6 +19,48 @@
     return Math.max(0, Math.min(100, (raised / goal) * 100));
   }
 
+  /* The headline "Road to $25,000" block used on the homepage. Everything comes
+     from fundraisingData, so the goal and the amount raised live in one place. */
+  function renderProgressHero(host) {
+    const goal = fundraisingData.goal;
+    const raised = fundraisingData.raised;
+    const pct = progressPct(raised, goal);
+    const remaining = Math.max(0, goal - raised);
+
+    host.innerHTML = `
+      <div class="progress-hero">
+        <div class="progress-hero__head">
+          <div class="eyebrow eyebrow--center">Road to Cooperstown</div>
+          <h2>Road to ${money(goal)}</h2>
+        </div>
+
+        <div class="progress-hero__figure">
+          <span class="progress-hero__raised" data-countup="${raised}" data-prefix="$">$0</span>
+          <span class="progress-hero__of">raised of ${money(goal)}</span>
+        </div>
+
+        <div class="progress-bar progress-bar--lg">
+          <div class="progress-bar__fill" data-progress="${pct.toFixed(1)}"
+               role="progressbar" aria-valuenow="${Math.round(pct)}" aria-valuemin="0" aria-valuemax="100"
+               aria-label="Cooperstown fundraising progress"></div>
+        </div>
+
+        <p class="progress-hero__pct">
+          <b>${Math.round(pct)}%</b> of the way to Cooperstown
+        </p>
+
+        <div class="progress-hero__meta">
+          <span><b>${money(remaining)}</b> to go</span>
+          ${fundraisingData.deadlineLabel ? `<span>${esc(fundraisingData.deadlineLabel)}</span>` : ""}
+        </div>
+
+        <div class="row row--center progress-hero__cta">
+          <a class="btn btn--lg" href="fundraising.html">Help Us Reach Our Goal</a>
+          <a class="btn btn--lg btn--outline" href="sponsors.html">Sponsor the Thunder</a>
+        </div>
+      </div>`;
+  }
+
   function renderProgress(host) {
     const pct = progressPct(fundraisingData.raised, fundraisingData.goal);
     const compact = host.dataset.variant === "compact";
@@ -107,10 +149,20 @@
             ${chip("Favorite Team", p.favTeam)}
             ${chip("Favorite Player", p.favPlayer)}
           </div>
+          ${p.favoriteMemory ? `
+          <div class="player-modal__fact">
+            <div class="l">Favorite Baseball Memory</div>
+            <p>${esc(p.favoriteMemory)}</p>
+          </div>` : ""}
           ${p.funFact ? `
           <div class="player-modal__fact">
             <div class="l">Fun Fact</div>
             <p>${esc(p.funFact)}</p>
+          </div>` : ""}
+          ${p.sponsoredBy ? `
+          <div class="player-modal__sponsor">
+            <span class="l">Sponsored by</span>
+            <b>${esc(p.sponsoredBy)}</b>
           </div>` : ""}
         </div>
       </div>`, `${p.first} ${p.last} player profile`);
@@ -364,7 +416,7 @@
     host.className = "tier-grid";
     host.innerHTML = sponsorData.levels.map((lv, i) => `
       <article class="tier-card ${lv.featured ? "tier-card--featured" : ""}" data-reveal data-reveal-delay="${(i % 4) + 1}">
-        ${lv.featured ? `<div class="tier-card__flag">Most Impact</div>` : ""}
+        ${lv.flag ? `<div class="tier-card__flag">${esc(lv.flag)}</div>` : ""}
         <h3 class="tier-card__name">${esc(lv.name)}</h3>
         <div class="tier-card__price"><sup>$</sup>${lv.price.toLocaleString("en-US")}</div>
         ${lv.note ? `<div class="tier-card__note">${esc(lv.note)}</div>` : `<div class="tier-card__note">Full season recognition</div>`}
@@ -372,7 +424,7 @@
           ${lv.benefits.map((b) => `<li>${icon.check}<span>${esc(b)}</span></li>`).join("")}
         </ul>
         <button class="btn ${lv.featured ? "" : "btn--ghost"}" type="button"
-                data-sponsor-level="${esc(lv.name)}">Become a Sponsor</button>
+                data-sponsor-level="${esc(lv.name)}">${esc(lv.cta || "Choose This Level")}</button>
       </article>`).join("") +
       (sponsorData.footnote
         ? `<p class="muted center" style="grid-column:1/-1;margin:6px auto 0;font-size:.95rem">${esc(sponsorData.footnote)}</p>`
@@ -400,16 +452,24 @@
   /* ======================================================================
      SPONSOR WALL
      ====================================================================== */
+  /* A sponsor's card is a small business profile, not just a logo: logo or name,
+     category, one line about them, and a link out to their site. */
   function sponsorCard(s, tierIndex) {
     const size = Math.min(tierIndex + 1, 4);
     const inner = `
-      ${s.logo
-        ? `<img src="${esc(s.logo)}" alt="${esc(s.name)}" loading="lazy">`
-        : `<span class="sponsor-card__name">${esc(s.name)}</span>`}
-      ${s.tagline ? `<span class="sponsor-card__tag">${esc(s.tagline)}</span>` : ""}`;
+      <span class="sponsor-card__mark">
+        ${s.logo
+          ? `<img src="${esc(s.logo)}" alt="${esc(s.name)}" loading="lazy">`
+          : `<span class="sponsor-card__name">${esc(s.name)}</span>`}
+      </span>
+      ${s.logo ? `<span class="sponsor-card__biz">${esc(s.name)}</span>` : ""}
+      ${s.category ? `<span class="sponsor-card__cat">${esc(s.category)}</span>` : ""}
+      ${s.tagline ? `<span class="sponsor-card__tag">${esc(s.tagline)}</span>` : ""}
+      ${s.url ? `<span class="sponsor-card__cta">Visit Our Sponsor ${icon.arrow}</span>` : ""}`;
+
     return s.url
       ? `<a class="sponsor-card sponsor-card--${size}" href="${esc(s.url)}" target="_blank" rel="noopener"
-            aria-label="${esc(s.name)} (opens in a new tab)">${inner}</a>`
+            aria-label="${esc(s.name)}${s.category ? ", " + esc(s.category) : ""} (opens in a new tab)">${inner}</a>`
       : `<div class="sponsor-card sponsor-card--${size}">${inner}</div>`;
   }
 
@@ -486,6 +546,7 @@
     if (limit) list = list.slice(0, limit);
 
     const statusLabel = { live: "Live Now", soon: "Coming Soon", closed: "Closed" };
+    const detailIcon = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>';
 
     host.className = "grid grid--3";
     host.innerHTML = list.map((f, i) => {
@@ -501,6 +562,10 @@
           <div class="fund-card__body">
             <h3 class="fund-card__name">${esc(f.name)}</h3>
             <p class="fund-card__desc">${esc(f.description)}</p>
+            ${(f.details && f.details.length) ? `
+              <ul class="fund-card__details">
+                ${f.details.map((d) => `<li>${detailIcon}<span>${esc(d)}</span></li>`).join("")}
+              </ul>` : ""}
             ${f.deadlineLabel ? `<div class="fund-card__deadline">${icon.clock} ${esc(f.deadlineLabel)}</div>` : ""}
             ${f.goal ? `
               <div>
@@ -794,6 +859,7 @@
      ====================================================================== */
   const renderers = {
     "progress":          renderProgress,
+    "progress-hero":     renderProgressHero,
     "roster":            renderRoster,
     "coaches":           renderCoaches,
     "schedule":          renderSchedule,
