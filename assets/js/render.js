@@ -752,6 +752,7 @@
       "cooperstown-dates": cooperstownConfig.displayDates,
       "cooperstown-location": cooperstownConfig.location,
       "cooperstown-name": cooperstownConfig.tournamentName,
+      "instagram-handle": siteConfig.instagramHandle,
       "goal": money(fundraisingData.goal),
       "raised": money(fundraisingData.raised),
       "player-count": String(teamData.players.length)
@@ -762,6 +763,11 @@
     if (host.tagName === "A") {
       if (key === "email") host.href = "mailto:" + siteConfig.email;
       if (key === "phone") host.href = "tel:" + String(siteConfig.phone).replace(/[^0-9+]/g, "");
+      if (key === "instagram-handle" && siteConfig.social.instagram) {
+        host.href = siteConfig.social.instagram;
+        host.target = "_blank";
+        host.rel = "noopener";
+      }
     }
   }
 

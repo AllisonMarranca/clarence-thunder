@@ -45,14 +45,15 @@ const siteConfig = {
   email: "hfmelancon@gmail.com",
   phone: "585-737-6756",
 
-  // Social links. Set to "" (empty string) to hide an icon.
-  // TODO: swap in the team's real pages.
+  // Social links. Set to "" (empty string) to hide that icon.
   social: {
-    facebook: "https://facebook.com",
-    instagram: "https://instagram.com",
+    instagram: "https://www.instagram.com/clarencethunder12u/",
+    facebook: "",          // TODO: paste the team's Facebook page URL to show the icon
     x: "",
     youtube: ""
   },
+  // Shown as text on the contact page.
+  instagramHandle: "@clarencethunder12u",
 
   // Payment / donation links.
   payments: {
