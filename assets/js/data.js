@@ -80,7 +80,7 @@ const siteConfig = {
   },
 
   // Used for SEO / structured data. Update after you pick a domain.
-  siteUrl: "https://clarencethunder12u.com"
+  siteUrl: "https://www.clarencethunder.com"
 };
 
 /* --------------------------------------------------------------------------

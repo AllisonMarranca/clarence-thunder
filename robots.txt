@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://clarencethunder12u.com/sitemap.xml
+Sitemap: https://www.clarencethunder.com/sitemap.xml
