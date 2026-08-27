@@ -690,7 +690,21 @@ body.nav-open{overflow:hidden}
 /* ==========================================================================
    SPONSORSHIP
    ========================================================================== */
-.tier-grid{display:grid;gap:clamp(16px,2vw,22px);grid-template-columns:repeat(auto-fit,minmax(270px,1fr))}
+.tier-grid{display:grid;gap:clamp(14px,1.6vw,20px);grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+/* All five levels on one row on desktop, so no single card is left stranded. */
+@media (min-width:1180px){
+  .tier-grid{grid-template-columns:repeat(5,minmax(0,1fr))}
+  .tier-grid .tier-card{padding:26px 20px}
+  .tier-grid .tier-card__name{font-size:1.3rem;padding-right:0;min-height:2.6em}
+  .tier-grid .tier-card--featured .tier-card__name{padding-right:52px}
+  .tier-grid .tier-card__price{font-size:2.5rem;margin:10px 0 4px}
+  .tier-grid .tier-card__benefits li{font-size:.86rem;gap:9px}
+  .tier-grid .tier-card__benefits svg{width:16px;height:16px;margin-top:3px}
+  .tier-grid .btn{padding:0 14px;font-size:.92rem;min-height:48px}
+}
+@media (min-width:760px) and (max-width:1179px){
+  .tier-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
 .tier-card{
   display:flex;flex-direction:column;position:relative;overflow:hidden;
   background:linear-gradient(165deg,var(--navy-800),var(--navy-900));

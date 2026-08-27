@@ -87,16 +87,18 @@ const siteConfig = {
    2. COOPERSTOWN — tournament details + the live countdown
    -------------------------------------------------------------------------- */
 const cooperstownConfig = {
-  // TODO: confirm the official week/dates with the tournament, then update.
+  // Cooperstown is AUGUST 2027. The exact week below is still a placeholder -
+  // TODO: confirm the official dates and update startDate/endDate/displayDates.
+  // The countdown on the site counts down to startDate.
   tournamentName: "Cooperstown",
   week: "",
-  startDate: "2027-07-10",
-  endDate: "2027-07-16",
+  startDate: "2027-08-07",
+  endDate: "2027-08-13",
   location: "Cooperstown, New York",
-  displayDates: "Summer 2027",
+  displayDates: "August 2027",
 
   intro:
-    "In summer 2027, our boys will travel to Cooperstown, New York - the home of " +
+    "In August 2027, our boys will travel to Cooperstown, New York - the home of " +
     "the National Baseball Hall of Fame - to compete on the same fields where " +
     "baseball's history was made.",
 
@@ -122,7 +124,7 @@ const cooperstownConfig = {
     { date: "Fall 2026", title: "The Campaign Opens", desc: "Sponsorship packages go out to Clarence-area businesses and fundraising begins.", done: true },
     { date: "Winter 2026-27", title: "Off-Season Work", desc: "Off-season practices and training while the campaign keeps building.", done: false },
     { date: "March 1, 2027", title: "Fundraising Deadline", desc: "Our $25,000 campaign goal needs to be met so the trip is fully covered.", done: false },
-    { date: "Summer 2027", title: "Cooperstown", desc: "A full week at the home of baseball - the one we've been working toward.", done: false }
+    { date: "August 2027", title: "Cooperstown", desc: "A full week at the home of baseball - the one we've been working toward.", done: false }
   ]
 };
 
@@ -280,7 +282,7 @@ const scheduleData = {
   tournaments: [
     {
       name: "Cooperstown",
-      dates: "Summer 2027",
+      dates: "August 2027",
       location: "Cooperstown, NY",
       image: "assets/img/photos/thumb/hero-cooperstown.jpg",
       note: "The one we've been working toward. A full week at the home of baseball."
@@ -347,11 +349,13 @@ const sponsorData = {
       featured: true,
       note: "Our top level of support",
       benefits: [
+        "Top-billed logo on the website sponsor wall - largest placement, listed first",
+        "Featured on the website homepage and the Cooperstown page",
+        "Your own sponsor spotlight article on the team website",
         "Large logo on the team banner",
-        "Featured social media post",
-        "Recognition at every event",
         "Prominent logo on the practice jersey sleeve (first 2 sponsors at this level only)",
-        "Shout-out on our social media and website"
+        "Featured social media post",
+        "Recognition at every event"
       ]
     },
     {
@@ -361,9 +365,11 @@ const sponsorData = {
       featured: false,
       note: "",
       benefits: [
+        "Large logo on the website sponsor wall",
+        "Featured on the website homepage and the Cooperstown page",
         "Medium logo on the team banner",
-        "Social media recognition",
-        "Logo on the practice jersey"
+        "Logo on the practice jersey",
+        "Social media recognition"
       ]
     },
     {
@@ -373,7 +379,8 @@ const sponsorData = {
       featured: false,
       note: "",
       benefits: [
-        "Logo on the team banner",
+        "Logo on the website sponsor wall",
+        "Small logo on the team banner",
         "Social media mention"
       ]
     },
@@ -384,6 +391,7 @@ const sponsorData = {
       featured: false,
       note: "",
       benefits: [
+        "Name on the website sponsor wall",
         "Name on the team banner"
       ]
     },
@@ -394,6 +402,7 @@ const sponsorData = {
       featured: false,
       note: "Great for small and family-run businesses",
       benefits: [
+        "Name in the website supporters list",
         "Named recognition in our final campaign thank-you report"
       ]
     }
@@ -427,9 +436,9 @@ const newsData = [
     category: "Cooperstown",
     image: "assets/img/photos/team-photo.jpg",
     excerpt:
-      "In summer 2027, eleven Clarence boys will play a full week at the home of baseball. Here's what it takes to get them there.",
+      "In August 2027, eleven Clarence boys will play a full week at the home of baseball. Here's what it takes to get them there.",
     body: [
-      "In summer 2027, Clarence Thunder 12U will travel to Cooperstown, New York - the home of the National Baseball Hall of Fame - to compete on the same fields where baseball's history was made.",
+      "In August 2027, Clarence Thunder 12U will travel to Cooperstown, New York - the home of the National Baseball Hall of Fame - to compete on the same fields where baseball's history was made.",
       "Our 12U roster is made up of eleven dedicated young athletes, every one of them from Clarence, coached by volunteers who invest their own time to develop these players both on and off the field.",
       { h: "Why It Matters" },
       "A Cooperstown tournament is more than a baseball trip - it's a milestone. For many of these players, it will be their first time competing on a national stage, staying with their team for a full week, and experiencing the traditions and history of the sport they love.",
@@ -451,7 +460,7 @@ const newsData = [
     title: "Thunder Win the 2026 Championship",
     date: "2026-07-30",
     category: "Game Recap",
-    image: "assets/img/photos/gallery-16.jpg",
+    image: "assets/img/photos/champions-2026.jpg",
     excerpt:
       "A 14-1 win over the Hamburg Dawgs closed out the 2026 season with a championship.",
     body: [
@@ -525,6 +534,7 @@ const galleryData = {
     { src: "gallery-28", category: "games",       caption: "Blocking in the dirt" },
     { src: "gallery-22", category: "games",       caption: "Balanced and ready to swing" },
     { src: "gallery-10", category: "practices",   caption: "Working through a bullpen" },
+    { src: "champions-2026", category: "team",   caption: "2026 League Champions - medals and number ones" },
     { src: "team-photo", category: "team",        caption: "Clarence Thunder - 2026 team photo" },
     { src: "coaches",    category: "team",        caption: "The coaching staff at work" }
 

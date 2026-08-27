@@ -437,7 +437,21 @@
       return;
     }
 
-    host.innerHTML = sponsorData.levels.map((lv, idx) => {
+    // "featured" walls (homepage, Cooperstown page) show logos for the top two
+    // levels only, so the higher tiers genuinely buy more prominence. The full
+    // wall on the sponsors page shows every level.
+    const featured = host.dataset.featured === "true";
+    const FEATURED_TIERS = 2;
+
+    const tiersToShow = featured
+      ? sponsorData.levels.slice(0, FEATURED_TIERS)
+      : sponsorData.levels;
+
+    const rest = featured
+      ? sponsors.filter((s) => !tiersToShow.some((lv) => lv.id === s.tier))
+      : [];
+
+    host.innerHTML = tiersToShow.map((lv, idx) => {
       const inTier = sponsors.filter((s) => s.tier === lv.id);
       if (!inTier.length) return "";
       const size = Math.min(idx + 1, 4);
@@ -451,7 +465,11 @@
             ${inTier.map((s) => sponsorCard(s, idx)).join("")}
           </div>
         </section>`;
-    }).join("") + `
+    }).join("") + (rest.length ? `
+      <p class="muted center" data-reveal style="margin:0 auto 22px">
+        Plus ${rest.length} more ${rest.length === 1 ? "business" : "businesses"} backing the Thunder &mdash;
+        <a href="sponsors.html" style="color:var(--gold)">see every sponsor</a>.
+      </p>` : "") + `
       <div class="center" data-reveal style="margin-top:26px">
         <p class="muted" style="margin:0 auto 18px">There's still room on the banner.</p>
         <a class="btn" href="sponsors.html">Become a Sponsor</a>
