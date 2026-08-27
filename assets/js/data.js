@@ -23,6 +23,9 @@
    1. SITE CONFIG — team identity, contact info, social links, payment links
    -------------------------------------------------------------------------- */
 const siteConfig = {
+  // Bump this whenever you REPLACE a player/coach photo but keep the same
+  // filename - it forces browsers to fetch the new image instead of a cached one.
+  assetVersion: "20260827h",
   teamName: "Clarence Thunder 12U",
   shortName: "Thunder",
   orgName: "Clarence Thunder Baseball",

@@ -99,8 +99,16 @@
   /* ======================================================================
      ROSTER + PLAYER MODAL
      ====================================================================== */
+  /* Appends siteConfig.assetVersion so a replaced photo that keeps its filename
+     still busts the browser cache. */
+  function ver(src) {
+    if (!src) return src;
+    const v = siteConfig && siteConfig.assetVersion;
+    return v && src.indexOf("?") === -1 ? `${src}?v=${v}` : src;
+  }
+
   function playerPhoto(p) {
-    return p.photo ? p.photo : "assets/img/player-placeholder.svg";
+    return ver(p.photo ? p.photo : "assets/img/player-placeholder.svg");
   }
 
   function renderRoster(host) {
@@ -176,7 +184,7 @@
     host.innerHTML = teamData.coaches.map((c, i) => `
       <div class="card card--hover coach-card" data-reveal data-reveal-delay="${(i % 4) + 1}">
         ${c.photo
-          ? `<img class="coach-card__img" src="${esc(c.photo)}" alt="${esc(c.name)}" loading="lazy">`
+          ? `<img class="coach-card__img" src="${esc(ver(c.photo))}" alt="${esc(c.name)}" loading="lazy">`
           : `<img class="coach-card__img" src="assets/img/player-placeholder.svg" alt="" aria-hidden="true" loading="lazy">`}
         <div>
           <div class="coach-card__role">${esc(c.role)}</div>
