@@ -232,7 +232,7 @@ const fundraisingData = {
 const teamData = {
   players: [
     { number: 2,  first: "Leo",      last: "Siejak",      pos1: "1B", pos2: "LF", bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "assets/img/players/siejak.jpg" , favoriteMemory: "", sponsoredBy: "" },
-    { number: 8,  first: "Will",     last: "Pelkey",      pos1: "C",  pos2: "2B", bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "" , favoriteMemory: "", sponsoredBy: "" },
+    { number: 8,  first: "Will",     last: "Pelkey",      pos1: "C",  pos2: "2B", bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "assets/img/players/pelkey.jpg" , favoriteMemory: "", sponsoredBy: "" },
     { number: 10, first: "Brayden",  last: "McKenna",     pos1: "SS", pos2: "",   bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "assets/img/players/mckenna.jpg" , favoriteMemory: "", sponsoredBy: "" },
     { number: 11, first: "Michael",  last: "Marranca",    pos1: "2B", pos2: "RF", bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "assets/img/players/marranca.jpg" , favoriteMemory: "", sponsoredBy: "" },
     { number: 16, first: "Luke",     last: "Johnson",     pos1: "P",  pos2: "C",  bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "assets/img/players/johnson.jpg" , favoriteMemory: "", sponsoredBy: "" },
@@ -476,20 +476,6 @@ const newsData = [
     ]
   },
   {
-    slug: "2026-championship",
-    title: "Thunder Win the 2026 Championship",
-    date: "2026-07-30",
-    category: "Game Recap",
-    image: "assets/img/photos/champions-2026.jpg",
-    excerpt:
-      "A 14-1 win over the Hamburg Dawgs closed out the 2026 season with a championship.",
-    body: [
-      "The Thunder closed out the 2026 season the right way, beating the Hamburg Dawgs 14-1 to take the championship.",
-      "It's the kind of result that comes from years of practice, teamwork, and a group of kids who have grown up playing the game together.",
-      "It's a good note to end the season on, and a good sign heading into a long off-season of work before the 2027 season - and Cooperstown."
-    ]
-  },
-  {
     slug: "sponsorship-open",
     title: "Sponsorship Is Open for the Cooperstown Campaign",
     date: "2026-08-04",
@@ -503,6 +489,21 @@ const newsData = [
       { h: "Where the Money Goes" },
       "Sponsorship dollars go directly toward team-level costs for the Cooperstown trip - player and coach room and board, umpire fees, team trading pins, and a contingency reserve. Not general operating expenses.",
       "Levels run from $100 to $2,500, and sponsorships of any amount are welcome. These tiers are a guide, not a limit - if you have something else in mind, tell us and we'll build it."
+    ]
+  }
+,
+  {
+    slug: "2026-championship",
+    title: "Thunder Win the 2026 Championship",
+    date: "2026-07-30",
+    category: "Game Recap",
+    image: "assets/img/photos/champions-2026.jpg",
+    excerpt:
+      "A 14-1 win over the Hamburg Dawgs closed out the 2026 season with a championship.",
+    body: [
+      "The Thunder closed out the 2026 season the right way, beating the Hamburg Dawgs 14-1 to take the championship.",
+      "It's the kind of result that comes from years of practice, teamwork, and a group of kids who have grown up playing the game together.",
+      "It's a good note to end the season on, and a good sign heading into a long off-season of work before the 2027 season - and Cooperstown."
     ]
   }
 ];
