@@ -387,8 +387,22 @@ body.nav-open{overflow:hidden}
 .page-hero__media img{width:100%;height:100%;object-fit:cover}
 .page-hero__media::after{
   content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(5,11,21,.86),rgba(5,11,21,.8)),
-             linear-gradient(90deg,rgba(5,11,21,.95),rgba(5,11,21,.35));
+  /* Left stays near-solid so the headline holds contrast; the right side is let
+     up so the photo actually reads. Anchor the subject right via object-position. */
+  background:linear-gradient(180deg,rgba(5,11,21,.66),rgba(5,11,21,.58)),
+             linear-gradient(90deg,rgba(5,11,21,.92),rgba(5,11,21,.12));
+}
+.page-hero__media img{object-position:center}
+/* Heroes whose subject sits right of centre keep them in frame at every width. */
+.page-hero__media--right img{object-position:75% center}
+
+/* On narrow screens the headline spans nearly the full width, so there is no
+   room to trade darkness for image - tighten the wash back up. */
+@media (max-width:780px){
+  .page-hero__media::after{
+    background:linear-gradient(180deg,rgba(5,11,21,.74),rgba(5,11,21,.68)),
+               linear-gradient(90deg,rgba(5,11,21,.88),rgba(5,11,21,.35));
+  }
 }
 .page-hero h1{font-size:clamp(2.4rem,7vw,5rem)}
 .page-hero p{margin-top:18px;font-size:clamp(1rem,1.6vw,1.2rem);color:var(--ice-200)}
