@@ -151,6 +151,7 @@
           <div class="card__label">Clarence Thunder ${esc(siteConfig.ageGroup)}</div>
           <h2 class="player-modal__name">${esc(p.first)}<br>${esc(p.last)}</h2>
           <div class="player-modal__pos">${esc(p.pos1)}${p.pos2 ? " / " + esc(p.pos2) : ""}</div>
+          ${p.bio ? `<p class="player-modal__bio">${esc(p.bio)}</p>` : ""}
           <div class="player-modal__grid">
             ${chip("Bats", p.bats)}
             ${chip("Throws", p.throws)}
@@ -172,6 +173,8 @@
             <span class="l">Sponsored by</span>
             <b>${esc(p.sponsoredBy)}</b>
           </div>` : ""}
+          ${!(p.bio || p.bats || p.throws || p.favTeam || p.favPlayer || p.favoriteMemory || p.funFact)
+            ? `<p class="player-modal__empty">Player profile coming soon.</p>` : ""}
         </div>
       </div>`, `${p.first} ${p.last} player profile`);
   }

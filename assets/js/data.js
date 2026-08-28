@@ -234,17 +234,17 @@ const fundraisingData = {
    -------------------------------------------------------------------------- */
 const teamData = {
   players: [
-    { number: 2,  first: "Leo",      last: "Siejak",      pos1: "1B", pos2: "LF", bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "assets/img/players/siejak.jpg" , favoriteMemory: "", sponsoredBy: "" },
-    { number: 8,  first: "Will",     last: "Pelkey",      pos1: "C",  pos2: "2B", bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "assets/img/players/pelkey.jpg" , favoriteMemory: "", sponsoredBy: "" },
-    { number: 10, first: "Brayden",  last: "McKenna",     pos1: "SS", pos2: "",   bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "assets/img/players/mckenna.jpg" , favoriteMemory: "", sponsoredBy: "" },
-    { number: 11, first: "Michael",  last: "Marranca",    pos1: "2B", pos2: "RF", bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "assets/img/players/marranca.jpg" , favoriteMemory: "", sponsoredBy: "" },
-    { number: 16, first: "Luke",     last: "Johnson",     pos1: "P",  pos2: "C",  bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "assets/img/players/johnson.jpg" , favoriteMemory: "", sponsoredBy: "" },
-    { number: 19, first: "Nolan",    last: "Olewnik",     pos1: "2B", pos2: "P",  bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "assets/img/players/olewnik.jpg" , favoriteMemory: "", sponsoredBy: "" },
-    { number: 29, first: "Will",     last: "Shine",       pos1: "LF", pos2: "2B", bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "assets/img/players/shine.jpg" , favoriteMemory: "", sponsoredBy: "" },
-    { number: 35, first: "Ethan",    last: "Kozel",       pos1: "P",  pos2: "C",  bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "assets/img/players/kozel.jpg" , favoriteMemory: "", sponsoredBy: "" },
-    { number: 42, first: "Jonathan", last: "Cooper",      pos1: "C",  pos2: "P",  bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "assets/img/players/cooper.jpg" , favoriteMemory: "", sponsoredBy: "" },
-    { number: 56, first: "Ivan",     last: "Burke",       pos1: "3B", pos2: "P",  bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "assets/img/players/burke.jpg" , favoriteMemory: "", sponsoredBy: "" },
-    { number: 86, first: "Phoenix",  last: "Fredericks",  pos1: "P",  pos2: "C",  bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", photo: "assets/img/players/fredericks.jpg" , favoriteMemory: "", sponsoredBy: "" }
+    { number: 2,  first: "Leo",      last: "Siejak",      pos1: "1B", pos2: "LF", bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", bio: "", photo: "assets/img/players/siejak.jpg" , favoriteMemory: "", sponsoredBy: "" },
+    { number: 8,  first: "Will",     last: "Pelkey",      pos1: "C",  pos2: "2B", bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", bio: "", photo: "assets/img/players/pelkey.jpg" , favoriteMemory: "", sponsoredBy: "" },
+    { number: 10, first: "Brayden",  last: "McKenna",     pos1: "SS", pos2: "",   bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", bio: "", photo: "assets/img/players/mckenna.jpg" , favoriteMemory: "", sponsoredBy: "" },
+    { number: 11, first: "Michael",  last: "Marranca",    pos1: "2B", pos2: "RF", bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", bio: "", photo: "assets/img/players/marranca.jpg" , favoriteMemory: "", sponsoredBy: "" },
+    { number: 16, first: "Luke",     last: "Johnson",     pos1: "P",  pos2: "C",  bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", bio: "", photo: "assets/img/players/johnson.jpg" , favoriteMemory: "", sponsoredBy: "" },
+    { number: 19, first: "Nolan",    last: "Olewnik",     pos1: "2B", pos2: "P",  bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", bio: "", photo: "assets/img/players/olewnik.jpg" , favoriteMemory: "", sponsoredBy: "" },
+    { number: 29, first: "Will",     last: "Shine",       pos1: "LF", pos2: "2B", bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", bio: "", photo: "assets/img/players/shine.jpg" , favoriteMemory: "", sponsoredBy: "" },
+    { number: 35, first: "Ethan",    last: "Kozel",       pos1: "P",  pos2: "C",  bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", bio: "", photo: "assets/img/players/kozel.jpg" , favoriteMemory: "", sponsoredBy: "" },
+    { number: 42, first: "Jonathan", last: "Cooper",      pos1: "C",  pos2: "P",  bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", bio: "", photo: "assets/img/players/cooper.jpg" , favoriteMemory: "", sponsoredBy: "" },
+    { number: 56, first: "Ivan",     last: "Burke",       pos1: "3B", pos2: "P",  bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", bio: "", photo: "assets/img/players/burke.jpg" , favoriteMemory: "", sponsoredBy: "" },
+    { number: 86, first: "Phoenix",  last: "Fredericks",  pos1: "P",  pos2: "C",  bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", bio: "", photo: "assets/img/players/fredericks.jpg" , favoriteMemory: "", sponsoredBy: "" }
   ],
 
   // bio is optional - add a line about each coach and it shows on their card.
