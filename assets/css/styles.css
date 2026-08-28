@@ -398,6 +398,14 @@ body.nav-open{overflow:hidden}
 /* Heroes whose subject sits right of centre keep them in frame at every width. */
 .page-hero__media--right img{object-position:75% center}
 
+/* For group photos whose faces reach the top edge: pin the crop to the very
+   top, and on wide screens let the band grow so the whole group fits.
+   44vw tracks the displayed image height, so it scales with the monitor. */
+.page-hero--tall .page-hero__media img{object-position:50% 0}
+@media (min-width:781px){
+  .page-hero--tall{min-height:min(44vw,880px);display:flex;align-items:center}
+}
+
 /* On narrow screens the headline spans nearly the full width, so there is no
    room to trade darkness for image - tighten the wash back up. */
 @media (max-width:780px){
