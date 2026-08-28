@@ -244,7 +244,7 @@ const teamData = {
         "On the field he holds down second base and right field for the Thunder. He plays baseball, football, and basketball, keeping him busy year-round.",
         "Off the field you'll find him traveling and making memories with family and friends. Wherever he goes, he brings the same energy, competitiveness, and team-first attitude."
       ],
-      photo: "assets/img/players/marranca.jpg" , favoriteMemory: "Winning the championship versus Hamburg.", sponsoredBy: "" },
+      photo: "assets/img/players/marranca.jpg" , favoriteMemory: "Beating the Hamburg Dawgs 14-1 to win the 2026 championship.", sponsoredBy: "" },
     { number: 16, first: "Luke",     last: "Johnson",     pos1: "P",  pos2: "C",  bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", bio: "", photo: "assets/img/players/johnson.jpg" , favoriteMemory: "", sponsoredBy: "" },
     { number: 19, first: "Nolan",    last: "Olewnik",     pos1: "2B", pos2: "P",  bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", bio: "", photo: "assets/img/players/olewnik.jpg" , favoriteMemory: "", sponsoredBy: "" },
     { number: 29, first: "Will",     last: "Shine",       pos1: "LF", pos2: "2B", bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", bio: "", photo: "assets/img/players/shine.jpg" , favoriteMemory: "", sponsoredBy: "" },
