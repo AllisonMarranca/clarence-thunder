@@ -241,7 +241,7 @@ const teamData = {
       // bio can be a plain string or an array - each array entry renders as its own paragraph.
       bio: [
         "Michael is 11 years old and a sixth-grader at Clarence Middle School - an active, social kid who loves time with friends, traveling, and competing in just about any sport he can find.",
-        "On the field he holds down second base and right field for the Thunder, modeling his game after Ben Rice. Baseball is the big one, but football and basketball keep him busy year-round.",
+        "On the field he holds down second base and right field for the Thunder. He plays baseball, football, and basketball, keeping him busy year-round.",
         "Off the field you'll find him traveling and making memories with family and friends. Wherever he goes, he brings the same energy, competitiveness, and team-first attitude."
       ],
       photo: "assets/img/players/marranca.jpg" , favoriteMemory: "Winning the championship versus Hamburg.", sponsoredBy: "" },
