@@ -151,7 +151,7 @@
           <div class="card__label">Clarence Thunder ${esc(siteConfig.ageGroup)}</div>
           <h2 class="player-modal__name">${esc(p.first)}<br>${esc(p.last)}</h2>
           <div class="player-modal__pos">${esc(p.pos1)}${p.pos2 ? " / " + esc(p.pos2) : ""}</div>
-          ${p.bio ? `<p class="player-modal__bio">${esc(p.bio)}</p>` : ""}
+          ${p.bio ? (Array.isArray(p.bio) ? p.bio : [p.bio]).map((par) => `<p class="player-modal__bio">${esc(par)}</p>`).join("") : ""}
           <div class="player-modal__grid">
             ${chip("Bats", p.bats)}
             ${chip("Throws", p.throws)}

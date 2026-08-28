@@ -616,6 +616,9 @@ body.nav-open{overflow:hidden}
   line-height:1.65;
   color:var(--ice-200);
 }
+.player-modal__bio + .player-modal__bio{
+  margin-top:12px;
+}
 .player-modal__empty{
   margin:20px 0 0;
   font-size:.94rem;

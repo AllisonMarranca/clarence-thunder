@@ -237,7 +237,14 @@ const teamData = {
     { number: 2,  first: "Leo",      last: "Siejak",      pos1: "1B", pos2: "LF", bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", bio: "", photo: "assets/img/players/siejak.jpg" , favoriteMemory: "", sponsoredBy: "" },
     { number: 8,  first: "Will",     last: "Pelkey",      pos1: "C",  pos2: "2B", bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", bio: "", photo: "assets/img/players/pelkey.jpg" , favoriteMemory: "", sponsoredBy: "" },
     { number: 10, first: "Brayden",  last: "McKenna",     pos1: "SS", pos2: "",   bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", bio: "", photo: "assets/img/players/mckenna.jpg" , favoriteMemory: "", sponsoredBy: "" },
-    { number: 11, first: "Michael",  last: "Marranca",    pos1: "2B", pos2: "RF", bats: "Right", throws: "Right", favPlayer: "Ben Rice", favTeam: "New York Yankees", funFact: "", bio: "Michael plays second base and right field for the Thunder. He bats and throws right, and models his game on Ben Rice.", photo: "assets/img/players/marranca.jpg" , favoriteMemory: "Winning the championship versus Hamburg.", sponsoredBy: "" },
+    { number: 11, first: "Michael",  last: "Marranca",    pos1: "2B", pos2: "RF", bats: "Right", throws: "Right", favPlayer: "Ben Rice", favTeam: "New York Yankees", funFact: "",
+      // bio can be a plain string or an array - each array entry renders as its own paragraph.
+      bio: [
+        "Michael is 11 years old and a sixth-grader at Clarence Middle School - an active, social kid who loves time with friends, traveling, and competing in just about any sport he can find.",
+        "On the field he holds down second base and right field for the Thunder, modeling his game after Ben Rice. Baseball is the big one, but football and basketball keep him busy year-round.",
+        "Off the field you'll find him traveling and making memories with family and friends. Wherever he goes, he brings the same energy, competitiveness, and team-first attitude."
+      ],
+      photo: "assets/img/players/marranca.jpg" , favoriteMemory: "Winning the championship versus Hamburg.", sponsoredBy: "" },
     { number: 16, first: "Luke",     last: "Johnson",     pos1: "P",  pos2: "C",  bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", bio: "", photo: "assets/img/players/johnson.jpg" , favoriteMemory: "", sponsoredBy: "" },
     { number: 19, first: "Nolan",    last: "Olewnik",     pos1: "2B", pos2: "P",  bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", bio: "", photo: "assets/img/players/olewnik.jpg" , favoriteMemory: "", sponsoredBy: "" },
     { number: 29, first: "Will",     last: "Shine",       pos1: "LF", pos2: "2B", bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", bio: "", photo: "assets/img/players/shine.jpg" , favoriteMemory: "", sponsoredBy: "" },
