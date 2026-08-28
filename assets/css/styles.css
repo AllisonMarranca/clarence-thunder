@@ -392,7 +392,9 @@ body.nav-open{overflow:hidden}
   background:linear-gradient(180deg,rgba(5,11,21,.66),rgba(5,11,21,.58)),
              linear-gradient(90deg,rgba(5,11,21,.92),rgba(5,11,21,.12));
 }
-.page-hero__media img{object-position:center}
+/* The hero is a short, wide band on desktop - anchor the crop to the top of the
+   photo so faces survive; centering was throwing away the whole top half. */
+.page-hero__media img{object-position:50% 12%}
 /* Heroes whose subject sits right of centre keep them in frame at every width. */
 .page-hero__media--right img{object-position:75% center}
 
