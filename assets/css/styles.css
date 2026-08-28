@@ -403,7 +403,7 @@ body.nav-open{overflow:hidden}
    44vw tracks the displayed image height, so it scales with the monitor. */
 .page-hero--tall .page-hero__media img{object-position:50% 0}
 @media (min-width:781px){
-  .page-hero--tall{min-height:min(44vw,880px);display:flex;align-items:center}
+  .page-hero--tall{min-height:min(49vw,1000px);display:flex;align-items:center}
 }
 
 /* On narrow screens the headline spans nearly the full width, so there is no
