@@ -267,10 +267,13 @@
       .sort(byDateAsc)
       .slice(0, limit);
 
-    host.innerHTML = games.length
-      ? `<div class="stack">${games.map(gameCard).join("")}</div>`
-      : `<div class="empty-state"><b>2026&ndash;27 Schedule Coming Soon</b>
-           <p>Games will be posted here as soon as they're confirmed.</p></div>`;
+    // No upcoming games entered -> hide the whole homepage section. It comes
+    // back automatically as soon as a game is added to scheduleData.
+    if (!games.length) {
+      const section = host.closest("section");
+      if (section) { section.hidden = true; return; }
+    }
+    host.innerHTML = `<div class="stack">${games.map(gameCard).join("")}</div>`;
     bindGameActions(host);
   }
 
@@ -317,7 +320,10 @@
       });
     });
 
-    apply("upcoming");
+    // Open on Upcoming when there are games to show; otherwise lead with results.
+    const start = scheduleData.games.some((g) => g.status === "upcoming") ? "upcoming" : "completed";
+    $$(".filter-btn", wrap).forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.filter === start)));
+    apply(start);
   }
 
   function renderTournaments(host) {
