@@ -25,7 +25,7 @@
 const siteConfig = {
   // Bump this whenever you REPLACE a player/coach photo but keep the same
   // filename - it forces browsers to fetch the new image instead of a cached one.
-  assetVersion: "20260827z",
+  assetVersion: "20260828m",
   teamName: "Clarence Thunder 12U",
   shortName: "Thunder",
   orgName: "Clarence Thunder Baseball",
@@ -255,12 +255,14 @@ const teamData = {
   ],
 
   // bio is optional - add a line about each coach and it shows on their card.
+  // Head Coach and Team Manager render centered on the top row;
+  // everyone else lands on the assistants row below.
   coaches: [
-    { role: "Head Coach",     name: "Jon Cooper",      bio: "", photo: "assets/img/coaches/cooper.jpg" },
-    { role: "Assistant Coach", name: "Eric Johnson",   bio: "", photo: "assets/img/coaches/johnson.jpg" },
-    { role: "Assistant Coach", name: "Matt Cardona",   bio: "", photo: "assets/img/coaches/cardona.jpg" },
-    { role: "Assistant Coach", name: "Brett McKenna",  bio: "", photo: "assets/img/coaches/mckenna.jpg" },
-    { role: "Team Manager",    name: "Clairice Cooper", bio: "", photo: "assets/img/coaches/cooper-clairice.jpg" }
+    { role: "Head Coach",      name: "Jon Cooper",      bio: "", photo: "assets/img/coaches/cooper.jpg" },
+    { role: "Team Manager",    name: "Clairice Cooper", bio: "", photo: "assets/img/coaches/cooper-clairice.jpg" },
+    { role: "Assistant Coach", name: "Eric Johnson",    bio: "", photo: "assets/img/coaches/johnson.jpg" },
+    { role: "Assistant Coach", name: "Matt Cardona",    bio: "", photo: "assets/img/coaches/cardona.jpg" },
+    { role: "Assistant Coach", name: "Brett McKenna",   bio: "", photo: "assets/img/coaches/mckenna.jpg" }
   ]
 };
 

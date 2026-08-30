@@ -182,9 +182,8 @@
   /* ======================================================================
      COACHES
      ====================================================================== */
-  function renderCoaches(host) {
-    host.className = "grid grid--2";
-    host.innerHTML = teamData.coaches.map((c, i) => `
+  function coachCard(c, i) {
+    return `
       <div class="card card--hover coach-card" data-reveal data-reveal-delay="${(i % 4) + 1}">
         ${c.photo
           ? `<img class="coach-card__img" src="${esc(ver(c.photo))}" alt="${esc(c.name)}" loading="lazy">`
@@ -194,7 +193,17 @@
           <div class="coach-card__name">${esc(c.name)}</div>
           ${c.bio ? `<p class="coach-card__bio">${esc(c.bio)}</p>` : ""}
         </div>
-      </div>`).join("");
+      </div>`;
+  }
+
+  function renderCoaches(host) {
+    // Head Coach + Team Manager centered on top; assistants on the row below.
+    const lead = teamData.coaches.filter((c) => /head coach|team manager/i.test(c.role));
+    const rest = teamData.coaches.filter((c) => !/head coach|team manager/i.test(c.role));
+    host.className = "";
+    host.innerHTML = `
+      <div class="grid grid--2 coaches-lead">${lead.map(coachCard).join("")}</div>
+      ${rest.length ? `<div class="grid grid--3" style="margin-top:22px">${rest.map((c, i) => coachCard(c, i + lead.length)).join("")}</div>` : ""}`;
   }
 
   /* ======================================================================
