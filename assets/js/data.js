@@ -184,7 +184,7 @@ const fundraisingData = {
       id: "tv-raffle",
       name: "75\" TV Raffle",
       status: "live",
-      image: "assets/img/photos/thumb/gallery-23.jpg",
+      image: "assets/img/photos/thumb/event-bowling-01.jpg",
       description:
         "Win a 75-inch TV just in time for the holidays. Tickets are $10 each, the " +
         "drawing is December 1, and you don't have to be present to win.",
