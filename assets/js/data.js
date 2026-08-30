@@ -346,10 +346,13 @@ const scheduleData = {
       field: "", city: "", home: false, status: "final", tournament: false,
       result: { us: 14, them: 1 } },
 
-    /* ---------- UPCOMING (placeholders - replace with the real 12U schedule) ---------- */
-    { date: "2026-09-12", time: "10:00", opponent: "TBD", event: "Fall Ball", field: "Clarence Town Park", city: "Clarence, NY", home: true,  status: "upcoming", tournament: false },
-    { date: "2026-09-19", time: "09:00", opponent: "TBD", event: "Fall Tournament", field: "TBD", city: "Western New York", home: false, status: "upcoming", tournament: true },
-    { date: "2026-09-26", time: "12:00", opponent: "TBD", event: "Fall Ball", field: "Clarence Town Park", city: "Clarence, NY", home: true,  status: "upcoming", tournament: false }
+    /* ---------- UPCOMING ----------
+       No games entered = the site shows a "coming soon" panel automatically.
+       Add the real 12U schedule here as games are confirmed, e.g.:
+       { date: "2026-09-12", time: "10:00", opponent: "Team Name", event: "Fall Ball",
+         field: "Clarence Town Park", city: "Clarence, NY", home: true,
+         status: "upcoming", tournament: false },
+    */
   ],
 
   // Featured tournaments (shown as cards on the schedule page)

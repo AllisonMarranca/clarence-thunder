@@ -269,8 +269,8 @@
 
     host.innerHTML = games.length
       ? `<div class="stack">${games.map(gameCard).join("")}</div>`
-      : `<div class="empty-state"><b>No games on the schedule right now</b>
-           <p>The next slate of games will be posted here as soon as it's confirmed.</p></div>`;
+      : `<div class="empty-state"><b>2026&ndash;27 Schedule Coming Soon</b>
+           <p>Games will be posted here as soon as they're confirmed.</p></div>`;
     bindGameActions(host);
   }
 
@@ -297,7 +297,7 @@
       else games = games.sort(byDateAsc);
 
       const emptyCopy = {
-        upcoming:   ["Nothing on the calendar yet", "As soon as the next games are confirmed, they'll show up here."],
+        upcoming:   ["2026&ndash;27 Schedule Coming Soon", "Games will be posted here as soon as they're confirmed."],
         completed:  ["No results posted yet", "Scores will appear here once games have been played."],
         tournaments:["No tournaments listed yet", "Tournament weekends will be posted here as they're booked."],
         all:        ["No games listed yet", "Check back soon."]
