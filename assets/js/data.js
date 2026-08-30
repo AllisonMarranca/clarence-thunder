@@ -157,13 +157,13 @@ const fundraisingData = {
       description:
         "Pick your square once and keep it for the whole Bills season. Cash payouts " +
         "every game - and the team's proceeds go straight to Cooperstown.",
-      details: ["17 game boards", "Same square all season", "Cash payout every game"],
+      details: ["$100 - one time, all 17 Bills games", "Same square all season", "Cash payout every game"],
       deadline: "",
       deadlineLabel: "Boards open now",
       goal: 0,
       raised: 0,
       cta: "Buy a Square",
-      link: ""     // leave "" and the button opens the contact form
+      link: "fundraising.html#squares"
     },
     {
       id: "restaurant-night",

@@ -610,6 +610,10 @@ body.nav-open{overflow:hidden}
 .stat-chip{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:12px;padding:13px 15px}
 .stat-chip .l{font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ice-400);font-weight:700}
 .stat-chip .v{font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:var(--white);margin-top:5px;line-height:1.15;text-transform:uppercase}
+.squares-steps{list-style:none;margin-top:16px;display:flex;flex-direction:column;gap:14px}
+.squares-steps li{position:relative;padding-left:30px;color:var(--ice-200);font-size:.98rem;line-height:1.55}
+.squares-steps li::before{content:"";position:absolute;left:0;top:.35em;width:14px;height:14px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(255,184,28,.18)}
+.squares-steps b{color:#fff}
 .player-modal__bio{
   margin:18px 0 0;
   font-size:1.02rem;

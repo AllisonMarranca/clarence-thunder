@@ -847,6 +847,7 @@
       "cooperstown-location": cooperstownConfig.location,
       "cooperstown-name": cooperstownConfig.tournamentName,
       "instagram-handle": siteConfig.instagramHandle,
+      "venmo": siteConfig.payments.venmoHandle,
       "goal": money(fundraisingData.goal),
       "raised": money(fundraisingData.raised),
       "player-count": String(teamData.players.length)
