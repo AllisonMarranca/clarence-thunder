@@ -578,7 +578,7 @@
     host.innerHTML = list.map((f, i) => {
       const pct = progressPct(f.raised, f.goal);
       const href = f.link || "contact.html?reason=Fundraising&about=" + encodeURIComponent(f.name);
-      const external = f.link ? ' target="_blank" rel="noopener"' : "";
+      const external = f.link && /^https?:/i.test(f.link) ? ' target="_blank" rel="noopener"' : "";
       return `
         <article class="fund-card" data-reveal data-reveal-delay="${(i % 3) + 1}">
           <div class="fund-card__media">

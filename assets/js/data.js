@@ -165,6 +165,38 @@ const fundraisingData = {
       link: "fundraising.html#squares"
     },
     {
+      id: "fall-concessions",
+      name: "Fall Ball Concessions",
+      status: "live",
+      image: "assets/img/photos/thumb/hero-sponsors.jpg",
+      description:
+        "Find the Thunder at the Meadowlakes concession stand every Tuesday and Thursday " +
+        "of fall ball - snacks, pizza, drinks, and more. Every sale goes to the Cooperstown fund.",
+      details: ["Every Tuesday & Thursday", "Meadowlakes - September 1 to October 1", "Snacks, pizza & drinks"],
+      deadline: "2026-10-01",
+      deadlineLabel: "Runs September 1 - October 1",
+      goal: 0,
+      raised: 0,
+      cta: "See the Fall Ball Schedule",
+      link: "https://www.clarencebaseball.com/schedules"
+    },
+    {
+      id: "tv-raffle",
+      name: "75\" TV Raffle",
+      status: "live",
+      image: "assets/img/photos/thumb/gallery-23.jpg",
+      description:
+        "Win a 75-inch TV just in time for the holidays. Tickets are $10 each, and the " +
+        "drawing is December 1.",
+      details: ["$10 per ticket", "75-inch TV", "Drawing December 1, 2026"],
+      deadline: "2026-12-01",
+      deadlineLabel: "Drawing December 1, 2026",
+      goal: 0,
+      raised: 0,
+      cta: "Get Raffle Tickets",
+      link: ""
+    },
+    {
       id: "restaurant-night",
       name: "Thunder Night Out",
       status: "soon",
