@@ -186,8 +186,8 @@ const fundraisingData = {
       status: "live",
       image: "assets/img/photos/thumb/gallery-23.jpg",
       description:
-        "Win a 75-inch TV just in time for the holidays. Tickets are $10 each, and the " +
-        "drawing is December 1.",
+        "Win a 75-inch TV just in time for the holidays. Tickets are $10 each, the " +
+        "drawing is December 1, and you don't have to be present to win.",
       details: ["$10 per ticket", "75-inch TV", "Drawing December 1, 2026"],
       deadline: "2026-12-01",
       deadlineLabel: "Drawing December 1, 2026",
