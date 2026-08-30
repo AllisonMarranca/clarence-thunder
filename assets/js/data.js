@@ -66,8 +66,7 @@ const siteConfig = {
     otherLink: "",
     otherLabel: "Donate Online",
     checkPayableTo: "Heidi Burke (Team Treasurer & Authorized Signer)",
-    // Drop a Venmo QR code image here (e.g. "assets/img/venmo-qr.png") to show it.
-    qrImage: ""
+    qrImage: "assets/img/venmo-qr.png"
   },
 
   // Where contact + sponsorship forms are sent.
