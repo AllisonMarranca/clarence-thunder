@@ -152,7 +152,7 @@ const fundraisingData = {
       id: "bills-squares",
       name: "Bills Season Squares",
       status: "live",
-      image: "assets/img/photos/thumb/gallery-16.jpg",
+      image: "assets/img/photos/thumb/bills-squares.jpg",
       description:
         "Pick your square once and keep it for the whole Bills season. Cash payouts " +
         "every game - and the team's proceeds go straight to Cooperstown.",
@@ -184,7 +184,7 @@ const fundraisingData = {
       id: "tv-raffle",
       name: "75\" TV Raffle",
       status: "live",
-      image: "assets/img/photos/thumb/event-bowling-01.jpg",
+      image: "assets/img/photos/thumb/tv-raffle.jpg",
       description:
         "Win a 75-inch TV just in time for the holidays. Tickets are $10 each, the " +
         "drawing is December 1, and you don't have to be present to win.",
@@ -200,7 +200,7 @@ const fundraisingData = {
       id: "restaurant-night",
       name: "Thunder Night Out",
       status: "soon",
-      image: "assets/img/photos/thumb/gallery-19.jpg",
+      image: "assets/img/photos/thumb/event-bowling-01.jpg",
       description:
         "Eat out, back the team. A Clarence-area restaurant donates a share of the " +
         "night's sales to the Thunder. Bring the whole family.",
