@@ -25,7 +25,7 @@
 const siteConfig = {
   // Bump this whenever you REPLACE a player/coach photo but keep the same
   // filename - it forces browsers to fetch the new image instead of a cached one.
-  assetVersion: "20260828o",
+  assetVersion: "20260830h",
   teamName: "Clarence Thunder 12U",
   shortName: "Thunder",
   orgName: "Clarence Thunder Baseball",
@@ -640,7 +640,6 @@ const galleryData = {
     { src: "gallery-25", category: "games",       caption: "Dust flying into second" },
     { src: "gallery-19", category: "team",        caption: "Coaches watching from the fence" },
     { src: "gallery-18", category: "games",       caption: "Gear on, glove up" },
-    { src: "gallery-13", category: "games",       caption: "Slide into third, safe" },
     { src: "gallery-29", category: "tournaments", caption: "Setting up in the box" },
     { src: "gallery-26", category: "team",        caption: "Teammates on deck, waiting to hit" },
     { src: "gallery-12", category: "games",       caption: "Follow-through off the mound" },
@@ -651,7 +650,6 @@ const galleryData = {
     { src: "gallery-20", category: "games",       caption: "Winding up" },
     { src: "gallery-28", category: "games",       caption: "Blocking in the dirt" },
     { src: "gallery-22", category: "games",       caption: "Balanced and ready to swing" },
-    { src: "gallery-10", category: "practices",   caption: "Working through a bullpen" },
     { src: "champions-2026", category: "team",   caption: "2026 League Champions - medals and number ones" },
 
     /* Monroeville tournament weekend, July 2026 - the team took in a Pirates
