@@ -73,7 +73,7 @@ const siteConfig = {
   // EASIEST OPTION: create a free form at https://formspree.io and paste the
   // endpoint here (looks like "https://formspree.io/f/abcdwxyz").
   // If left empty, forms open the visitor's email app pre-filled instead.
-  formEndpoint: "",
+  formEndpoint: "https://formspree.io/f/mppzqqvd",
 
   // Photography credit shown on the gallery.
   photoCredit: {
