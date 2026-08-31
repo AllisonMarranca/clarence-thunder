@@ -187,13 +187,19 @@
     const moreWrap = $(".nav-more", host);
     if (moreWrap) {
       const moreBtn = $(".nav-more__btn", moreWrap);
+      let hoverTimer;
       const setMore = (open) => {
+        clearTimeout(hoverTimer);
         moreWrap.classList.toggle("is-open", open);
         moreBtn.setAttribute("aria-expanded", String(open));
       };
       moreBtn.addEventListener("click", () => setMore(!moreWrap.classList.contains("is-open")));
+      // A grace period on mouseleave lets the pointer cross the gap between
+      // the button and the menu without the menu snapping shut.
       moreWrap.addEventListener("mouseenter", () => setMore(true));
-      moreWrap.addEventListener("mouseleave", () => setMore(false));
+      moreWrap.addEventListener("mouseleave", () => {
+        hoverTimer = setTimeout(() => setMore(false), 220);
+      });
       moreWrap.addEventListener("focusout", (e) => {
         if (!moreWrap.contains(e.relatedTarget)) setMore(false);
       });
