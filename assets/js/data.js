@@ -679,19 +679,23 @@ const galleryData = {
 /* --------------------------------------------------------------------------
    10. NAVIGATION — the site menu (used by every page's header and footer)
    -------------------------------------------------------------------------- */
+// Top-level navigation. The logo links home, so Home isn't listed here.
 const navData = [
-  { label: "Home",        href: "index.html" },
   { label: "Team",        href: "team.html" },
   { label: "Schedule",    href: "schedule.html" },
   { label: "Cooperstown", href: "cooperstown.html" },
-  { label: "Fundraising", href: "fundraising.html" },
-  { label: "Sponsors",    href: "sponsors.html" },
-  { label: "News",        href: "news.html" },
-  { label: "Contact",     href: "contact.html" }
+  { label: "Support Us",  href: "fundraising.html" },
+  { label: "Gallery",     href: "gallery.html" }
 ];
 
-// Extra pages that appear in the mobile menu and footer but not the top nav.
+// Lives under the "More" dropdown on desktop / the expandable More group on mobile.
+const navMore = [
+  { label: "News",     href: "news.html" },
+  { label: "Sponsors", href: "sponsors.html" },
+  { label: "Contact",  href: "contact.html" }
+];
+
+// Extra pages that appear in the More group and footer but not the top nav.
 const navExtras = [
-  { label: "About the Thunder", href: "about.html" },
-  { label: "Photo Gallery",     href: "gallery.html" }
+  { label: "About the Thunder", href: "about.html" }
 ];

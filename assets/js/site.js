@@ -87,6 +87,21 @@
       return `<a href="${n.href}"${cur}>${esc(n.label)}</a>`;
     }).join("");
 
+    // "More" dropdown - highlights itself when the current page lives inside it.
+    const moreCurrent = navMore.some((n) => n.href === currentPage);
+    const moreLinks = navMore.map((n) => {
+      const cur = n.href === currentPage ? ' aria-current="page"' : "";
+      return `<a href="${n.href}"${cur}>${esc(n.label)}</a>`;
+    }).join("");
+    const more = `
+      <div class="nav-more${moreCurrent ? " nav-more--current" : ""}">
+        <button class="nav-more__btn" type="button" aria-expanded="false" aria-haspopup="true">
+          More
+          <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="nav-more__menu">${moreLinks}</div>
+      </div>`;
+
     host.className = "site-header";
     host.innerHTML = `
       <div class="site-header__inner">
@@ -97,7 +112,7 @@
             <span class="brand__sub">${esc(siteConfig.ageGroup)} &middot; ${esc(siteConfig.location)}</span>
           </span>
         </a>
-        <nav class="nav" aria-label="Main">${links}</nav>
+        <nav class="nav" aria-label="Main">${links}${more}</nav>
         <div class="header__cta">
           <div class="socials socials--header">${socialIcons()}</div>
           <a class="btn btn--sm" href="sponsors.html">Support the Thunder</a>
@@ -115,10 +130,19 @@
         <div class="mobile-nav__cta mobile-nav__cta--top">
           <a class="btn btn--block" href="sponsors.html">Support the Thunder</a>
         </div>
-        ${navData.concat(navExtras).map((n) => {
+        ${navData.map((n) => {
           const cur = n.href === currentPage ? ' aria-current="page"' : "";
           return `<a class="mobile-link" href="${n.href}"${cur}>${esc(n.label)}<i>&rsaquo;</i></a>`;
         }).join("")}
+        <button class="mobile-link mobile-more__btn" type="button" aria-expanded="${navMore.concat(navExtras).some((n) => n.href === currentPage)}">
+          More<i class="mobile-more__chevron">&rsaquo;</i>
+        </button>
+        <div class="mobile-more__list"${navMore.concat(navExtras).some((n) => n.href === currentPage) ? "" : " hidden"}>
+          ${navMore.concat(navExtras).map((n) => {
+            const cur = n.href === currentPage ? ' aria-current="page"' : "";
+            return `<a class="mobile-link mobile-link--sub" href="${n.href}"${cur}>${esc(n.label)}<i>&rsaquo;</i></a>`;
+          }).join("")}
+        </div>
         <div class="mobile-nav__cta">
           <a class="btn btn--outline btn--block" href="fundraising.html">Support a Fundraiser</a>
         </div>
@@ -140,12 +164,49 @@
     toggle.addEventListener("click", () =>
       setOpen(toggle.getAttribute("aria-expanded") !== "true")
     );
-    $$(".mobile-link, .mobile-nav__cta a", drawer).forEach((a) =>
+    $$("a.mobile-link, .mobile-nav__cta a", drawer).forEach((a) =>
       a.addEventListener("click", () => setOpen(false))
     );
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && drawer.classList.contains("is-open")) setOpen(false);
     });
+
+    // Mobile "More" expands and collapses in place
+    const mMoreBtn = $(".mobile-more__btn", drawer);
+    const mMoreList = $(".mobile-more__list", drawer);
+    if (mMoreBtn && mMoreList) {
+      mMoreBtn.addEventListener("click", () => {
+        const open = mMoreList.hidden;
+        mMoreList.hidden = !open;
+        mMoreBtn.setAttribute("aria-expanded", String(open));
+      });
+    }
+
+    // Desktop "More" dropdown - click or hover opens; Escape, outside click,
+    // or tabbing away closes.
+    const moreWrap = $(".nav-more", host);
+    if (moreWrap) {
+      const moreBtn = $(".nav-more__btn", moreWrap);
+      const setMore = (open) => {
+        moreWrap.classList.toggle("is-open", open);
+        moreBtn.setAttribute("aria-expanded", String(open));
+      };
+      moreBtn.addEventListener("click", () => setMore(!moreWrap.classList.contains("is-open")));
+      moreWrap.addEventListener("mouseenter", () => setMore(true));
+      moreWrap.addEventListener("mouseleave", () => setMore(false));
+      moreWrap.addEventListener("focusout", (e) => {
+        if (!moreWrap.contains(e.relatedTarget)) setMore(false);
+      });
+      document.addEventListener("click", (e) => {
+        if (!moreWrap.contains(e.target)) setMore(false);
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && moreWrap.classList.contains("is-open")) {
+          setMore(false);
+          moreBtn.focus();
+        }
+      });
+    }
 
     // Sticky state
     const onScroll = () => host.classList.toggle("is-stuck", window.scrollY > 20);
@@ -184,8 +245,8 @@
               <a href="mailto:${esc(siteConfig.email)}" aria-label="Email the team">${icon.mail}</a>
             </div>
           </div>
-          ${col("Team", navData.slice(0, 4))}
-          ${col("Support", navData.slice(4).concat(navExtras))}
+          ${col("Team", navData)}
+          ${col("Support", navMore.concat(navExtras))}
           <div class="footer-col">
             <h2>Get In Touch</h2>
             <ul>
