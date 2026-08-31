@@ -216,18 +216,19 @@ const fundraisingData = {
     {
       id: "team-apparel",
       name: "Thunder Apparel",
-      status: "soon",
+      status: "live",
       image: "assets/img/photos/thumb/gallery-26.jpg",
       description:
-        "Hoodies, tees and hats for players, parents and grandparents. Wear the bolt " +
-        "and send a piece of every order to Cooperstown.",
-      details: ["Store opening soon", "Youth and adult sizes", "Proceeds to the trip"],
+        "Hoodies, tees and hats for players, parents and grandparents. The official " +
+        "Thunder team store is open at Harmony Bats - wear the bolt and send a piece " +
+        "of every order to Cooperstown.",
+      details: ["Official team store is open", "Youth and adult sizes", "Proceeds to the trip"],
       deadline: "",
-      deadlineLabel: "Store opening soon",
+      deadlineLabel: "Store open now",
       goal: 0,
       raised: 0,
       cta: "Shop Thunder Gear",
-      link: ""
+      link: "https://www.harmonybats.com/team/clarence-thunder"
     },
     {
       id: "direct-donation",
@@ -664,6 +665,7 @@ const galleryData = {
     { src: "event-bowling-02",    category: "team",        caption: "Ready to roll at the team bowling party" },
     { src: "event-bowling-03",    category: "team",        caption: "Handing out the end-of-season awards" },
     { src: "event-bowling-04",    category: "team",        caption: "Cheering on a strike" },
+    { src: "event-bowling-05",    category: "team",        caption: "Squad night at the lanes" },
     { src: "team-photo", category: "team",        caption: "Clarence Thunder - 2026 team photo" },
     { src: "coaches",    category: "team",        caption: "The coaching staff at work" },
 
@@ -692,7 +694,20 @@ const galleryData = {
     { src: "gallery-52", category: "games",       caption: "Digging for the extra base" },
     { src: "gallery-53", category: "games",       caption: "Bringing it home" },
     { src: "gallery-54", category: "games",       caption: "Barrel on the ball" },
-    { src: "gallery-55", category: "games",       caption: "The windup" }
+    { src: "gallery-55", category: "games",       caption: "The windup" },
+    { src: "gallery-56", category: "team",        caption: "Heads together on the mound" },
+    { src: "gallery-57", category: "team",        caption: "All smiles in the infield" },
+    { src: "gallery-58", category: "games",       caption: "Sliding in under the tag" },
+    { src: "gallery-59", category: "team",        caption: "The whole squad after a summer win" },
+    { src: "gallery-60", category: "games",       caption: "Dust cloud into third" },
+    { src: "gallery-61", category: "games",       caption: "Pop time" },
+    { src: "gallery-62", category: "games",       caption: "Stretching for the out" },
+    { src: "gallery-63", category: "games",       caption: "Heading in after three outs" },
+    { src: "gallery-64", category: "games",       caption: "Locked in at the corner" },
+    { src: "gallery-65", category: "games",       caption: "Painting the corner" },
+    { src: "gallery-66", category: "team",        caption: "High five rounding third" },
+    { src: "gallery-67", category: "team",        caption: "Bat ready, grin ready" },
+    { src: "gallery-68", category: "games",       caption: "Waiting on his pitch" }
 
     /* Add a video like this:
     { type: "video", videoUrl: "https://www.youtube.com/embed/VIDEO_ID",
