@@ -194,16 +194,22 @@
         moreBtn.setAttribute("aria-expanded", String(open));
       };
       moreBtn.addEventListener("click", () => setMore(!moreWrap.classList.contains("is-open")));
-      // A grace period on mouseleave lets the pointer cross the gap between
-      // the button and the menu without the menu snapping shut.
-      moreWrap.addEventListener("mouseenter", () => setMore(true));
-      moreWrap.addEventListener("mouseleave", () => {
-        hoverTimer = setTimeout(() => setMore(false), 220);
-      });
+      // Hover open/close only where hover actually exists - on touch screens
+      // these events fire alongside the tap and fight the click toggle.
+      if (window.matchMedia("(hover: hover)").matches) {
+        // A grace period on mouseleave lets the pointer cross the gap between
+        // the button and the menu without the menu snapping shut.
+        moreWrap.addEventListener("mouseenter", () => setMore(true));
+        moreWrap.addEventListener("mouseleave", () => {
+          hoverTimer = setTimeout(() => setMore(false), 220);
+        });
+      }
       moreWrap.addEventListener("focusout", (e) => {
         if (!moreWrap.contains(e.relatedTarget)) setMore(false);
       });
-      document.addEventListener("click", (e) => {
+      // pointerdown, not click: taps on empty page background don't reliably
+      // bubble a click to document on touch devices, which left the menu stuck.
+      document.addEventListener("pointerdown", (e) => {
         if (!moreWrap.contains(e.target)) setMore(false);
       });
       document.addEventListener("keydown", (e) => {
