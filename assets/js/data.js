@@ -186,11 +186,11 @@ const fundraisingData = {
       status: "live",
       image: "assets/img/photos/thumb/tv-raffle.jpg",
       description:
-        "Win a 75-inch TV just in time for the holidays. Tickets are $10 each, the " +
-        "drawing is December 1, and you don't have to be present to win.",
-      details: ["$10 per ticket", "75-inch TV", "Drawing December 1, 2026"],
-      deadline: "2026-12-01",
-      deadlineLabel: "Drawing December 1, 2026",
+        "Win a 75-inch TV. Tickets are $10 each, the drawing happens live on our " +
+        "Instagram on Friday, October 16 - and you don't have to be present to win.",
+      details: ["$10 per ticket", "75-inch TV", "Drawn live on Instagram - Oct 16"],
+      deadline: "2026-10-16",
+      deadlineLabel: "Drawing Friday, October 16, 2026",
       goal: 0,
       raised: 0,
       cta: "Get Raffle Tickets",
