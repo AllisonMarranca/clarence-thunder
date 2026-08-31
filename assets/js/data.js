@@ -51,7 +51,7 @@ const siteConfig = {
   // Social links. Set to "" (empty string) to hide that icon.
   social: {
     instagram: "https://www.instagram.com/clarencethunder12u/",
-    facebook: "",          // TODO: paste the team's Facebook page URL to show the icon
+    facebook: "https://www.facebook.com/profile.php?id=61593715955233",
     x: "",
     youtube: ""
   },
