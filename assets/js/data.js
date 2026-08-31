@@ -186,9 +186,10 @@ const fundraisingData = {
       status: "live",
       image: "assets/img/photos/thumb/tv-raffle.jpg",
       description:
-        "Win a 75-inch TV. Tickets are $10 each, the drawing happens live on our " +
-        "Instagram on Friday, October 16 - and you don't have to be present to win.",
-      details: ["$10 per ticket", "75-inch TV", "Drawn live on Instagram - Oct 16"],
+        "Win a 75-inch Samsung TV. Tickets are $10 - or 2 for $15, 3 for $20, or 10 for $50. " +
+        "Pay by cash or Venmo. The drawing happens live on our Instagram on Friday, " +
+        "October 16 - and you don't have to be present to win.",
+      details: ["$10 each - 2/$15, 3/$20, 10/$50", "75-inch Samsung TV", "Drawn live on Instagram - Oct 16"],
       deadline: "2026-10-16",
       deadlineLabel: "Drawing Friday, October 16, 2026",
       goal: 0,
