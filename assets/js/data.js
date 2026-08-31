@@ -686,13 +686,13 @@ const navData = [
   { label: "Schedule",    href: "schedule.html" },
   { label: "Cooperstown", href: "cooperstown.html" },
   { label: "Support Us",  href: "fundraising.html" },
-  { label: "Gallery",     href: "gallery.html" }
+  { label: "Sponsors",    href: "sponsors.html" }
 ];
 
 // Lives under the "More" dropdown on desktop / the expandable More group on mobile.
 const navMore = [
   { label: "News",     href: "news.html" },
-  { label: "Sponsors", href: "sponsors.html" },
+  { label: "Gallery",  href: "gallery.html" },
   { label: "Contact",  href: "contact.html" }
 ];
 
