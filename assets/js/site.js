@@ -70,6 +70,14 @@
   /* ======================================================================
      HEADER + MOBILE NAV
      ====================================================================== */
+  function socialIcons() {
+    return Object.entries(siteConfig.social)
+      .filter(([, url]) => url)
+      .map(([k, url]) =>
+        `<a href="${esc(url)}" target="_blank" rel="noopener" aria-label="${k} (opens in a new tab)">${icon[k] || icon.mail}</a>`
+      ).join("");
+  }
+
   function buildHeader() {
     const host = $("#site-header");
     if (!host) return;
@@ -91,6 +99,7 @@
         </a>
         <nav class="nav" aria-label="Main">${links}</nav>
         <div class="header__cta">
+          <div class="socials socials--header">${socialIcons()}</div>
           <a class="btn btn--sm" href="sponsors.html">Support the Thunder</a>
           <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
             <span></span><span></span><span></span>
@@ -113,6 +122,7 @@
         <div class="mobile-nav__cta">
           <a class="btn btn--outline btn--block" href="fundraising.html">Support a Fundraiser</a>
         </div>
+        <div class="socials socials--drawer">${socialIcons()}</div>
         <div class="mobile-nav__meta">
           <a href="mailto:${esc(siteConfig.email)}">${esc(siteConfig.email)}</a>
           <span>${esc(siteConfig.location)}</span>

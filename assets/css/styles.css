@@ -1143,6 +1143,11 @@ body.nav-open{overflow:hidden}
 }
 .socials a:hover{background:var(--gold);color:var(--navy-950);transform:translateY(-3px)}
 .socials svg{width:19px;height:19px}
+.socials--header{margin-top:0;gap:8px;margin-right:12px}
+.socials--header a{width:36px;height:36px;border-radius:10px}
+.socials--header svg{width:17px;height:17px}
+@media (max-width:1140px){.socials--header{display:none}}
+.socials--drawer{justify-content:center;margin:22px 0 4px}
 .footer-bottom{
   margin-top:clamp(36px,5vw,56px);padding:24px 0 26px;border-top:1px solid rgba(255,255,255,.08);
   display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center;
