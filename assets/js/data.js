@@ -665,7 +665,20 @@ const galleryData = {
     { src: "event-bowling-03",    category: "team",        caption: "Handing out the end-of-season awards" },
     { src: "event-bowling-04",    category: "team",        caption: "Cheering on a strike" },
     { src: "team-photo", category: "team",        caption: "Clarence Thunder - 2026 team photo" },
-    { src: "coaches",    category: "team",        caption: "The coaching staff at work" }
+    { src: "coaches",    category: "team",        caption: "The coaching staff at work" },
+
+    /* Added August 2026 */
+    { src: "gallery-31", category: "games",       caption: "Digging hard out of the box" },
+    { src: "gallery-32", category: "games",       caption: "Dealing in the sprinkle jerseys" },
+    { src: "gallery-33", category: "games",       caption: "Leg kick, locked in" },
+    { src: "gallery-34", category: "games",       caption: "Staring down the hitter" },
+    { src: "gallery-35", category: "games",       caption: "Eye on the ball" },
+    { src: "gallery-36", category: "games",       caption: "Charging the grounder" },
+    { src: "gallery-37", category: "games",       caption: "Framing it in the sprinkle gear" },
+    { src: "gallery-38", category: "games",       caption: "Game face on the way to the plate" },
+    { src: "gallery-39", category: "games",       caption: "On the mound in the Pink Out jerseys" },
+    { src: "gallery-40", category: "games",       caption: "Reading the pitcher from second" },
+    { src: "gallery-41", category: "team",        caption: "All smiles between innings" }
 
     /* Add a video like this:
     { type: "video", videoUrl: "https://www.youtube.com/embed/VIDEO_ID",
