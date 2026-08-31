@@ -678,7 +678,21 @@ const galleryData = {
     { src: "gallery-38", category: "games",       caption: "Game face on the way to the plate" },
     { src: "gallery-39", category: "games",       caption: "On the mound in the Pink Out jerseys" },
     { src: "gallery-40", category: "games",       caption: "Reading the pitcher from second" },
-    { src: "gallery-41", category: "team",        caption: "All smiles between innings" }
+    { src: "gallery-41", category: "team",        caption: "All smiles between innings" },
+    { src: "gallery-42", category: "games",       caption: "Firing it across from second" },
+    { src: "gallery-43", category: "games",       caption: "Letting it rip in the red and gold" },
+    { src: "gallery-44", category: "games",       caption: "Backhand pick on one knee" },
+    { src: "gallery-45", category: "games",       caption: "Loaded up and looking for a fastball" },
+    { src: "gallery-46", category: "games",       caption: "That one's got a chance" },
+    { src: "gallery-47", category: "games",       caption: "Sidearm smoke" },
+    { src: "gallery-48", category: "games",       caption: "Dealing from the windup" },
+    { src: "gallery-49", category: "games",       caption: "Cannon from the outfield" },
+    { src: "gallery-50", category: "games",       caption: "Turning the corner at full speed" },
+    { src: "gallery-51", category: "games",       caption: "Ready for anything" },
+    { src: "gallery-52", category: "games",       caption: "Digging for the extra base" },
+    { src: "gallery-53", category: "games",       caption: "Bringing it home" },
+    { src: "gallery-54", category: "games",       caption: "Barrel on the ball" },
+    { src: "gallery-55", category: "games",       caption: "The windup" }
 
     /* Add a video like this:
     { type: "video", videoUrl: "https://www.youtube.com/embed/VIDEO_ID",
