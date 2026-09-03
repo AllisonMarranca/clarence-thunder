@@ -540,7 +540,24 @@ const sponsorData = {
        logo: "assets/img/sponsors/clarence-auto-works.png"
      },
   */
-  sponsors: []
+  sponsors: [
+    {
+      name: "Sunnking Sustainable Solutions",
+      tier: "home-run",
+      category: "Electronics Recycling",
+      tagline: "Sustainable electronics recycling solutions for Western New York",
+      url: "https://www.sunnking.com",
+      logo: "assets/img/sponsors/sunnking.png"
+    },
+    {
+      name: "Freight130",
+      tier: "home-run",
+      category: "Freight Management",
+      tagline: "Cloud-based freight management",
+      url: "https://www.freight130.com",
+      logo: "assets/img/sponsors/freight130.png"
+    }
+  ]
 };
 
 /* --------------------------------------------------------------------------
