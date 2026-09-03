@@ -695,6 +695,7 @@ const galleryData = {
     { src: "gallery-53", category: "games",       caption: "Bringing it home" },
     { src: "gallery-54", category: "games",       caption: "Barrel on the ball" },
     { src: "gallery-55", category: "games",       caption: "The windup" },
+    { src: "gallery-56", category: "team",        caption: "Lining up at the lanes at the team bowling party" },
     { src: "gallery-58", category: "games",       caption: "Sliding in under the tag" },
     { src: "gallery-60", category: "games",       caption: "Dust cloud into third" },
     { src: "gallery-61", category: "games",       caption: "Pop time" },
