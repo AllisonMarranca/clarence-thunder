@@ -482,15 +482,18 @@
      category, one line about them, and a link out to their site. */
   function sponsorCard(s, tierIndex) {
     const size = Math.min(tierIndex + 1, 4);
-    const inner = `
+    // Logo-only cards: the mark IS the card, and the whole thing links out.
+    // The sponsor's name lives in the alt text and aria-label for screen
+    // readers and image-off browsing. Text-only fallback when there's no logo.
+    const inner = s.logo
+      ? `<span class="sponsor-card__mark sponsor-card__mark--solo">
+           <img src="${esc(s.logo)}" alt="${esc(s.name)}" loading="lazy">
+         </span>`
+      : `
       <span class="sponsor-card__mark">
-        ${s.logo
-          ? `<img src="${esc(s.logo)}" alt="${esc(s.name)}" loading="lazy">`
-          : `<span class="sponsor-card__name">${esc(s.name)}</span>`}
+        <span class="sponsor-card__name">${esc(s.name)}</span>
       </span>
-      ${s.logo ? `<span class="sponsor-card__biz">${esc(s.name)}</span>` : ""}
       ${s.category ? `<span class="sponsor-card__cat">${esc(s.category)}</span>` : ""}
-      ${s.tagline ? `<span class="sponsor-card__tag">${esc(s.tagline)}</span>` : ""}
       ${s.url ? `<span class="sponsor-card__cta">Visit Our Sponsor ${icon.arrow}</span>` : ""}`;
 
     return s.url
