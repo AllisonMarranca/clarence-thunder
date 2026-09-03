@@ -555,7 +555,7 @@ const sponsorData = {
       category: "Freight Management",
       tagline: "Cloud-based freight management",
       url: "https://www.freight130.com",
-      logo: "assets/img/sponsors/freight130-dark.png"
+      logo: "assets/img/sponsors/freight130-hd.png"
     }
   ]
 };
