@@ -559,11 +559,11 @@ const sponsorData = {
     },
     {
       name: "Mainstreethost",
-      tier: "home-run",
+      tier: "grand-slam",
       category: "Digital Marketing",
       tagline: "Digital marketing agency",
       url: "https://www.mainstreethost.com",
-      logo: "assets/img/sponsors/mainstreethost.png?v=20260911b"
+      logo: "assets/img/sponsors/mainstreethost.png?v=20260911c"
     }
   ]
 };
