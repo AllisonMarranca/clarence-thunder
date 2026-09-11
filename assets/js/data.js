@@ -267,7 +267,7 @@ const fundraisingData = {
    -------------------------------------------------------------------------- */
 const teamData = {
   players: [
-    { number: 2,  first: "Leo",      last: "Siejak",      pos1: "1B", pos2: "LF", bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", bio: "", photo: "assets/img/players/siejak.jpg" , favoriteMemory: "", sponsoredBy: "" },
+    { number: 2,  first: "Leo",      last: "Siejak",      pos1: "1B", pos2: "LF", bats: "Right", throws: "Left", favPlayer: "Elly De La Cruz", favTeam: "Toronto Blue Jays", funFact: "", bio: "", photo: "assets/img/players/siejak.jpg" , favoriteMemory: "Sealing a win at the 3&2 tournament with a game-ending diving catch.", sponsoredBy: "" },
     { number: 8,  first: "Will",     last: "Pelkey",      pos1: "C",  pos2: "2B", bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", bio: "", photo: "assets/img/players/pelkey.jpg" , favoriteMemory: "", sponsoredBy: "" },
     { number: 10, first: "Brayden",  last: "McKenna",     pos1: "SS", pos2: "",   bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", bio: "", photo: "assets/img/players/mckenna.jpg" , favoriteMemory: "", sponsoredBy: "" },
     { number: 11, first: "Michael",  last: "Marranca",    pos1: "2B", pos2: "RF", bats: "Right", throws: "Right", favPlayer: "Ben Rice", favTeam: "New York Yankees", funFact: "",
