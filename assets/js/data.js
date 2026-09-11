@@ -556,6 +556,14 @@ const sponsorData = {
       tagline: "Cloud-based freight management",
       url: "https://www.freight130.com",
       logo: "assets/img/sponsors/freight130.png?v=20260904a"
+    },
+    {
+      name: "Mainstreethost",
+      tier: "home-run",
+      category: "Digital Marketing",
+      tagline: "Digital marketing agency",
+      url: "https://www.mainstreethost.com",
+      logo: "assets/img/sponsors/mainstreethost.png?v=20260911b"
     }
   ]
 };
