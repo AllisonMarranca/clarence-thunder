@@ -267,7 +267,13 @@ const fundraisingData = {
    -------------------------------------------------------------------------- */
 const teamData = {
   players: [
-    { number: 2,  first: "Leo",      last: "Siejak",      pos1: "1B", pos2: "LF", bats: "Right", throws: "Left", favPlayer: "Elly De La Cruz", favTeam: "Toronto Blue Jays", funFact: "", bio: "", photo: "assets/img/players/siejak.jpg" , favoriteMemory: "Sealing a win at the 3&2 tournament with a game-ending diving catch.", sponsoredBy: "" },
+    { number: 2,  first: "Leo",      last: "Siejak",      pos1: "1B", pos2: "LF", bats: "Right", throws: "Left", favPlayer: "Elly De La Cruz", favTeam: "Toronto Blue Jays", funFact: "",
+      bio: [
+        "Leo holds down first base and left field for the Thunder, bringing a lefty glove, a right-handed bat, and some of the surest hands on the roster.",
+        "He's the kind of first baseman who saves his infielders all game long - and he's not afraid to leave his feet either. Just ask anyone who saw his game-ending diving catch at the 3&2 tournament.",
+        "Off the field he's usually watching the pros: a Toronto Blue Jays fan who never misses a chance to catch Elly De La Cruz doing something electric. He brings that same love of the game to every Thunder practice and every inning."
+      ],
+      photo: "assets/img/players/siejak.jpg" , favoriteMemory: "Sealing a win at the 3&2 tournament with a game-ending diving catch.", sponsoredBy: "" },
     { number: 8,  first: "Will",     last: "Pelkey",      pos1: "C",  pos2: "2B", bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", bio: "", photo: "assets/img/players/pelkey.jpg" , favoriteMemory: "", sponsoredBy: "" },
     { number: 10, first: "Brayden",  last: "McKenna",     pos1: "SS", pos2: "",   bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", bio: "", photo: "assets/img/players/mckenna.jpg" , favoriteMemory: "", sponsoredBy: "" },
     { number: 11, first: "Michael",  last: "Marranca",    pos1: "2B", pos2: "RF", bats: "Right", throws: "Right", favPlayer: "Ben Rice", favTeam: "New York Yankees", funFact: "",
@@ -563,7 +569,7 @@ const sponsorData = {
       category: "Digital Marketing",
       tagline: "Digital marketing agency",
       url: "https://www.mainstreethost.com",
-      logo: "assets/img/sponsors/mainstreethost.png?v=20260911c"
+      logo: "assets/img/sponsors/mainstreethost.png?v=20260911d"
     }
   ]
 };
