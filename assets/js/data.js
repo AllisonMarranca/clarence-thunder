@@ -267,9 +267,9 @@ const fundraisingData = {
    -------------------------------------------------------------------------- */
 const teamData = {
   players: [
-    { number: 2,  first: "Leo",      last: "Siejak",      pos1: "1B", pos2: "LF", bats: "Right", throws: "Left", favPlayer: "Elly De La Cruz", favTeam: "Toronto Blue Jays", funFact: "",
+    { number: 2,  first: "Leo",      last: "Siejak",      pos1: "1B", pos2: "OF", bats: "Right", throws: "Left", favPlayer: "Elly De La Cruz", favTeam: "Toronto Blue Jays", funFact: "",
       bio: [
-        "Leo holds down first base and left field for the Thunder, bringing a lefty glove, a right-handed bat, and some of the surest hands on the roster.",
+        "Leo is a Clarence Middle School student who holds down first base and the outfield for the Thunder, bringing a lefty glove, a right-handed bat, and some of the surest hands on the roster.",
         "He's the kind of first baseman who saves his infielders all game long - and he's not afraid to leave his feet either. Just ask anyone who saw his game-ending diving catch at the 3&2 tournament.",
         "Off the field he's usually watching the pros: a Toronto Blue Jays fan who never misses a chance to catch Elly De La Cruz doing something electric. He brings that same love of the game to every Thunder practice and every inning."
       ],
@@ -569,7 +569,7 @@ const sponsorData = {
       category: "Digital Marketing",
       tagline: "Digital marketing agency",
       url: "https://www.mainstreethost.com",
-      logo: "assets/img/sponsors/mainstreethost.png?v=20260911d"
+      logo: "assets/img/sponsors/mainstreethost.png?v=20260911e"
     }
   ]
 };
