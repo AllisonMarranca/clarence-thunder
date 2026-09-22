@@ -569,7 +569,7 @@ const sponsorData = {
       category: "Digital Marketing",
       tagline: "Digital marketing agency",
       url: "https://www.mainstreethost.com",
-      logo: "assets/img/sponsors/mainstreethost.png?v=20260921a"
+      logo: "assets/img/sponsors/mainstreethost.png?v=20260921b"
     }
   ]
 };

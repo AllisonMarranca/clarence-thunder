@@ -526,19 +526,10 @@
       return;
     }
 
-    // "featured" walls (homepage, Cooperstown page) show logos for the top two
-    // levels only, so the higher tiers genuinely buy more prominence. The full
-    // wall on the sponsors page shows every level.
-    const featured = host.dataset.featured === "true";
-    const FEATURED_TIERS = 2;
-
-    const tiersToShow = featured
-      ? sponsorData.levels.slice(0, FEATURED_TIERS)
-      : sponsorData.levels;
-
-    const rest = featured
-      ? sponsors.filter((s) => !tiersToShow.some((lv) => lv.id === s.tier))
-      : [];
+    // Every wall (homepage, Cooperstown, sponsors page) shows every level -
+    // higher tiers still get bigger cards via the per-tier sizing below.
+    const tiersToShow = sponsorData.levels;
+    const rest = [];
 
     host.innerHTML = tiersToShow.map((lv, idx) => {
       const inTier = sponsors.filter((s) => s.tier === lv.id);
