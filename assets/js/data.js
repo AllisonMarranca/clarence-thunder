@@ -135,10 +135,10 @@ const cooperstownConfig = {
    -------------------------------------------------------------------------- */
 const fundraisingData = {
   goal: 25000,        // campaign goal from the sponsorship package
-  raised: 5200,       // <-- UPDATE THIS as money comes in
+  raised: 7850,       // <-- UPDATE THIS as money comes in
   deadline: "2027-03-01",
   deadlineLabel: "Campaign closes March 1, 2027",
-  lastUpdated: "2026-08-27",
+  lastUpdated: "2026-09-21",
 
   headline: "Cooperstown Fundraising Goal",
   blurb:
@@ -569,7 +569,7 @@ const sponsorData = {
       category: "Digital Marketing",
       tagline: "Digital marketing agency",
       url: "https://www.mainstreethost.com",
-      logo: "assets/img/sponsors/mainstreethost.png?v=20260912a"
+      logo: "assets/img/sponsors/mainstreethost.png?v=20260921a"
     }
   ]
 };
