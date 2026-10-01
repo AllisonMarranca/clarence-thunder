@@ -125,7 +125,7 @@ const cooperstownConfig = {
     { date: "2026 Season", title: "Championship Season", desc: "The Thunder close out 2026 with a 14-1 championship win over the Hamburg Dawgs.", done: true },
     { date: "Fall 2026", title: "The Campaign Opens", desc: "Sponsorship packages go out to Clarence-area businesses and fundraising begins.", done: true },
     { date: "Winter 2026-27", title: "Off-Season Work", desc: "Off-season practices and training while the campaign keeps building.", done: false },
-    { date: "March 1, 2027", title: "Fundraising Deadline", desc: "Our $25,000 campaign goal needs to be met so the trip is fully covered.", done: false },
+    { date: "March 1, 2027", title: "Fundraising Deadline", desc: "Our $40,000 campaign goal needs to be met so the trip is fully covered.", done: false },
     { date: "August 2027", title: "Cooperstown", desc: "A full week at the home of baseball - the one we've been working toward.", done: false }
   ]
 };
@@ -134,11 +134,11 @@ const cooperstownConfig = {
    3. FUNDRAISING — the goal, the money raised, and every active fundraiser
    -------------------------------------------------------------------------- */
 const fundraisingData = {
-  goal: 25000,        // campaign goal from the sponsorship package
+  goal: 40000,        // campaign goal from the sponsorship package
   raised: 7850,       // <-- UPDATE THIS as money comes in
   deadline: "2027-03-01",
   deadlineLabel: "Campaign closes March 1, 2027",
-  lastUpdated: "2026-09-21",
+  lastUpdated: "2026-10-01",
 
   headline: "Cooperstown Fundraising Goal",
   blurb:
@@ -569,7 +569,7 @@ const sponsorData = {
       category: "Digital Marketing",
       tagline: "Digital marketing agency",
       url: "https://www.mainstreethost.com",
-      logo: "assets/img/sponsors/mainstreethost.png?v=20260921b"
+      logo: "assets/img/sponsors/mainstreethost.png?v=20261001a"
     }
   ]
 };
@@ -596,7 +596,7 @@ const newsData = [
       { h: "Why It Matters" },
       "A Cooperstown tournament is more than a baseball trip - it's a milestone. For many of these players, it will be their first time competing on a national stage, staying with their team for a full week, and experiencing the traditions and history of the sport they love.",
       { h: "What It Takes" },
-      "Our campaign goal is $25,000, to be raised between now and March 1, 2027. Sponsorship dollars go directly toward team-level costs for the trip - not general operating expenses:",
+      "Our campaign goal is $40,000, to be raised between now and March 1, 2027. Sponsorship dollars go directly toward team-level costs for the trip - not general operating expenses:",
       { list: [
         "Player room and board for the week in Cooperstown",
         "Required umpire fees for tournament play",
