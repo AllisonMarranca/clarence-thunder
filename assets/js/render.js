@@ -134,8 +134,19 @@
         </span>
       </button>`).join("");
 
+    // Touch devices: first tap flips the photo to the trading card,
+    // second tap (or tapping a card-less player) opens the profile modal.
+    const touchFlip = window.matchMedia("(hover: none)").matches;
     $$(".player-card", host).forEach((btn) => {
-      btn.addEventListener("click", () => openPlayer(teamData.players[+btn.dataset.player]));
+      btn.addEventListener("click", () => {
+        const p = teamData.players[+btn.dataset.player];
+        if (touchFlip && p.card && !btn.classList.contains("is-flipped")) {
+          $$(".player-card.is-flipped", host).forEach((b) => b.classList.remove("is-flipped"));
+          btn.classList.add("is-flipped");
+          return;
+        }
+        openPlayer(p);
+      });
     });
   }
 

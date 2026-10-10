@@ -591,17 +591,23 @@ body.nav-open{overflow:hidden}
 .player-card:hover .player-card__media img{transform:scale(1.06)}
 .player-card__media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 32%,rgba(5,11,21,.55) 66%,rgba(5,11,21,.96) 100%)}
 
-/* Roster hover flip: photo flips over to the player's Thunder trading card.
-   Hover-capable devices only - on touch, tapping opens the profile modal,
-   which shows the card. */
+/* Roster flip: photo flips over to the player's Thunder trading card.
+   Desktop: flip on hover. Touch: first tap flips (JS adds .is-flipped),
+   second tap opens the profile modal. */
 .player-card__flipimg{display:none}
+.player-card--flip .player-card__media{perspective:900px}
+.player-card--flip .player-card__media img{backface-visibility:hidden;transition:transform .55s var(--ease)}
+.player-card--flip .player-card__media .player-card__flipimg{display:block;position:absolute;inset:0;transform:rotateY(180deg)}
+.player-card__media::after,.player-card__num,.player-card__hint,.player-card__body{transition:opacity .3s var(--ease)}
+.player-card--flip.is-flipped .player-card__media img{transform:rotateY(180deg)}
+.player-card--flip.is-flipped .player-card__media img.player-card__flipimg{transform:rotateY(0)}
+.player-card--flip.is-flipped .player-card__media::after,
+.player-card--flip.is-flipped .player-card__num,
+.player-card--flip.is-flipped .player-card__hint,
+.player-card--flip.is-flipped .player-card__body{opacity:0}
 @media (hover:hover){
-  .player-card--flip .player-card__media{perspective:900px}
-  .player-card--flip .player-card__media img{backface-visibility:hidden;transition:transform .55s var(--ease)}
-  .player-card--flip .player-card__media .player-card__flipimg{display:block;position:absolute;inset:0;transform:rotateY(180deg)}
   .player-card--flip:hover .player-card__media img{transform:rotateY(180deg)}
   .player-card--flip:hover .player-card__media img.player-card__flipimg{transform:rotateY(0)}
-  .player-card__media::after,.player-card__num,.player-card__hint,.player-card__body{transition:opacity .3s var(--ease)}
   .player-card--flip:hover .player-card__media::after,
   .player-card--flip:hover .player-card__num,
   .player-card--flip:hover .player-card__hint,
