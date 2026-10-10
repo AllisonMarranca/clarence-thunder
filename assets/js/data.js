@@ -572,6 +572,30 @@ const sponsorData = {
       logo: "assets/img/sponsors/manitoba.png?v=20261009a"
     },
     {
+      name: "Double A Landscaping",
+      tier: "triple",
+      category: "Landscaping",
+      tagline: "",
+      url: "",
+      logo: "assets/img/sponsors/double-a-landscaping.png?v=20261009a"
+    },
+    {
+      name: "King Petroleum",
+      tier: "triple",
+      category: "Fuel & Energy",
+      tagline: "",
+      url: "",
+      logo: ""
+    },
+    {
+      name: "West Herr",
+      tier: "triple",
+      category: "Automotive",
+      tagline: "",
+      url: "https://www.westherr.com",
+      logo: "assets/img/sponsors/westherr.png?v=20261009a"
+    },
+    {
       name: "Mainstreethost",
       tier: "grand-slam",
       category: "Digital Marketing",
