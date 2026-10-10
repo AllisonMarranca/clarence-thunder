@@ -564,12 +564,20 @@ const sponsorData = {
       logo: "assets/img/sponsors/freight130.png?v=20260904a"
     },
     {
+      name: "Manitoba Corporation",
+      tier: "home-run",
+      category: "Metals Recycling",
+      tagline: "Copper and metals recycling",
+      url: "https://www.manitobacorp.com",
+      logo: "assets/img/sponsors/manitoba.png?v=20261009a"
+    },
+    {
       name: "Mainstreethost",
       tier: "grand-slam",
       category: "Digital Marketing",
       tagline: "Digital marketing agency",
       url: "https://www.mainstreethost.com",
-      logo: "assets/img/sponsors/mainstreethost.png?v=20261001b"
+      logo: "assets/img/sponsors/mainstreethost.png?v=20261009a"
     }
   ]
 };
