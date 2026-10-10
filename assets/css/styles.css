@@ -902,6 +902,7 @@ body.nav-open{overflow:hidden}
 .sponsor-card__mark--solo img{max-height:110px;max-width:100%;width:auto}
 .sponsor-card--1 .sponsor-card__mark--solo img{max-height:150px}
 .sponsor-card--2 .sponsor-card__mark--solo img{max-height:130px}
+.sponsor-card--4 .sponsor-card__mark--solo img{max-height:72px}
 .sponsor-card__name{font-family:var(--font-display);font-weight:800;text-transform:uppercase;color:var(--navy-900);font-size:1.15rem;line-height:1.1}
 .sponsor-card__biz{font-family:var(--font-display);font-weight:800;text-transform:uppercase;color:var(--navy-900);font-size:1rem;line-height:1.1}
 .sponsor-card__cat{
