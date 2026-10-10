@@ -117,12 +117,13 @@
 
     host.className = "roster-grid";
     host.innerHTML = list.map((p, i) => `
-      <button class="player-card" type="button" data-player="${teamData.players.indexOf(p)}"
+      <button class="player-card${p.card ? " player-card--flip" : ""}" type="button" data-player="${teamData.players.indexOf(p)}"
               data-reveal data-reveal-delay="${(i % 4) + 1}"
               aria-label="View profile for number ${p.number}, ${esc(p.first)} ${esc(p.last)}">
         <span class="player-card__media">
           <img src="${esc(playerPhoto(p))}" alt="${esc(p.first)} ${esc(p.last)}, number ${p.number}"
                loading="lazy" width="300" height="400">
+          ${p.card ? `<img class="player-card__flipimg" src="${esc(ver(p.card))}" alt="" aria-hidden="true" loading="lazy">` : ""}
         </span>
         <span class="player-card__num"><i>#</i>${p.number}</span>
         <span class="player-card__hint" aria-hidden="true">+</span>
@@ -143,9 +144,11 @@
     const chip = (l, v) => v ? `<div class="stat-chip"><div class="l">${esc(l)}</div><div class="v">${esc(v)}</div></div>` : "";
     modal.open(`
       <div class="player-modal">
-        <div class="player-modal__media">
-          <img src="${esc(playerPhoto(p))}" alt="${esc(p.first)} ${esc(p.last)}">
-          <div class="player-modal__num">#${p.number}</div>
+        <div class="player-modal__media${p.card ? " player-modal__media--card" : ""}">
+          ${p.card
+            ? `<img src="${esc(ver(p.card))}" alt="${esc(p.first)} ${esc(p.last)} trading card">`
+            : `<img src="${esc(playerPhoto(p))}" alt="${esc(p.first)} ${esc(p.last)}">
+          <div class="player-modal__num">#${p.number}</div>`}
         </div>
         <div class="player-modal__body">
           <div class="card__label">Clarence Thunder ${esc(siteConfig.ageGroup)}</div>
@@ -184,7 +187,8 @@
      ====================================================================== */
   function coachCard(c, i) {
     return `
-      <div class="card card--hover coach-card" data-reveal data-reveal-delay="${(i % 4) + 1}">
+      <div class="card card--hover coach-card${c.card ? " coach-card--has-card" : ""}" data-reveal data-reveal-delay="${(i % 4) + 1}"
+           ${c.card ? `role="button" tabindex="0" data-coach-card="${esc(ver(c.card))}" aria-label="View ${esc(c.name)}'s Thunder card"` : ""}>
         ${c.photo
           ? `<img class="coach-card__img" src="${esc(ver(c.photo))}" alt="${esc(c.name)}" loading="lazy">`
           : `<img class="coach-card__img" src="assets/img/player-placeholder.svg" alt="" aria-hidden="true" loading="lazy">`}
@@ -204,6 +208,17 @@
     host.innerHTML = `
       <div class="grid grid--2 coaches-lead">${lead.map(coachCard).join("")}</div>
       ${rest.length ? `<div class="grid grid--3" style="margin-top:22px">${rest.map((c, i) => coachCard(c, i + lead.length)).join("")}</div>` : ""}`;
+
+    // A coach card with a trading card opens it in the lightbox modal.
+    $$("[data-coach-card]", host).forEach((el) => {
+      const open = () => modal.open(
+        `<div class="card-lightbox"><img src="${el.dataset.coachCard}" alt="${el.getAttribute("aria-label")}"></div>`,
+        el.getAttribute("aria-label"));
+      el.addEventListener("click", open);
+      el.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); }
+      });
+    });
   }
 
   /* ======================================================================

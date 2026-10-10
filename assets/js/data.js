@@ -273,9 +273,9 @@ const teamData = {
         "At first base he does the quiet work - scooping throws and finishing plays - and every now and then the game asks for a little more, like the diving catch that closed out a win at the 3&2 tournament.",
         "Off the field he's usually watching the pros: a Toronto Blue Jays fan who never misses a chance to catch Elly De La Cruz doing something electric. He brings that same love of the game to every Thunder practice and every inning."
       ],
-      photo: "assets/img/players/siejak.jpg" , favoriteMemory: "Sealing a win at the 3&2 tournament with a game-ending diving catch.", sponsoredBy: "" },
-    { number: 8,  first: "Will",     last: "Pelkey",      pos1: "C",  pos2: "2B", bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", bio: "", photo: "assets/img/players/pelkey.jpg" , favoriteMemory: "", sponsoredBy: "" },
-    { number: 10, first: "Brayden",  last: "McKenna",     pos1: "SS", pos2: "",   bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", bio: "", photo: "assets/img/players/mckenna.jpg" , favoriteMemory: "", sponsoredBy: "" },
+      photo: "assets/img/players/siejak.jpg", card: "assets/img/cards/siejak.webp" , favoriteMemory: "Sealing a win at the 3&2 tournament with a game-ending diving catch.", sponsoredBy: "" },
+    { number: 8,  first: "Will",     last: "Pelkey",      pos1: "C",  pos2: "2B", bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", bio: "", photo: "assets/img/players/pelkey.jpg", card: "assets/img/cards/pelkey.webp" , favoriteMemory: "", sponsoredBy: "" },
+    { number: 10, first: "Brayden",  last: "McKenna",     pos1: "SS", pos2: "",   bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", bio: "", photo: "assets/img/players/mckenna.jpg", card: "assets/img/cards/mckenna-brayden.webp" , favoriteMemory: "", sponsoredBy: "" },
     { number: 11, first: "Michael",  last: "Marranca",    pos1: "2B", pos2: "RF", bats: "Right", throws: "Right", favPlayer: "Ben Rice", favTeam: "New York Yankees", funFact: "",
       // bio can be a plain string or an array - each array entry renders as its own paragraph.
       bio: [
@@ -283,25 +283,25 @@ const teamData = {
         "On the field he holds down second base and right field for the Thunder. He plays baseball, football, and basketball, keeping him busy year-round.",
         "Off the field you'll find him traveling and making memories with family and friends. Wherever he goes, he brings the same energy, competitiveness, and team-first attitude."
       ],
-      photo: "assets/img/players/marranca.jpg" , favoriteMemory: "Beating the Hamburg Dawgs 14-1 to win the 2026 championship.", sponsoredBy: "" },
-    { number: 16, first: "Luke",     last: "Johnson",     pos1: "P",  pos2: "C",  bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", bio: "", photo: "assets/img/players/johnson.jpg" , favoriteMemory: "", sponsoredBy: "" },
-    { number: 19, first: "Nolan",    last: "Olewnik",     pos1: "2B", pos2: "P",  bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", bio: "", photo: "assets/img/players/olewnik.jpg" , favoriteMemory: "", sponsoredBy: "" },
-    { number: 29, first: "Will",     last: "Shine",       pos1: "LF", pos2: "2B", bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", bio: "", photo: "assets/img/players/shine.jpg" , favoriteMemory: "", sponsoredBy: "" },
-    { number: 35, first: "Ethan",    last: "Kozel",       pos1: "P",  pos2: "C",  bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", bio: "", photo: "assets/img/players/kozel.jpg" , favoriteMemory: "", sponsoredBy: "" },
-    { number: 42, first: "Jonathan", last: "Cooper",      pos1: "C",  pos2: "P",  bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", bio: "", photo: "assets/img/players/cooper.jpg" , favoriteMemory: "", sponsoredBy: "" },
-    { number: 56, first: "Ivan",     last: "Burke",       pos1: "3B", pos2: "P",  bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", bio: "", photo: "assets/img/players/burke.jpg" , favoriteMemory: "", sponsoredBy: "" },
-    { number: 86, first: "Phoenix",  last: "Fredericks",  pos1: "P",  pos2: "C",  bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", bio: "", photo: "assets/img/players/fredericks.jpg" , favoriteMemory: "", sponsoredBy: "" }
+      photo: "assets/img/players/marranca.jpg", card: "assets/img/cards/marranca.webp" , favoriteMemory: "Beating the Hamburg Dawgs 14-1 to win the 2026 championship.", sponsoredBy: "" },
+    { number: 16, first: "Luke",     last: "Johnson",     pos1: "P",  pos2: "C",  bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", bio: "", photo: "assets/img/players/johnson.jpg", card: "assets/img/cards/johnson-luke.webp" , favoriteMemory: "", sponsoredBy: "" },
+    { number: 19, first: "Nolan",    last: "Olewnik",     pos1: "2B", pos2: "P",  bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", bio: "", photo: "assets/img/players/olewnik.jpg", card: "assets/img/cards/olewnik.webp" , favoriteMemory: "", sponsoredBy: "" },
+    { number: 29, first: "Will",     last: "Shine",       pos1: "LF", pos2: "2B", bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", bio: "", photo: "assets/img/players/shine.jpg", card: "assets/img/cards/shine.webp" , favoriteMemory: "", sponsoredBy: "" },
+    { number: 35, first: "Ethan",    last: "Kozel",       pos1: "P",  pos2: "C",  bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", bio: "", photo: "assets/img/players/kozel.jpg", card: "assets/img/cards/kozel.webp" , favoriteMemory: "", sponsoredBy: "" },
+    { number: 42, first: "Jonathan", last: "Cooper",      pos1: "C",  pos2: "P",  bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", bio: "", photo: "assets/img/players/cooper.jpg", card: "assets/img/cards/cooper-jonathan.webp" , favoriteMemory: "", sponsoredBy: "" },
+    { number: 56, first: "Ivan",     last: "Burke",       pos1: "3B", pos2: "P",  bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", bio: "", photo: "assets/img/players/burke.jpg", card: "assets/img/cards/burke.webp" , favoriteMemory: "", sponsoredBy: "" },
+    { number: 86, first: "Phoenix",  last: "Fredericks",  pos1: "P",  pos2: "C",  bats: "", throws: "", favPlayer: "", favTeam: "", funFact: "", bio: "", photo: "assets/img/players/fredericks.jpg", card: "assets/img/cards/fredericks.webp" , favoriteMemory: "", sponsoredBy: "" }
   ],
 
   // bio is optional - add a line about each coach and it shows on their card.
   // Head Coach and Team Manager render centered on the top row;
   // everyone else lands on the assistants row below.
   coaches: [
-    { role: "Head Coach",      name: "Jon Cooper",      bio: "", photo: "assets/img/coaches/cooper.jpg" },
+    { role: "Head Coach",      name: "Jon Cooper",      bio: "", photo: "assets/img/coaches/cooper.jpg", card: "assets/img/cards/coach-cooper.webp" },
     { role: "Team Manager",    name: "Clairice Cooper", bio: "", photo: "assets/img/coaches/cooper-clairice.jpg" },
-    { role: "Assistant Coach", name: "Eric Johnson",    bio: "", photo: "assets/img/coaches/johnson.jpg" },
-    { role: "Assistant Coach", name: "Matt Cardona",    bio: "", photo: "assets/img/coaches/cardona.jpg" },
-    { role: "Assistant Coach", name: "Brett McKenna",   bio: "", photo: "assets/img/coaches/mckenna.jpg" }
+    { role: "Assistant Coach", name: "Eric Johnson",    bio: "", photo: "assets/img/coaches/johnson.jpg", card: "assets/img/cards/coach-johnson.webp" },
+    { role: "Assistant Coach", name: "Matt Cardona",    bio: "", photo: "assets/img/coaches/cardona.jpg", card: "assets/img/cards/coach-cardona.webp" },
+    { role: "Assistant Coach", name: "Brett McKenna",   bio: "", photo: "assets/img/coaches/mckenna.jpg", card: "assets/img/cards/coach-mckenna.webp" }
   ]
 };
 
