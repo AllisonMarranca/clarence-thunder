@@ -577,7 +577,7 @@ const sponsorData = {
       category: "Coffee Shop",
       tagline: "Coffee, connection, and community on Main Street in Clarence",
       url: "https://www.facebook.com/profile.php?id=61591113637984",
-      logo: "assets/img/sponsors/wanderingcup.png?v=20261012a"
+      logo: "assets/img/sponsors/wanderingcup.png?v=20261012b"
     },
     {
       name: "Double A Landscaping",
