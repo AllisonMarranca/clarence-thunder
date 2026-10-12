@@ -572,6 +572,14 @@ const sponsorData = {
       logo: "assets/img/sponsors/manitoba.png?v=20261009a"
     },
     {
+      name: "The Wandering Cup",
+      tier: "home-run",
+      category: "Coffee Shop",
+      tagline: "Coffee, connection, and community on Main Street in Clarence",
+      url: "https://www.facebook.com/profile.php?id=61591113637984",
+      logo: "assets/img/sponsors/wanderingcup.png?v=20261012a"
+    },
+    {
       name: "Double A Landscaping",
       tier: "triple",
       category: "Landscaping",
