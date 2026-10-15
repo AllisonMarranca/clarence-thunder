@@ -72,8 +72,9 @@ Search `data.js` for `TODO`.
    (The 14–1 championship over the Hamburg Dawgs is already in as a completed game.)
 3. **Schedule** — upcoming games are placeholders marked TBD. Replace with the real
    fall/spring schedule.
-4. **Cooperstown dates** — I assumed **July 10–16, 2027** so the countdown has a target.
-   Confirm your real week and update `cooperstownConfig.startDate`.
+4. **Cooperstown dates** — the trip is **August 2027**; the exact week isn't confirmed, so the
+   countdown targets a placeholder `cooperstownConfig.startDate`. When the week is set, update
+   `startDate`/`endDate`/`displayDates` in data.js and the fallback text in cooperstown.html.
 5. **Social links** — `siteConfig.social` still points at facebook.com / instagram.com.
 6. **Domain** — `siteConfig.siteUrl`, plus the `canonical` and `og:image` tags in each
    page's `<head>`.
