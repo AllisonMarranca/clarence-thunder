@@ -711,14 +711,13 @@
     initCountdown();
     initReveals();
     injectSchema();
-    loadChatTrial();
+    loadChat();
   });
 
-  /* ---------- MSH Live Chat trial (local preview only - never loads on the live site) ---------- */
-  function loadChatTrial() {
-    if (!/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) return;
+  /* ---------- MSH Live Chat bubble (answers come from the MSH Chat inbox) ---------- */
+  function loadChat() {
     const s = document.createElement("script");
-    s.src = "http://localhost:8960/widget.js";
+    s.src = "https://chat.mshanalytics.com/widget.js";
     s.async = true;
     s.dataset.site = "st_5u671u03204c0n";
     document.body.appendChild(s);
