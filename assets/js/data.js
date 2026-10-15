@@ -572,6 +572,14 @@ const sponsorData = {
       logo: "assets/img/sponsors/manitoba.png?v=20261009a"
     },
     {
+      name: "The Great Pumpkin Farm",
+      tier: "home-run",
+      category: "Fall Festival",
+      tagline: "WNY's fall festival on Main Street in Clarence",
+      url: "https://www.greatpumpkinfarm.com",
+      logo: "assets/img/sponsors/greatpumpkinfarm.png?v=20261015a"
+    },
+    {
       name: "The Wandering Cup",
       tier: "home-run",
       category: "Coffee Shop",

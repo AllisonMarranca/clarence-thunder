@@ -711,5 +711,16 @@
     initCountdown();
     initReveals();
     injectSchema();
+    loadChatTrial();
   });
+
+  /* ---------- MSH Live Chat trial (local preview only - never loads on the live site) ---------- */
+  function loadChatTrial() {
+    if (!/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) return;
+    const s = document.createElement("script");
+    s.src = "http://localhost:8960/widget.js";
+    s.async = true;
+    s.dataset.site = "st_5u671u03204c0n";
+    document.body.appendChild(s);
+  }
 })();
