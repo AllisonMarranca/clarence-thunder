@@ -167,35 +167,36 @@ const fundraisingData = {
     {
       id: "fall-concessions",
       name: "Fall Ball Concessions",
-      status: "live",
+      status: "closed",
       image: "assets/img/photos/thumb/hero-sponsors.jpg",
       description:
-        "Find the Thunder at the Meadowlakes concession stand every Tuesday and Thursday " +
-        "of fall ball - snacks, pizza, drinks, and more. Every sale goes to the Cooperstown fund.",
-      details: ["Every Tuesday & Thursday", "Meadowlakes - September 1 to October 1", "Snacks, pizza & drinks"],
+        "That's a wrap on fall ball! Thank you to everyone who stopped by the Meadowlakes " +
+        "concession stand this season - every snack, slice, and drink brought the team a " +
+        "little closer to Cooperstown.",
+      details: ["Ran September 1 - October 1", "Meadowlakes concession stand", "Thank you, Clarence!"],
       deadline: "2026-10-01",
-      deadlineLabel: "Runs September 1 - October 1",
+      deadlineLabel: "Wrapped up October 1 - thank you!",
       goal: 0,
       raised: 0,
-      cta: "See the Fall Ball Schedule",
-      link: "https://www.clarencebaseball.com/schedules"
+      cta: "See Our Other Fundraisers",
+      link: "fundraising.html"
     },
     {
       id: "tv-raffle",
       name: "75\" TV Raffle",
-      status: "live",
+      status: "closed",
       image: "assets/img/photos/thumb/tv-raffle.jpg",
       description:
-        "Win a 75-inch Samsung TV. Tickets are $10 - or 2 for $15, 3 for $20, or 10 for $50. " +
-        "Pay by cash or Venmo. The drawing happens live on our Instagram on Friday, " +
-        "October 16 - and you don't have to be present to win.",
-      details: ["$10 each - 2/$15, 3/$20, 10/$50", "75-inch Samsung TV", "Drawn live on Instagram - Oct 16"],
+        "Congratulations to Barbara Juryniec, winner of the 75-inch Samsung TV! The drawing " +
+        "was held live on our Instagram on October 16. Thank you to everyone who bought " +
+        "tickets - every dollar goes to the Cooperstown fund.",
+      details: ["Winner: Barbara Juryniec", "Drawn live on Instagram - Oct 16", "Thank you to everyone who entered!"],
       deadline: "2026-10-16",
-      deadlineLabel: "Drawing Friday, October 16, 2026",
+      deadlineLabel: "Drawn October 16 - congratulations, Barbara!",
       goal: 0,
       raised: 0,
-      cta: "Get Raffle Tickets",
-      link: ""
+      cta: "See Our Other Fundraisers",
+      link: "fundraising.html"
     },
     {
       id: "restaurant-night",
@@ -577,7 +578,7 @@ const sponsorData = {
       category: "Fall Festival",
       tagline: "WNY's fall festival on Main Street in Clarence",
       url: "https://www.greatpumpkinfarm.com",
-      logo: "assets/img/sponsors/greatpumpkinfarm.png?v=20261015a"
+      logo: "assets/img/sponsors/greatpumpkinfarm.png?v=20261017a"
     },
     {
       name: "The Wandering Cup",
