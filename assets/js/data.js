@@ -199,6 +199,23 @@ const fundraisingData = {
       link: "fundraising.html"
     },
     {
+      id: "addys-wine-night",
+      name: "Wine Night at Addy's",
+      status: "live",
+      image: "assets/img/photos/thumb/addys-wine-night.jpg",
+      description:
+        "Join us at Addy's Fine Wine & Spirits for an evening of wine, door prizes, and a " +
+        "basket raffle - all supporting the Thunder's road to Cooperstown. $20 per person, " +
+        "Saturday, December 5 from 6 to 8 PM.",
+      details: ["Saturday, December 5 - 6 to 8 PM", "$20 per person", "Door prize & basket raffle", "8268 Transit Rd, Williamsville"],
+      deadline: "2026-12-05",
+      deadlineLabel: "Saturday, December 5, 2026",
+      goal: 0,
+      raised: 0,
+      cta: "Ask About Tickets",
+      link: ""
+    },
+    {
       id: "restaurant-night",
       name: "Thunder Night Out",
       status: "soon",
@@ -578,7 +595,7 @@ const sponsorData = {
       category: "Fall Festival",
       tagline: "WNY's fall festival on Main Street in Clarence",
       url: "https://www.greatpumpkinfarm.com",
-      logo: "assets/img/sponsors/greatpumpkinfarm.png?v=20261017a"
+      logo: "assets/img/sponsors/greatpumpkinfarm.png?v=20261017b"
     },
     {
       name: "The Wandering Cup",
