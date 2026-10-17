@@ -166,20 +166,36 @@ const fundraisingData = {
       link: ""
     },
     {
-      id: "bills-squares",
-      name: "Bills Season Squares",
-      status: "live",
+      id: "superbowl-squares",
+      name: "Super Bowl Squares",
+      status: "soon",
       image: "assets/img/photos/thumb/bills-squares.jpg",
       description:
-        "Pick your square once and keep it for the whole Bills season. Cash payouts " +
-        "every game - and the team's proceeds go straight to Cooperstown.",
-      details: ["$100 - one time, all 17 Bills games", "Same square all season", "Cash payout every game"],
+        "One big board for the big game. Details and pricing are coming soon - reach out " +
+        "and we'll make sure you're first in line for a square.",
+      details: ["Super Bowl - February 2027", "Details coming soon"],
       deadline: "",
-      deadlineLabel: "Boards open now",
+      deadlineLabel: "Details coming soon",
       goal: 0,
       raised: 0,
-      cta: "Buy a Square",
-      link: "fundraising.html#squares"
+      cta: "Get First Dibs",
+      link: ""
+    },
+    {
+      id: "bills-squares",
+      name: "Bills Season Squares",
+      status: "closed",
+      image: "assets/img/photos/thumb/bills-squares.jpg",
+      description:
+        "Every square is claimed - thank you, Thunder fans! The boards are locked and " +
+        "winners are drawn after every Bills game, all season long.",
+      details: ["Sold out - thank you!", "Winners paid after every Bills game", "Same square all 17 games"],
+      deadline: "",
+      deadlineLabel: "Sold out - winners drawn weekly",
+      goal: 0,
+      raised: 0,
+      cta: "See Our Other Fundraisers",
+      link: "fundraising.html"
     },
     {
       id: "fall-concessions",
@@ -595,7 +611,7 @@ const sponsorData = {
       category: "Fall Festival",
       tagline: "WNY's fall festival on Main Street in Clarence",
       url: "https://www.greatpumpkinfarm.com",
-      logo: "assets/img/sponsors/greatpumpkinfarm.png?v=20261017d"
+      logo: "assets/img/sponsors/greatpumpkinfarm.png?v=20261017e"
     },
     {
       name: "The Wandering Cup",
