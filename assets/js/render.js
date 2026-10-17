@@ -589,6 +589,9 @@
     const limit = parseInt(host.dataset.limit || "0", 10);
     let list = fundraisingData.fundraisers.slice();
     if (host.dataset.filter === "live") list = list.filter((f) => f.status === "live");
+    // Active fundraisers first, then coming soon, closed ones at the bottom.
+    const statusRank = { live: 0, soon: 1, closed: 2 };
+    list.sort((a, b) => (statusRank[a.status] ?? 3) - (statusRank[b.status] ?? 3));
     if (limit) list = list.slice(0, limit);
 
     const statusLabel = { live: "Live Now", soon: "Coming Soon", closed: "Closed" };
