@@ -157,7 +157,7 @@ const fundraisingData = {
         "Join us at Addy's Fine Wine & Spirits for an evening of wine and food, with a door " +
         "prize and basket raffle - all supporting the Thunder's road to Cooperstown. " +
         "$20 per person, Saturday, December 5 from 6 to 8 PM.",
-      details: ["Saturday, December 5 - 6 to 8 PM", "$20 per person - food & wine included", "Door prize & basket raffle", "8268 Transit Rd, Williamsville"],
+      details: ["Saturday, December 5 - 6 to 8 PM", "$20 per person", "Food & wine", "Door prize & basket raffle", "8268 Transit Rd, Williamsville"],
       deadline: "2026-12-05",
       deadlineLabel: "Saturday, December 5, 2026",
       goal: 0,
@@ -595,7 +595,7 @@ const sponsorData = {
       category: "Fall Festival",
       tagline: "WNY's fall festival on Main Street in Clarence",
       url: "https://www.greatpumpkinfarm.com",
-      logo: "assets/img/sponsors/greatpumpkinfarm.png?v=20261017c"
+      logo: "assets/img/sponsors/greatpumpkinfarm.png?v=20261017d"
     },
     {
       name: "The Wandering Cup",
