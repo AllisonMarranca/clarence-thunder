@@ -159,7 +159,7 @@ const fundraisingData = {
         "Sip, snack and support the Thunder. Join us at Addy's Fine Wine & Spirits for a " +
         "wine tasting with light snacks, a basket raffle, and a Buffalo Sabres Night Out " +
         "up for grabs - all supporting the road to Cooperstown. $20 per person.",
-      details: ["Saturday, December 5 - 6 to 8 PM", "$20 per person - reserve online", "Wine tasting & light snacks", "Win a Buffalo Sabres Night Out", "8268 Transit Rd, Williamsville"],
+      details: ["Saturday, December 5 - 6 to 8 PM", "$20 per person - reserve online", "Wine tasting & light snacks", "Slice of pizza included (pre-sale only)", "Win a Buffalo Sabres Night Out", "8268 Transit Rd, Williamsville"],
       deadline: "2026-12-05",
       deadlineLabel: "Saturday, December 5, 2026",
       goal: 0,
