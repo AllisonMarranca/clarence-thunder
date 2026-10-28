@@ -61,7 +61,9 @@ const siteConfig = {
   // Payment / donation links.
   payments: {
     venmoHandle: "@ClarenceThunder",       // the team account
-    venmoLink: "",                         // e.g. "https://venmo.com/u/ClarenceThunder"
+    // Decoded from the team's Venmo QR code (assets/img/venmo-qr.png) - this is the
+    // link the QR opens, so buttons and the code always land on the same account.
+    venmoLink: "https://venmo.com/code?user_id=2840825964789760990&created=1786845108.098847",
     paypalLink: "",
     otherLink: "",
     otherLabel: "Donate Online",
@@ -74,6 +76,13 @@ const siteConfig = {
   // endpoint here (looks like "https://formspree.io/f/abcdwxyz").
   // If left empty, forms open the visitor's email app pre-filled instead.
   formEndpoint: "https://formspree.io/f/mppzqqvd",
+
+  // OPTIONAL signup tracker: a Google Sheet that every wine tasting signup is added
+  // to automatically, with Paid / Checked-in checkboxes and a running total.
+  // Setup takes ~5 minutes - see README "Tracking signups". Paste the Apps Script
+  // web app URL here (looks like "https://script.google.com/macros/s/AKfy.../exec").
+  // Leave empty and signups still arrive by email through formEndpoint above.
+  sheetEndpoint: "",
 
   // Photography credit shown on the gallery.
   photoCredit: {
@@ -150,20 +159,20 @@ const fundraisingData = {
   fundraisers: [
     {
       id: "addys-wine-night",
-      name: "Wine Night at Addy's",
+      name: "Wine Tasting at Addy's",
       status: "live",
       image: "assets/img/photos/thumb/addys-wine-night.jpg",
       description:
-        "Join us at Addy's Fine Wine & Spirits for an evening of wine and food, with a door " +
-        "prize and basket raffle - all supporting the Thunder's road to Cooperstown. " +
-        "$20 per person, Saturday, December 5 from 6 to 8 PM.",
-      details: ["Saturday, December 5 - 6 to 8 PM", "$20 per person", "Food & wine", "Door prize & basket raffle", "8268 Transit Rd, Williamsville"],
+        "Sip, snack and support the Thunder. Join us at Addy's Fine Wine & Spirits for a " +
+        "wine tasting with light snacks, a basket raffle, and a Buffalo Sabres Night Out " +
+        "up for grabs - all supporting the road to Cooperstown. $20 per person.",
+      details: ["Saturday, December 5 - 6 to 8 PM", "$20 per person - reserve online", "Wine tasting & light snacks", "Slice of pizza included (pre-sale only)", "Win a Buffalo Sabres Night Out", "8268 Transit Rd, Williamsville"],
       deadline: "2026-12-05",
       deadlineLabel: "Saturday, December 5, 2026",
       goal: 0,
       raised: 0,
-      cta: "Ask About Tickets",
-      link: ""
+      cta: "Reserve Your Tickets",
+      link: "wine-tasting.html"
     },
     {
       id: "superbowl-squares",
@@ -851,3 +860,29 @@ const navMore = [
 const navExtras = [
   { label: "About the Thunder", href: "about.html" }
 ];
+
+/* --------------------------------------------------------------------------
+   11. PROMO POPUP — the one-time signup prompt shown when someone arrives
+   --------------------------------------------------------------------------
+   Set enabled:false to switch it off. It never shows on the page it links to,
+   never again to someone who already signed up, and after a dismissal it waits
+   `repeatAfterDays` before asking again. Change `id` when you reuse this for a
+   new event so everyone sees the new one.
+   -------------------------------------------------------------------------- */
+const promoData = {
+  enabled: true,
+  id: "wine-tasting-2026",
+  until: "2026-12-05",                  // stops showing after this date (YYYY-MM-DD)
+  delaySeconds: 2,                      // how long after the page loads it appears
+  repeatAfterDays: 3,                   // show again this many days after "Maybe later"
+  image: "assets/img/photos/thumb/wine-tasting-flyer.jpg",
+  eyebrow: "Saturday, December 5 · 6–8 PM",
+  title: "Wine Tasting Fundraiser at Addy's",
+  text: "Sip, snack and support the Thunder. $20 per person gets you a wine tasting, light " +
+        "snacks, a slice of pizza (pre-sale only) and a shot at a Buffalo Sabres Night Out. " +
+        "Every ticket helps send the team to Cooperstown.",
+  pills: ["$20 per person", "Addy's Fine Wine & Spirits", "Win Sabres tickets"],
+  cta: "Reserve Your Tickets",
+  link: "wine-tasting.html#signup",
+  dismiss: "Maybe later"
+};

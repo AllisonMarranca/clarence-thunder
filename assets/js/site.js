@@ -507,12 +507,56 @@
   };
 
   /* ======================================================================
+     PROMO POPUP — one-time signup prompt (settings in data.js: promoData)
+     ====================================================================== */
+  // localStorage can throw (private mode, blocked storage) - treat it as absent.
+  const storage = {
+    get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+    set(k, v) { try { localStorage.setItem(k, v); } catch (e) { /* ignore */ } }
+  };
+
+  function initPromo() {
+    if (typeof promoData === "undefined" || !promoData.enabled) return;
+    const p = promoData;
+    if (p.until && new Date() > parseDate(p.until, "23:59")) return;
+    // Not on the page it sends people to, and not for anyone who already signed up.
+    const target = (p.link || "").split("#")[0].split("?")[0];
+    if (target && currentPage === target) return;
+    if (storage.get("th-promo-done:" + p.id)) return;
+    const last = parseInt(storage.get("th-promo-seen:" + p.id) || "0", 10);
+    if (last && Date.now() - last < (p.repeatAfterDays || 0) * 86400000) return;
+
+    const open = () => {
+      if (document.querySelector(".modal.is-open, .lightbox.is-open")) return;
+      storage.set("th-promo-seen:" + p.id, String(Date.now()));
+      const el = modal.open(`
+        <div class="promo">
+          ${p.image ? `<div class="promo__media"><img src="${esc(p.image)}" alt=""></div>` : ""}
+          <div class="promo__body">
+            ${p.eyebrow ? `<div class="eyebrow">${esc(p.eyebrow)}</div>` : ""}
+            <h2 class="promo__title">${esc(p.title)}</h2>
+            <p class="promo__text">${esc(p.text)}</p>
+            ${(p.pills && p.pills.length) ? `<div class="promo__pills">${p.pills.map((t) => `<span class="pill pill--gold">${esc(t)}</span>`).join("")}</div>` : ""}
+            <div class="promo__actions">
+              <a class="btn" href="${esc(p.link)}">${esc(p.cta || "Sign Up")}</a>
+              <button class="btn btn--ghost" type="button" data-promo-dismiss>${esc(p.dismiss || "Maybe later")}</button>
+            </div>
+          </div>
+        </div>`, p.title);
+      $("[data-promo-dismiss]", el).addEventListener("click", () => modal.close());
+      $(".promo .btn", el).focus();
+    };
+    setTimeout(open, (p.delaySeconds || 0) * 1000);
+  }
+
+  /* ======================================================================
      FORMS — posts to formEndpoint, or falls back to a pre-filled email
      ====================================================================== */
   function initForms() {
     $$("form[data-form]").forEach((form) => {
       form.addEventListener("submit", async (e) => {
         e.preventDefault();
+        if (!form.checkValidity()) { form.reportValidity(); return; }
         const status = $(".form-status", form);
         const btn = $("button[type=submit]", form);
         const data = Object.fromEntries(new FormData(form).entries());
@@ -524,19 +568,38 @@
           status.textContent = msg;
         };
 
+        // Optional tracker: forms marked data-sheet="..." are also appended to the
+        // Google Sheet behind siteConfig.sheetEndpoint (see README "Tracking signups").
+        // Best effort - a sheet hiccup never blocks the email going out.
+        const sendToSheet = async () => {
+          if (!siteConfig.sheetEndpoint || !form.dataset.sheet) return;
+          const params = new URLSearchParams();
+          Object.entries(data).filter(([k]) => !k.startsWith("_")).forEach(([k, v]) => params.append(k, v));
+          params.append("form", form.dataset.sheet);
+          params.append("page", location.href);
+          try {
+            await fetch(siteConfig.sheetEndpoint, { method: "POST", body: params });
+          } catch (err) { /* ignore - the email copy still goes out */ }
+        };
+
         if (siteConfig.formEndpoint) {
           btn.disabled = true;
           const original = btn.textContent;
           btn.textContent = "Sending...";
           try {
-            const res = await fetch(siteConfig.formEndpoint, {
+            const [res] = await Promise.all([
+              fetch(siteConfig.formEndpoint, {
               method: "POST",
-              headers: { Accept: "application/json" },
-              body: new FormData(form)
-            });
+                headers: { Accept: "application/json" },
+                body: new FormData(form)
+              }),
+              sendToSheet()
+            ]);
             if (!res.ok) throw new Error("Bad response");
             form.reset();
-            show("ok", "Thank you - your message is on its way. We'll get back to you shortly.");
+            if (form.dataset.promoDone) storage.set("th-promo-done:" + form.dataset.promoDone, "1");
+            if (form.dataset.resetHook) window[form.dataset.resetHook]?.();
+            show("ok", form.dataset.success || "Thank you - your message is on its way. We'll get back to you shortly.");
           } catch (err) {
             show("err", `Something went wrong sending that. Please email us directly at ${siteConfig.email}.`);
           } finally {
@@ -547,8 +610,9 @@
         }
 
         // No endpoint configured yet -> open the visitor's email app, pre-filled.
+        sendToSheet();
         const body = Object.entries(data)
-          .filter(([k]) => k !== "_gotcha")
+          .filter(([k]) => !k.startsWith("_"))
           .map(([k, v]) => `${k.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase())}: ${v}`)
           .join("\n");
         window.location.href =
@@ -708,6 +772,7 @@
     if (window.renderPage) window.renderPage();   // from render.js / page scripts
     initMarquee();
     initForms();
+    initPromo();
     initCountdown();
     initReveals();
     injectSchema();
