@@ -197,6 +197,37 @@ paying (already paid on Venmo / paying now / needs another way), notes, and the 
   `assets/img/venmo-qr-hires.png` in as the QR. An alternate site-styled design lives in
   `assets/flyers/wine-tasting-flyer.html` (`node assets/flyers/render-flyer.js` renders it).
 
+## Tracking signups (Google Sheet)
+
+Formspree emails every signup, and its dashboard at <https://formspree.io> lists them and
+exports CSV. For actually *running* the event - who's paid, how many tickets are sold, the
+door list - a Google Sheet is easier. One-time setup, about 5 minutes:
+
+1. Create a new Google Sheet (name it anything, e.g. "Wine Tasting Signups").
+2. In the sheet: **Extensions → Apps Script**. Delete the sample code and paste in the
+   whole of `assets/forms/signup-tracker.gs`. Click the save icon.
+3. In the toolbar pick the function **`setup`** and click **Run**. Approve the permissions
+   prompt (it only touches this sheet and, optionally, sends you email). This builds the
+   `Signups` tab with headers and checkboxes and a `Summary` tab with live totals.
+4. **Deploy → New deployment → ⚙ Web app.** Execute as: **Me**. Who has access: **Anyone**.
+   Click Deploy and copy the **Web app URL** (ends in `/exec`).
+5. Paste that URL into `siteConfig.sheetEndpoint` in `assets/js/data.js`, bump the `?v=`
+   on the `.js` links, and push.
+
+From then on every wine tasting signup appears as a row within a second or two. The
+person managing the event just ticks **Paid?** (and types the amount received if it
+differs), then **Checked In** at the door. `Summary` shows signups, tickets sold, money
+expected, money received and what's still outstanding.
+
+- Want an email per signup from the sheet as well as from Formspree? Set `NOTIFY_EMAIL`
+  at the top of the script. Leave it empty to avoid two emails per signup.
+- Changed the script? **Deploy → Manage deployments → ✎ → Version: New version → Deploy**.
+  The URL stays the same.
+- Other forms can use the same sheet: add `data-sheet="contact"` (any short name) to a
+  `<form data-form>` and rows land in a tab of that name.
+- The sheet is private to the Google account that owns it; share it with whoever runs
+  the door. Nothing from it is ever shown on the website.
+
 ## Donation buttons
 
 The fundraising page already shows your Venmo handle (@ClarenceThunder) and the check

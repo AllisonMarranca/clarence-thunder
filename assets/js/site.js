@@ -525,16 +525,33 @@
           status.textContent = msg;
         };
 
+        // Optional tracker: forms marked data-sheet="..." are also appended to the
+        // Google Sheet behind siteConfig.sheetEndpoint (see README "Tracking signups").
+        // Best effort - a sheet hiccup never blocks the email going out.
+        const sendToSheet = async () => {
+          if (!siteConfig.sheetEndpoint || !form.dataset.sheet) return;
+          const params = new URLSearchParams();
+          Object.entries(data).filter(([k]) => !k.startsWith("_")).forEach(([k, v]) => params.append(k, v));
+          params.append("form", form.dataset.sheet);
+          params.append("page", location.href);
+          try {
+            await fetch(siteConfig.sheetEndpoint, { method: "POST", body: params });
+          } catch (err) { /* ignore - the email copy still goes out */ }
+        };
+
         if (siteConfig.formEndpoint) {
           btn.disabled = true;
           const original = btn.textContent;
           btn.textContent = "Sending...";
           try {
-            const res = await fetch(siteConfig.formEndpoint, {
+            const [res] = await Promise.all([
+              fetch(siteConfig.formEndpoint, {
               method: "POST",
-              headers: { Accept: "application/json" },
-              body: new FormData(form)
-            });
+                headers: { Accept: "application/json" },
+                body: new FormData(form)
+              }),
+              sendToSheet()
+            ]);
             if (!res.ok) throw new Error("Bad response");
             form.reset();
             if (form.dataset.resetHook) window[form.dataset.resetHook]?.();
@@ -549,6 +566,7 @@
         }
 
         // No endpoint configured yet -> open the visitor's email app, pre-filled.
+        sendToSheet();
         const body = Object.entries(data)
           .filter(([k]) => !k.startsWith("_"))
           .map(([k, v]) => `${k.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase())}: ${v}`)

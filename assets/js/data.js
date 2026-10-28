@@ -77,6 +77,13 @@ const siteConfig = {
   // If left empty, forms open the visitor's email app pre-filled instead.
   formEndpoint: "https://formspree.io/f/mppzqqvd",
 
+  // OPTIONAL signup tracker: a Google Sheet that every wine tasting signup is added
+  // to automatically, with Paid / Checked-in checkboxes and a running total.
+  // Setup takes ~5 minutes - see README "Tracking signups". Paste the Apps Script
+  // web app URL here (looks like "https://script.google.com/macros/s/AKfy.../exec").
+  // Leave empty and signups still arrive by email through formEndpoint above.
+  sheetEndpoint: "",
+
   // Photography credit shown on the gallery.
   photoCredit: {
     name: "Matthew Tyree Photography",
