@@ -191,10 +191,11 @@ paying (already paid on Venmo / paying now / needs another way), notes, and the 
   use `siteConfig.payments.venmoLink`, which is the exact link the team's original Venmo QR
   (`assets/img/venmo-qr.png`) decodes to. **Scan it once on a phone to confirm it opens
   @ClarenceThunder** before printing flyers.
-- **Flyer:** `assets/flyers/wine-tasting-flyer.html` is the print flyer source (letter size).
-  Edit it, then run `node assets/flyers/render-flyer.js` to regenerate the JPG used on the
-  page, its thumbnail, and `assets/flyers/wine-tasting-flyer.pdf`. Needs Node with Playwright
-  installed (`npm i playwright` once).
+- **Flyer:** the flyer on the page (`assets/img/photos/wine-tasting-flyer.jpg`, PDF at
+  `assets/flyers/wine-tasting-flyer.pdf`) is the team's original design with the Venmo QR
+  replaced by the verified code. If you re-export the flyer from its design tool, drop
+  `assets/img/venmo-qr-hires.png` in as the QR. An alternate site-styled design lives in
+  `assets/flyers/wine-tasting-flyer.html` (`node assets/flyers/render-flyer.js` renders it).
 
 ## Donation buttons
 

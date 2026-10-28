@@ -11,8 +11,8 @@
 <meta property="og:title" content="Wine Tasting Fundraiser at Addy's | Clarence Thunder 12U">
 <meta property="og:description" content="Saturday, December 5, 2026, 6-8 PM at Addy's Fine Wine & Spirits. $20 per person. Reserve your tickets.">
 <meta property="og:image" content="https://www.clarencethunder.com/assets/img/photos/wine-tasting-flyer.jpg">
-<meta property="og:image:width" content="1700">
-<meta property="og:image:height" content="2200">
+<meta property="og:image:width" content="1103">
+<meta property="og:image:height" content="1426">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/img/logo-on-light.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -152,7 +152,7 @@
 
         <form class="form card" id="wine-form" data-form
               data-subject="Wine Tasting Signup - Clarence Thunder 12U"
-              data-success="You're on the list! Check your email for a confirmation. If you haven't sent your Venmo payment yet, use the QR code or button on this page - your tickets are confirmed once payment comes through."
+              data-success="You're on the list! Check your email for a confirmation. If you haven't paid yet, tap the Venmo button below - your tickets are confirmed once payment comes through."
               data-reset-hook="wineFormReset" novalidate>
           <input type="hidden" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
           <input type="hidden" name="_subject" id="f-subject" value="Wine Tasting Signup - Clarence Thunder 12U">
@@ -208,7 +208,7 @@
               </label>
               <label class="choice">
                 <input type="radio" name="payment" value="Paying on Venmo now" checked>
-                <div><b>I'll pay on Venmo now</b><span>Use the QR code or the Venmo button next to this form after you submit.</span></div>
+                <div><b>I'll pay on Venmo now</b><span>After you submit, a button takes you to Venmo with the amount and note filled in.</span></div>
               </label>
               <label class="choice">
                 <input type="radio" name="payment" value="Need another way to pay">
@@ -248,7 +248,8 @@
               Scan to pay <strong>$20 per person</strong>. In the note, put your
               <strong>name + number of tickets</strong> so we can match it to your signup.
             </p>
-            <a class="btn btn--block" style="margin-top:16px" id="venmo-btn" href="#" target="_blank" rel="noopener">Open Venmo</a>
+            <a class="btn btn--block" style="margin-top:16px" id="venmo-btn" href="#" target="_blank" rel="noopener">Pay $40 on Venmo</a>
+            <p class="form__note" style="margin-top:10px">On a phone, the button opens the Venmo app with the amount and note filled in for you.</p>
           </div>
 
           <div class="card" data-reveal data-reveal-delay="1">
@@ -327,13 +328,60 @@
   }
   sel.addEventListener("change", update);
   nameEl.addEventListener("input", update);
-  window.wineFormReset = function () { sel.value = "2"; update(); };
+  window.wineFormReset = function () { sel.value = "2"; update(); if (window.updateVenmoBtn) updateVenmoBtn(); };
   update();
 
-  /* ---- Venmo button: same link the QR code opens ---- */
+  /* ---- Venmo links ----
+     Two kinds:  profileLink  = the link the QR code opens (team profile, verified from the QR);
+                 payLink(n)   = Venmo's "pay" deep link with the amount + note pre-filled.
+     payLink uses the @handle. On a phone with Venmo installed it opens the app on the
+     payment screen with $amount and the note already typed; otherwise it opens the
+     profile on venmo.com. */
+  var pay = (typeof siteConfig !== "undefined" && siteConfig.payments) || {};
+  var profileLink = pay.venmoLink || "";
+  var handle = (pay.venmoHandle || "").replace(/^@/, "");
+  function payLink(n, who) {
+    if (!handle) return profileLink;
+    var note = "Wine Tasting " + (who ? "- " + who + " " : "") + "- " + n + (n === 1 ? " ticket" : " tickets");
+    return "https://venmo.com/u/" + encodeURIComponent(handle) +
+      "?txn=pay&amount=" + (n * PRICE) + "&note=" + encodeURIComponent(note);
+  }
   var venmo = document.getElementById("venmo-btn");
-  var link = (typeof siteConfig !== "undefined" && siteConfig.payments && siteConfig.payments.venmoLink) || "";
-  if (link) venmo.href = link; else venmo.style.display = "none";
+  function updateVenmoBtn() {
+    var n = parseInt(sel.value, 10) || 1;
+    var who = (nameEl.value || "").trim();
+    var href = payLink(n, who) || profileLink;
+    if (!href) { venmo.style.display = "none"; return; }
+    venmo.href = href;
+    venmo.textContent = "Pay $" + (n * PRICE) + " on Venmo";
+  }
+  sel.addEventListener("change", updateVenmoBtn);
+  nameEl.addEventListener("input", updateVenmoBtn);
+  updateVenmoBtn();
+  window.updateVenmoBtn = updateVenmoBtn;
+
+  /* ---- after a successful signup, put a pre-filled "Pay on Venmo" button in the
+     confirmation so paying is the very next tap ---- */
+  var form = document.getElementById("wine-form");
+  var status = form.querySelector(".form-status");
+  var snapshot = null;
+  form.addEventListener("submit", function () {
+    snapshot = { n: parseInt(sel.value, 10) || 1, who: (nameEl.value || "").trim(),
+                 paid: (form.querySelector("input[name=payment]:checked") || {}).value || "" };
+  });
+  new MutationObserver(function () {
+    if (!snapshot || !status.classList.contains("form-status--ok") || status.querySelector("a")) return;
+    var href = payLink(snapshot.n, snapshot.who) || profileLink;
+    if (!href || snapshot.paid === "Already paid on Venmo") return;
+    var wrap = document.createElement("div");
+    wrap.style.marginTop = "14px";
+    wrap.innerHTML = '<a class="btn btn--block" target="_blank" rel="noopener"></a>';
+    var a = wrap.firstChild;
+    a.href = href;
+    a.textContent = "Pay $" + (snapshot.n * PRICE) + " on Venmo now";
+    status.appendChild(wrap);
+    a.focus();
+  }).observe(status, { attributes: true, attributeFilter: ["class"] });
 
   /* ---- flyer lightbox ---- */
   var frame = document.getElementById("flyer-frame");
