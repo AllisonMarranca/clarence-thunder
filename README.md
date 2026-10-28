@@ -177,6 +177,25 @@ pre-filled. That works, but it's not ideal on mobile.
 Submissions then get emailed to you directly and the visitor sees a success message without
 leaving the page.
 
+## Wine tasting signup page (`wine-tasting.html`)
+
+The December 5 wine tasting at Addy's has its own page with a ticket reservation form.
+Submissions go to the same Formspree inbox as the contact form (`siteConfig.formEndpoint`),
+with the subject line `Wine Tasting Signup - <name> - <n> tickets ($total)` so they're easy
+to spot. Each email includes name, email, phone, ticket count, guest names, how they're
+paying (already paid on Venmo / paying now / needs another way), notes, and the total owed.
+
+- **Price:** `$20` is set in one place, `PRICE`, in the script at the bottom of
+  `wine-tasting.html`; the ticket dropdown labels are plain text and should be updated to match.
+- **Venmo:** the QR code (`assets/img/venmo-qr-hires.png`) and the "Open Venmo" button both
+  use `siteConfig.payments.venmoLink`, which is the exact link the team's original Venmo QR
+  (`assets/img/venmo-qr.png`) decodes to. **Scan it once on a phone to confirm it opens
+  @ClarenceThunder** before printing flyers.
+- **Flyer:** `assets/flyers/wine-tasting-flyer.html` is the print flyer source (letter size).
+  Edit it, then run `node assets/flyers/render-flyer.js` to regenerate the JPG used on the
+  page, its thumbnail, and `assets/flyers/wine-tasting-flyer.pdf`. Needs Node with Playwright
+  installed (`npm i playwright` once).
+
 ## Donation buttons
 
 The fundraising page already shows your Venmo handle (@ClarenceThunder) and the check

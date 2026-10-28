@@ -513,6 +513,7 @@
     $$("form[data-form]").forEach((form) => {
       form.addEventListener("submit", async (e) => {
         e.preventDefault();
+        if (!form.checkValidity()) { form.reportValidity(); return; }
         const status = $(".form-status", form);
         const btn = $("button[type=submit]", form);
         const data = Object.fromEntries(new FormData(form).entries());
@@ -536,7 +537,8 @@
             });
             if (!res.ok) throw new Error("Bad response");
             form.reset();
-            show("ok", "Thank you - your message is on its way. We'll get back to you shortly.");
+            if (form.dataset.resetHook) window[form.dataset.resetHook]?.();
+            show("ok", form.dataset.success || "Thank you - your message is on its way. We'll get back to you shortly.");
           } catch (err) {
             show("err", `Something went wrong sending that. Please email us directly at ${siteConfig.email}.`);
           } finally {
@@ -548,7 +550,7 @@
 
         // No endpoint configured yet -> open the visitor's email app, pre-filled.
         const body = Object.entries(data)
-          .filter(([k]) => k !== "_gotcha")
+          .filter(([k]) => !k.startsWith("_"))
           .map(([k, v]) => `${k.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase())}: ${v}`)
           .join("\n");
         window.location.href =

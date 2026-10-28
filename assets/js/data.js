@@ -61,7 +61,9 @@ const siteConfig = {
   // Payment / donation links.
   payments: {
     venmoHandle: "@ClarenceThunder",       // the team account
-    venmoLink: "",                         // e.g. "https://venmo.com/u/ClarenceThunder"
+    // Decoded from the team's Venmo QR code (assets/img/venmo-qr.png) - this is the
+    // link the QR opens, so buttons and the code always land on the same account.
+    venmoLink: "https://venmo.com/code?user_id=2840825964789760990&created=1786845108.098847",
     paypalLink: "",
     otherLink: "",
     otherLabel: "Donate Online",
@@ -150,20 +152,20 @@ const fundraisingData = {
   fundraisers: [
     {
       id: "addys-wine-night",
-      name: "Wine Night at Addy's",
+      name: "Wine Tasting at Addy's",
       status: "live",
       image: "assets/img/photos/thumb/addys-wine-night.jpg",
       description:
-        "Join us at Addy's Fine Wine & Spirits for an evening of wine and food, with a door " +
-        "prize and basket raffle - all supporting the Thunder's road to Cooperstown. " +
-        "$20 per person, Saturday, December 5 from 6 to 8 PM.",
-      details: ["Saturday, December 5 - 6 to 8 PM", "$20 per person", "Food & wine", "Door prize & basket raffle", "8268 Transit Rd, Williamsville"],
+        "Sip, snack and support the Thunder. Join us at Addy's Fine Wine & Spirits for a " +
+        "wine tasting with light snacks, a basket raffle, and a Buffalo Sabres Night Out " +
+        "up for grabs - all supporting the road to Cooperstown. $20 per person.",
+      details: ["Saturday, December 5 - 6 to 8 PM", "$20 per person - reserve online", "Wine tasting & light snacks", "Win a Buffalo Sabres Night Out", "8268 Transit Rd, Williamsville"],
       deadline: "2026-12-05",
       deadlineLabel: "Saturday, December 5, 2026",
       goal: 0,
       raised: 0,
-      cta: "Ask About Tickets",
-      link: ""
+      cta: "Reserve Your Tickets",
+      link: "wine-tasting.html"
     },
     {
       id: "superbowl-squares",
