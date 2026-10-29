@@ -78,7 +78,16 @@
       ).join("");
   }
 
+  // The header button: a temporary promo from siteConfig.headerCta while it's
+  // live, otherwise the standing "Support the Thunder" link.
+  function headerCta() {
+    const c = siteConfig.headerCta;
+    const live = c && c.label && c.href && (!c.until || new Date() <= parseDate(c.until, "23:59"));
+    return live ? { label: c.label, href: c.href } : { label: "Support the Thunder", href: "sponsors.html" };
+  }
+
   function buildHeader() {
+    const cta = headerCta();
     const host = $("#site-header");
     if (!host) return;
 
@@ -115,7 +124,7 @@
         <nav class="nav" aria-label="Main">${links}${more}</nav>
         <div class="header__cta">
           <div class="socials socials--header">${socialIcons()}</div>
-          <a class="btn btn--sm" href="sponsors.html">Support the Thunder</a>
+          <a class="btn btn--sm" href="${esc(cta.href)}">${esc(cta.label)}</a>
           <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
             <span></span><span></span><span></span>
           </button>
@@ -128,7 +137,7 @@
     drawer.innerHTML = `
       <div class="mobile-nav__panel">
         <div class="mobile-nav__cta mobile-nav__cta--top">
-          <a class="btn btn--block" href="sponsors.html">Support the Thunder</a>
+          <a class="btn btn--block" href="${esc(cta.href)}">${esc(cta.label)}</a>
         </div>
         ${navData.map((n) => {
           const cur = n.href === currentPage ? ' aria-current="page"' : "";
