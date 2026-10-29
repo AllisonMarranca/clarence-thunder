@@ -94,7 +94,7 @@ const siteConfig = {
   // Setup takes ~5 minutes - see README "Tracking signups". Paste the Apps Script
   // web app URL here (looks like "https://script.google.com/macros/s/AKfy.../exec").
   // Leave empty and signups still arrive by email through formEndpoint above.
-  sheetEndpoint: "",
+  sheetEndpoint: "https://script.google.com/macros/s/AKfycbx7FTowYpzP7i3Rl-4njUYvvaSUlj-vQAlQy19jQ_L5xc7xwKCdg2JrtJINY7aqZGZj9g/exec",
 
   // Photography credit shown on the gallery.
   photoCredit: {
