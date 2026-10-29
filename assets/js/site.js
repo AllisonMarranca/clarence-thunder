@@ -543,7 +543,7 @@
       const included = (p.included || []).map((t) => `<li>${check}<span>${esc(t)}</span></li>`).join("");
       const prize = p.prize ? `
             <div class="promo__prize">
-              <div class="card__label">Featured Prize</div>
+              <div class="card__label">Door Prize</div>
               <h3>${esc(p.prize.title)}</h3>
               ${(p.prize.items || []).length ? `<ul>${p.prize.items.map((t) => `<li>${esc(t)}</li>`).join("")}</ul>` : ""}
               ${p.prize.note ? `<p>${esc(p.prize.note)}</p>` : ""}
