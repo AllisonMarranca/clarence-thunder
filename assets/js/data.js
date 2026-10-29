@@ -883,7 +883,7 @@ const promoData = {
     { label: "Where", value: "Addy's Fine Wine & Spirits, 8268 Transit Rd, Williamsville" },
     { label: "Cost",  value: "$20 per person · pay by Venmo @ClarenceThunder" }
   ],
-  included: ["Wine tasting", "Light snacks", "Slice of pizza (pre-sale only)", "Basket raffle"],
+  included: ["Wine tasting", "Light snacks", "Slice of pizza (pre-sale only)", "Basket raffle (available to purchase)"],
   prize: {
     title: "Win a Buffalo Sabres Night Out",
     items: ["2 Sabres tickets, 200 Club Level", "Parking pass", "$100 Southern Tier Brewing gift card"],
