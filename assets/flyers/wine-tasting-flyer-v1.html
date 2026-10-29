@@ -102,5 +102,11 @@
     </div>
   </div>
 </div>
+<script>
+  (function(){ if (/theme=light/.test(location.search)) {
+    document.body.classList.add("light");
+    document.querySelectorAll("img.thunder").forEach(function(i){ i.src = "../img/logo-on-light.png"; });
+  } })();
+</script>
 </body>
 </html>
