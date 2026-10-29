@@ -898,7 +898,7 @@ const promoData = {
   included: ["Wine tasting", "Light snacks", "Slice of pizza (pre-sale only)", "Basket raffle (available to purchase)"],
   prize: {
     title: "Win a Buffalo Sabres Night Out",
-    items: ["2 Sabres tickets, 200 Club Level", "Parking pass", "$100 Southern Tier Brewing gift card"],
+    items: ["2 Sabres tickets, 200 Club Level", "Parking pass", "$100 gift card"],
     note: "You do not need to be present to win."
   },
   cta: "Reserve Your Tickets",
