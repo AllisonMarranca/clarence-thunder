@@ -147,10 +147,6 @@ const fundraisingData = {
   raised: 9400,       // <-- UPDATE THIS as money comes in
   deadline: "2027-03-01",
   deadlineLabel: "Campaign closes March 1, 2027",
-
-  // Optional third button under the big progress tracker (homepage + Cooperstown
-  // page). Point it at whatever fundraiser is live; set label: "" to hide it.
-  featuredCta: { label: "Wine Tasting Tickets", href: "wine-tasting.html#signup" },
   lastUpdated: "2026-10-01",
 
   headline: "Cooperstown Fundraising Goal",
