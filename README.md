@@ -221,6 +221,10 @@ expected, money received and what's still outstanding.
 
 - Want an email per signup from the sheet as well as from Formspree? Set `NOTIFY_EMAIL`
   at the top of the script. Leave it empty to avoid two emails per signup.
+- **The person signing up gets an automatic confirmation email** from the script
+  (`SEND_CONFIRMATION = true`), with their ticket count, total and Venmo instructions.
+  Set `REPLY_TO` so their replies reach the right person. Formspree on its own does *not*
+  email the submitter - only the sheet script does.
 - Changed the script? **Deploy → Manage deployments → ✎ → Version: New version → Deploy**.
   The URL stays the same.
 - Other forms can use the same sheet: add `data-sheet="contact"` (any short name) to a
