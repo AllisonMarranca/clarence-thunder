@@ -955,7 +955,10 @@ body.nav-open{overflow:hidden}
 .sponsor-grid{display:grid;gap:14px}
 .sponsor-grid--1{grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr))}
 .sponsor-grid--2{grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr))}
-.sponsor-grid--3{grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+/* Home Run tier: two per row, centred when there's an odd one out */
+.sponsor-grid--3{display:flex;flex-wrap:wrap;justify-content:center}
+.sponsor-grid--3 .sponsor-card{flex:0 1 calc(50% - 7px)}
+@media (max-width:640px){.sponsor-grid--3 .sponsor-card{flex-basis:100%}}
 .sponsor-grid--4{display:flex;flex-wrap:wrap;justify-content:center}
 .sponsor-grid--4 .sponsor-card{flex:0 1 240px;min-height:96px;padding:16px 18px}
 
@@ -976,6 +979,9 @@ body.nav-open{overflow:hidden}
 .sponsor-card__mark--solo img{max-height:110px;max-width:100%;width:auto}
 .sponsor-card--1 .sponsor-card__mark--solo img{max-height:150px}
 .sponsor-card--2 .sponsor-card__mark--solo img{max-height:92px}
+/* Home Run logos: about half the Grand Slam mark */
+.sponsor-card--3{min-height:170px}
+.sponsor-card--3 .sponsor-card__mark--solo img{max-height:110px;max-width:min(100%,280px)}
 .sponsor-card--4 .sponsor-card__mark--solo img{max-height:60px}
 .sponsor-card__name{font-family:var(--font-display);font-weight:800;text-transform:uppercase;color:var(--navy-900);font-size:1.15rem;line-height:1.1}
 .sponsor-card__biz{font-family:var(--font-display);font-weight:800;text-transform:uppercase;color:var(--navy-900);font-size:1rem;line-height:1.1}
