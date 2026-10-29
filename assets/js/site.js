@@ -792,8 +792,17 @@
     downloadIcs, directionsUrl, currentPage, countUp
   };
 
+  /* ---------- time-limited elements: <a data-until="YYYY-MM-DD"> is removed after that day ---------- */
+  function expireDated() {
+    $$("[data-until]").forEach((el) => {
+      const end = parseDate(el.dataset.until, "23:59");
+      if (end && new Date() > end) el.remove();
+    });
+  }
+
   /* ---------- boot ---------- */
   document.addEventListener("DOMContentLoaded", () => {
+    expireDated();
     buildHeader();
     buildFooter();
     buildSupportBar();
