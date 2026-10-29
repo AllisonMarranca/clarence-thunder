@@ -192,10 +192,11 @@ paying (already paid on Venmo / paying now / needs another way), notes, and the 
   (`assets/img/venmo-qr.png`) decodes to. **Scan it once on a phone to confirm it opens
   @ClarenceThunder** before printing flyers.
 - **Flyer:** the flyer on the page (`assets/img/photos/wine-tasting-flyer.jpg`, PDF at
-  `assets/flyers/wine-tasting-flyer.pdf`) is the team's original design with the Venmo QR
-  replaced by the verified code. If you re-export the flyer from its design tool, drop
-  `assets/img/venmo-qr-hires.png` in as the QR. An alternate site-styled design lives in
-  `assets/flyers/wine-tasting-flyer.html` (`node assets/flyers/render-flyer.js` renders it).
+  `assets/flyers/wine-tasting-flyer.pdf`) is variation 3 in the white print look. The
+  sources are `assets/flyers/wine-tasting-flyer-v1/v2/v3.html` plus `flyer-base.css`;
+  edit the wording there and run `node assets/flyers/render-flyer.js` to re-render every
+  variation in both the dark and white (`-print`) looks, then copy the one you want over
+  the two files above.
 
 ## Tracking signups (Google Sheet)
 
