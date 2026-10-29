@@ -607,13 +607,16 @@
           } catch (err) { /* ignore - the email copy still goes out */ }
         };
 
-        if (siteConfig.formEndpoint) {
+        // A form can have its own inbox via siteConfig.formEndpoints[data-sheet].
+        const endpoint = (siteConfig.formEndpoints || {})[form.dataset.sheet] || siteConfig.formEndpoint;
+
+        if (endpoint) {
           btn.disabled = true;
           const original = btn.textContent;
           btn.textContent = "Sending...";
           try {
             const [res] = await Promise.all([
-              fetch(siteConfig.formEndpoint, {
+              fetch(endpoint, {
               method: "POST",
                 headers: { Accept: "application/json" },
                 body: new FormData(form)

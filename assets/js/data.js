@@ -82,6 +82,13 @@ const siteConfig = {
   // If left empty, forms open the visitor's email app pre-filled instead.
   formEndpoint: "https://formspree.io/f/mppzqqvd",
 
+  // Per-form overrides, so one form can go to a different inbox. The key is the
+  // form's data-sheet name. Paste a Formspree endpoint to send wine tasting
+  // signups to their own form; leave "" to use formEndpoint above.
+  formEndpoints: {
+    "wine-tasting": ""
+  },
+
   // OPTIONAL signup tracker: a Google Sheet that every wine tasting signup is added
   // to automatically, with Paid / Checked-in checkboxes and a running total.
   // Setup takes ~5 minutes - see README "Tracking signups". Paste the Apps Script
