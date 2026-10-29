@@ -1269,6 +1269,14 @@ body.nav-open{overflow:hidden}
 .prize-card li{display:flex;gap:10px;align-items:flex-start;color:var(--ice-200);font-size:.96rem}
 .prize-card li::before{content:"";flex:none;width:9px;height:9px;border-radius:50%;background:var(--gold);margin-top:9px}
 
+.ticket-card{border-color:rgba(255,184,28,.35);background:linear-gradient(160deg,var(--navy-700),var(--navy-900))}
+.ticket-card__price{margin-top:10px;font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ice-200)}
+.ticket-card__price span{font-size:clamp(3rem,6vw,4rem);font-weight:800;color:var(--gold);line-height:1;margin-right:8px;letter-spacing:0}
+.ticket-card__text{margin-top:14px;color:var(--ice-200);line-height:1.6}
+.ticket-card__text strong{color:#fff}
+.ticket-card__steps{margin-top:20px;padding-top:18px;border-top:1px solid rgba(255,255,255,.1);display:flex;flex-direction:column;gap:9px}
+.ticket-card__steps li{font-size:.93rem;color:var(--ice-200);line-height:1.5}
+.ticket-card__steps b{color:var(--gold)}
 .flyer-frame{cursor:zoom-in}
 .flyer-frame img{aspect-ratio:auto;object-fit:contain;background:var(--navy-900)}
 

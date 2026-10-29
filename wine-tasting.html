@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/styles.css?v=20261029i">
+<link rel="stylesheet" href="assets/css/styles.css?v=20261029j">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -50,7 +50,7 @@
   <!-- HERO -->
   <section class="page-hero">
     <div class="page-hero__media">
-      <img src="assets/img/photos/hero-fundraising.jpg?v=20261029i" alt="The Thunder goofing around for the camera after practice" fetchpriority="high">
+      <img src="assets/img/photos/hero-fundraising.jpg?v=20261029j" alt="The Thunder goofing around for the camera after practice" fetchpriority="high">
     </div>
     <div class="container">
       <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -59,8 +59,9 @@
       <div class="eyebrow">Saturday, December 5, 2026 &middot; 6&ndash;8 PM</div>
       <h1>Wine Tasting<br>Fundraiser at Addy's</h1>
       <p class="lede">
-        Sip, snack &amp; support the Thunder! An evening of wine tasting at Addy's Fine Wine &amp;
-        Spirits to help send our Clarence Thunder 12U team to Cooperstown in 2027. $20 per person.
+        Sip, snack &amp; support the Thunder! $20 per person includes a wine tasting, light snacks,
+        and a slice of pizza (pre-sale only) at Addy's Fine Wine &amp; Spirits, with a basket raffle
+        on the night. Every ticket helps send our Clarence Thunder 12U team to Cooperstown in 2027.
       </p>
       <div class="row" style="margin-top:28px">
         <a class="btn btn--lg" href="#signup">Reserve Your Tickets</a>
@@ -104,7 +105,7 @@
               <li><b>Wine tasting</b> &mdash; a guided pour of Addy's picks</li>
               <li><b>Light snacks</b> to go with every glass</li>
               <li><b>Slice of pizza included</b> &mdash; pre-sale tickets only</li>
-              <li><b>Basket raffle</b> &mdash; tickets sold at the event</li>
+              <li><b>Basket raffle</b> &mdash; tickets available to purchase at the event</li>
             </ul>
           </div>
 
@@ -122,15 +123,28 @@
         </div>
 
         <div data-reveal data-reveal-delay="2">
-          <div class="frame frame--tall flyer-frame" id="flyer-frame" role="button" tabindex="0" aria-label="View the event flyer full size">
-            <img src="assets/img/photos/thumb/wine-tasting-flyer.jpg?v=20261029i" alt="Clarence Thunder Wine Tasting Fundraiser flyer: Saturday December 5, 2026, 6 to 8 PM at Addy's Fine Wine and Spirits, $20 per person">
-            <div class="frame__badge">Tap to Enlarge</div>
+          <div class="card ticket-card">
+            <div class="card__label">Tickets</div>
+            <div class="ticket-card__price"><span>$20</span> per person</div>
+            <p class="ticket-card__text">
+              Your ticket includes the <strong>wine tasting</strong>, <strong>light snacks</strong>, and a
+              <strong>slice of pizza</strong> (pre-sale tickets only). <strong>Basket raffle</strong> tickets are
+              available to purchase at the event, with a Buffalo Sabres Night Out as the featured prize.
+            </p>
+            <div class="stack" style="gap:10px;margin-top:22px">
+              <a class="btn btn--lg btn--block" href="#signup">Reserve Your Tickets</a>
+              <a class="btn btn--lg btn--block btn--outline" id="venmo-top" href="#signup">Pay on Venmo</a>
+            </div>
+            <ul class="ticket-card__steps">
+              <li><b>1.</b> Reserve with the form below (one signup per group).</li>
+              <li><b>2.</b> Send $20 per person on Venmo to <b data-text="venmo">@ClarenceThunder</b>, name + ticket count in the note.</li>
+              <li><b>3.</b> Show up December 5 at 6 PM. Your name will be at the door.</li>
+            </ul>
+            <p class="form__note" style="margin-top:16px">
+              Reserve ahead to lock in your slice. Tickets are confirmed once payment is received.
+              <a href="assets/flyers/wine-tasting-flyer.pdf" style="color:var(--gold)" download>Print the flyer</a> to share.
+            </p>
           </div>
-          <div class="row" style="margin-top:16px">
-            <a class="btn btn--sm btn--ghost" href="assets/img/photos/wine-tasting-flyer.jpg" download="clarence-thunder-wine-tasting-flyer.jpg">Download the Flyer</a>
-            <a class="btn btn--sm btn--ghost" href="assets/flyers/wine-tasting-flyer.pdf" download>Print-Ready PDF</a>
-          </div>
-          <p class="form__note" style="margin-top:12px">Share it with friends, family, and coworkers &mdash; the more the merrier.</p>
         </div>
 
       </div>
@@ -280,7 +294,7 @@
   <!-- CTA -->
   <section class="section cta-banner">
     <div class="cta-banner__media">
-      <img src="assets/img/photos/cta-banner.jpg?v=20261029i" alt="" loading="lazy">
+      <img src="assets/img/photos/cta-banner.jpg?v=20261029j" alt="" loading="lazy">
     </div>
     <div class="container container--narrow">
       <div class="eyebrow eyebrow--center">Road to Cooperstown 2027</div>
@@ -299,9 +313,9 @@
 
 <footer id="site-footer"></footer>
 
-<script src="assets/js/data.js?v=20261029i"></script>
-<script src="assets/js/site.js?v=20261029i"></script>
-<script src="assets/js/render.js?v=20261029i"></script>
+<script src="assets/js/data.js?v=20261029j"></script>
+<script src="assets/js/site.js?v=20261029j"></script>
+<script src="assets/js/render.js?v=20261029j"></script>
 <script>
 (function () {
   var PRICE = 20;
@@ -384,17 +398,10 @@
     a.focus();
   }).observe(status, { attributes: true, attributeFilter: ["class"] });
 
-  /* ---- flyer lightbox ---- */
-  var frame = document.getElementById("flyer-frame");
-  function openFlyer() {
-    if (window.TH && TH.lightbox) {
-      TH.lightbox.open([{ full: "assets/img/photos/wine-tasting-flyer.jpg", caption: "Wine Tasting Fundraiser at Addy's - Saturday, December 5, 2026" }], 0);
-    } else {
-      window.open("assets/img/photos/wine-tasting-flyer.jpg", "_blank");
-    }
-  }
-  frame.addEventListener("click", openFlyer);
-  frame.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openFlyer(); } });
+  /* ---- top Venmo button mirrors the sidebar one ---- */
+  var venmoTop = document.getElementById("venmo-top");
+  var baseLink = payLink(1, "") || profileLink;
+  if (baseLink) venmoTop.href = baseLink; else venmoTop.style.display = "none";
 
   /* ---- add to calendar (.ics) ---- */
   document.getElementById("add-to-calendar").addEventListener("click", function () {
