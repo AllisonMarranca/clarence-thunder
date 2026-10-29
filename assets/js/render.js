@@ -57,6 +57,9 @@
         <div class="row row--center progress-hero__cta">
           <a class="btn btn--lg" href="fundraising.html">Help Us Reach Our Goal</a>
           <a class="btn btn--lg btn--outline" href="sponsors.html">Sponsor the Thunder</a>
+          ${(fundraisingData.featuredCta && fundraisingData.featuredCta.label)
+            ? `<a class="btn btn--lg btn--outline" href="${esc(fundraisingData.featuredCta.href)}">${esc(fundraisingData.featuredCta.label)}</a>`
+            : ""}
         </div>
       </div>`;
   }
