@@ -71,6 +71,11 @@ const siteConfig = {
     qrImage: "assets/img/venmo-qr.png"
   },
 
+  // TEMPORARY header button (top right on desktop, top of the mobile menu).
+  // Shown until the `until` date, then the button goes back to
+  // "Support the Thunder" -> sponsors.html on its own. Set label: "" to end it early.
+  headerCta: { label: "Wine Tasting Tickets", href: "wine-tasting.html#signup", until: "2026-12-05" },
+
   // Where contact + sponsorship forms are sent.
   // EASIEST OPTION: create a free form at https://formspree.io and paste the
   // endpoint here (looks like "https://formspree.io/f/abcdwxyz").
