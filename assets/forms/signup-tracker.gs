@@ -11,7 +11,12 @@
 
 // Email a note for every signup? Leave "" if Formspree already emails you.
 var NOTIFY_EMAIL = "";
+// Send the person who signed up an automatic confirmation email? (true/false)
+var SEND_CONFIRMATION = true;
+var REPLY_TO = "";            // e.g. "hfmelancon@gmail.com" - where replies to confirmations go
 var TICKET_PRICE = 20;
+var VENMO_HANDLE = "@ClarenceThunder";
+var EVENT_LINE = "Saturday, December 5, 2026, 6-8 PM at Addy's Fine Wine & Spirits, 8268 Transit Rd, Williamsville";
 
 // Columns for the wine tasting signups. The last three are filled in by hand.
 var WINE_HEADERS = [
@@ -86,6 +91,7 @@ function doPost(e) {
       sh.getRange(r, 11).setNumberFormat("$#,##0");
     }
     notify_(form, p, row);
+    if (form === "wine-tasting") confirm_(p, row);
     return json_({ ok: true, row: r });
   } finally {
     lock.releaseLock();
@@ -130,6 +136,29 @@ function notify_(form, p, row) {
     body = Object.keys(p).map(function (k) { return k + ": " + p[k]; }).join("\n");
   }
   MailApp.sendEmail(NOTIFY_EMAIL, subject, body);
+}
+
+// Confirmation to the person who signed up (wine tasting only).
+function confirm_(p, row) {
+  if (!SEND_CONFIRMATION || !p.email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(p.email)) return;
+  var n = row[4], total = row[5];
+  var paid = String(p.payment || "").indexOf("Already paid") === 0;
+  var body =
+    "Hi " + (p.name || "there") + ",\n\n" +
+    "Thanks for signing up for the Clarence Thunder Wine Tasting Fundraiser!\n\n" +
+    "  " + EVENT_LINE + "\n" +
+    "  Tickets: " + n + "  (" + "$" + total + " total)\n\n" +
+    (paid
+      ? "You told us you've already paid on Venmo - thank you! Your name will be at the door.\n\n"
+      : "To confirm your tickets, please send $" + total + " on Venmo to " + VENMO_HANDLE +
+        " with your name and number of tickets in the note. Your name will be at the door once payment comes through.\n\n") +
+    "Pre-sale tickets include a slice of pizza. Basket raffle tickets are available to purchase at the event, " +
+    "and you don't need to be present to win the Buffalo Sabres Night Out.\n\n" +
+    "Questions? Just reply to this email.\n\n" +
+    "See you there,\nClarence Thunder 12U\nhttps://www.clarencethunder.com/wine-tasting.html";
+  var opts = { name: "Clarence Thunder 12U" };
+  if (REPLY_TO) opts.replyTo = REPLY_TO;
+  MailApp.sendEmail(p.email, "Your Wine Tasting tickets - Clarence Thunder (" + n + (n === 1 ? " ticket" : " tickets") + ")", body, opts);
 }
 
 function json_(obj) {
