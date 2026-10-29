@@ -127,3 +127,43 @@
 
 .inc .txt{display:block;line-height:1.2}
 .inc .txt small{font-size:.78em;font-weight:500;color:var(--ice-200)}
+
+/* ===== PRINT / WHITE-BACKGROUND THEME (body.light) ===== */
+.light,.light .flyer{background:#fff}
+.light .flyer{
+  color:var(--navy-950);
+  background:
+    radial-gradient(900px 520px at 85% -5%, rgba(122,18,48,.07), transparent 60%),
+    radial-gradient(700px 500px at -10% 105%, rgba(255,199,44,.14), transparent 60%),
+    #fff;
+}
+.light .flyer::before{border-color:rgba(217,155,0,.7)}
+.light .flyer::after{opacity:.035;background:repeating-linear-gradient(135deg,var(--navy-950) 0 2px,transparent 2px 14px)}
+.light .title .team{color:var(--navy-950);text-shadow:0 4px 0 var(--red),0 8px 18px rgba(5,11,21,.12)}
+.light .title .event{color:var(--red)}
+.light .title .tag{color:var(--navy-900)}
+.light .title .tag::before{background:linear-gradient(90deg,transparent,var(--gold-deep))}
+.light .title .tag::after{background:linear-gradient(90deg,var(--gold-deep),transparent)}
+.light .title .sub{color:#2D3A4E}
+.light .fact .ic{background:rgba(255,199,44,.18);border-color:rgba(217,155,0,.6)}
+.light .fact svg{stroke:var(--gold-deep)}
+.light .fact b{color:var(--navy-950)}
+.light .fact span{color:#3B4A60}
+.light .card{background:#F6F7FA;border-color:#DCE1EA}
+.light .inc li{color:var(--navy-950)}
+.light .inc .txt small{color:#4A5568}
+.light .prize{border-color:rgba(217,155,0,.55);background:linear-gradient(150deg,rgba(255,199,44,.14),rgba(122,18,48,.07))}
+.light .prize h3{color:var(--navy-950)}
+.light .prize h3 em{color:var(--red)}
+.light .prize li{color:var(--navy-950)}
+.light .prize li::before{background:var(--gold-deep)}
+.light .prize .note{border-top-color:rgba(5,11,21,.12);color:#4A5568}
+.light .band .line{color:var(--wine)}
+.light .band .line::before,.light .band .line::after{background:rgba(217,155,0,.6)}
+.light .band p{color:#3B4A60}
+.light .venmo{border-color:var(--navy-950);box-shadow:0 10px 28px rgba(5,11,21,.08)}
+.light .web .join{color:var(--navy-950)}
+.light .web .join em{color:var(--red)}
+.light .web .url{color:var(--red)}
+.light .web .url small{color:#4A5568}
+.light .logos .bar{background:linear-gradient(180deg,transparent,var(--gold-deep),transparent)}

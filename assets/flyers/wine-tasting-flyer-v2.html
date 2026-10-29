@@ -25,6 +25,10 @@
   .when{margin-top:22px}
   .cards{margin-top:16px}
   .band{margin-top:14px}
+  .light .hero::after{background:linear-gradient(180deg,rgba(5,11,21,.05) 0%,rgba(255,255,255,.55) 40%,#fff 72%)}
+  .light .hero .title .team{color:var(--navy-950)}
+  .light .hero .title .event{color:var(--red)}
+  .light .hero .title .tag{color:var(--navy-900)}
 </style>
 </head>
 <body>
@@ -94,5 +98,11 @@
     </div>
   </div>
 </div>
+<script>
+  (function(){ if (/theme=light/.test(location.search)) {
+    document.body.classList.add("light");
+    document.querySelectorAll("img.thunder").forEach(function(i){ i.src = "../img/logo-on-light.png"; });
+  } })();
+</script>
 </body>
 </html>
