@@ -875,13 +875,20 @@ const promoData = {
   until: "2026-12-05",                  // stops showing after this date (YYYY-MM-DD)
   delaySeconds: 2,                      // how long after the page loads it appears
   repeatAfterDays: 3,                   // show again this many days after "Maybe later"
-  image: "assets/img/photos/thumb/wine-tasting-flyer.jpg",
-  eyebrow: "Saturday, December 5 · 6–8 PM",
-  title: "Wine Tasting Fundraiser at Addy's",
-  text: "Sip, snack and support the Thunder. $20 per person gets you a wine tasting, light " +
-        "snacks, a slice of pizza (pre-sale only) and a shot at a Buffalo Sabres Night Out. " +
-        "Every ticket helps send the team to Cooperstown.",
-  pills: ["$20 per person", "Addy's Fine Wine & Spirits", "Win Sabres tickets"],
+  eyebrow: "Fundraiser · Saturday, December 5",
+  title: "Wine Tasting at Addy's",
+  text: "Sip, snack and support the Thunder. Every ticket helps send our 12U team to Cooperstown in 2027.",
+  facts: [
+    { label: "When",  value: "Saturday, December 5, 2026 · 6–8 PM" },
+    { label: "Where", value: "Addy's Fine Wine & Spirits, 8268 Transit Rd, Williamsville" },
+    { label: "Cost",  value: "$20 per person · pay by Venmo @ClarenceThunder" }
+  ],
+  included: ["Wine tasting", "Light snacks", "Slice of pizza (pre-sale only)", "Basket raffle"],
+  prize: {
+    title: "Win a Buffalo Sabres Night Out",
+    items: ["2 Sabres tickets, 200 Club Level", "Parking pass", "$100 Southern Tier Brewing gift card"],
+    note: "You do not need to be present to win."
+  },
   cta: "Reserve Your Tickets",
   link: "wine-tasting.html#signup",
   dismiss: "Maybe later"

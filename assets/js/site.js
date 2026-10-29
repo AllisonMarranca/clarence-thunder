@@ -529,13 +529,28 @@
     const open = () => {
       if (document.querySelector(".modal.is-open, .lightbox.is-open")) return;
       storage.set("th-promo-seen:" + p.id, String(Date.now()));
+      const check = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>';
+      const facts = (p.facts || []).map((f) => `<li><b>${esc(f.label)}</b><span>${esc(f.value)}</span></li>`).join("");
+      const included = (p.included || []).map((t) => `<li>${check}<span>${esc(t)}</span></li>`).join("");
+      const prize = p.prize ? `
+            <div class="promo__prize">
+              <div class="card__label">Featured Prize</div>
+              <h3>${esc(p.prize.title)}</h3>
+              ${(p.prize.items || []).length ? `<ul>${p.prize.items.map((t) => `<li>${esc(t)}</li>`).join("")}</ul>` : ""}
+              ${p.prize.note ? `<p>${esc(p.prize.note)}</p>` : ""}
+            </div>` : "";
       const el = modal.open(`
-        <div class="promo">
+        <div class="promo${p.image ? " promo--media" : ""}">
           ${p.image ? `<div class="promo__media"><img src="${esc(p.image)}" alt=""></div>` : ""}
           <div class="promo__body">
             ${p.eyebrow ? `<div class="eyebrow">${esc(p.eyebrow)}</div>` : ""}
             <h2 class="promo__title">${esc(p.title)}</h2>
-            <p class="promo__text">${esc(p.text)}</p>
+            ${p.text ? `<p class="promo__text">${esc(p.text)}</p>` : ""}
+            ${facts ? `<ul class="promo__facts">${facts}</ul>` : ""}
+            <div class="promo__cols">
+              ${included ? `<div><div class="card__label">What's Included</div><ul class="promo__list">${included}</ul></div>` : ""}
+              ${prize}
+            </div>
             ${(p.pills && p.pills.length) ? `<div class="promo__pills">${p.pills.map((t) => `<span class="pill pill--gold">${esc(t)}</span>`).join("")}</div>` : ""}
             <div class="promo__actions">
               <a class="btn" href="${esc(p.link)}">${esc(p.cta || "Sign Up")}</a>
@@ -544,7 +559,8 @@
           </div>
         </div>`, p.title);
       $("[data-promo-dismiss]", el).addEventListener("click", () => modal.close());
-      $(".promo .btn", el).focus();
+      $(".promo .btn", el).focus({ preventScroll: true });
+      $(".modal__panel", el).scrollTop = 0;
     };
     setTimeout(open, (p.delaySeconds || 0) * 1000);
   }
