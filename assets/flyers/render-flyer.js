@@ -13,7 +13,8 @@ const { chromium } = require("playwright");
     .filter((f) => !only || f.includes(only + ".html"));
   const browser = await chromium.launch();
   for (const file of variants) {
-    for (const theme of ["dark", "light"]) {
+    const single = fs.readFileSync(path.join(__dirname, file), "utf8").includes("<!-- single-theme -->");
+    for (const theme of single ? ["dark"] : ["dark", "light"]) {
       const base = file.replace(/\.html$/, "") + (theme === "light" ? "-print" : "");
       const page = await browser.newPage({ viewport: { width: 850, height: 1100 }, deviceScaleFactor: 2 });
       await page.goto("file://" + path.join(__dirname, file) + (theme === "light" ? "?theme=light" : ""), { waitUntil: "networkidle" });

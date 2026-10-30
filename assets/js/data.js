@@ -893,7 +893,8 @@ const promoData = {
   facts: [
     { label: "When",  value: "Saturday, December 5, 2026 · 6–8 PM" },
     { label: "Where", value: "Addy's Fine Wine & Spirits, 8268 Transit Rd, Williamsville" },
-    { label: "Cost",  value: "$20 per person · pay by Venmo @ClarenceThunder" }
+    { label: "Cost",  value: "$20 per person · pay by Venmo @ClarenceThunder" },
+    { label: "Ages",  value: "Must be 21 or older to attend" }
   ],
   included: ["Wine tasting", "Light snacks", "Slice of pizza (pre-sale only)", "Basket raffle (available to purchase)"],
   prize: {

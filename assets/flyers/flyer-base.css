@@ -167,3 +167,6 @@
 .light .web .url{color:var(--red)}
 .light .web .url small{color:#4A5568}
 .light .logos .bar{background:linear-gradient(180deg,transparent,var(--gold-deep),transparent)}
+
+.title .sub .age{display:block;margin-top:3px;font-weight:700;color:var(--gold);font-size:.95em}
+.light .title .sub .age{color:var(--red)}

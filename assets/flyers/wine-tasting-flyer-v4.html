@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- single-theme -->
+<title>Clarence Thunder Wine Tasting Fundraiser - Flyer v4 (cream)</title>
+<!--
+  FLYER VARIATION 4 - the team's cream & burgundy style, with the current details.
+  Single look (already print-friendly). Render:  node assets/flyers/render-flyer.js v4
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:ital,wght@0,700;0,800;1,800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400;1,700&family=Tinos:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FBF6EC;--cream-2:#F4EBDA;--wine:#7A1230;--wine-deep:#5C0C22;--red:#B3122E;
+    --gold:#C9A24A;--gold-deep:#A8842F;--gold-light:#E8D59A;--navy:#0C1B30;--ink:#1F1A17;--ink-2:#3A322D;
+    --serif:"Libre Baskerville",Georgia,serif;--body:"Tinos","Times New Roman",serif;
+    --display:"Anton","Impact",sans-serif;--cond:"Barlow Condensed","Arial Narrow",sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#fff}
+  @page{size:8.5in 11in;margin:0}
+  .flyer{position:relative;width:850px;height:1100px;overflow:hidden;color:var(--ink);font-family:var(--body);
+    background:radial-gradient(700px 500px at 20% 110%, rgba(201,162,74,.18), transparent 60%),
+               radial-gradient(600px 400px at 100% 0%, rgba(122,18,48,.10), transparent 60%),
+               linear-gradient(180deg,#FDF9F1,var(--cream) 50%,#F7EFDF)}
+  .flyer::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.05;
+    background:repeating-linear-gradient(135deg,var(--wine) 0 1px,transparent 1px 12px)}
+  .glasses{position:absolute;right:38px;top:20px;width:150px;z-index:0}
+  .ball{position:absolute;right:26px;top:230px;width:96px;z-index:0;opacity:.9}
+  .inner{position:relative;z-index:1;padding:28px 44px 28px;height:100%;display:flex;flex-direction:column;justify-content:space-between}
+
+  .logos{display:flex;align-items:center;gap:26px;padding-left:40px}
+  .logos .addys{height:78px}
+  .logos .bar{width:2px;height:80px;background:linear-gradient(180deg,transparent,var(--gold-deep),transparent)}
+  .mark{display:flex;align-items:center;gap:10px}
+  .mark img{height:74px}
+  .mark .word{display:flex;flex-direction:column;line-height:.85}
+  .mark .word small{font-family:var(--cond);font-weight:800;font-size:15px;letter-spacing:.28em;color:var(--ink);padding-left:4px}
+  .mark .word b{font-family:var(--cond);font-weight:800;font-style:italic;font-size:40px;color:var(--red);
+    -webkit-text-stroke:1.5px var(--ink);text-shadow:2px 2px 0 var(--ink);letter-spacing:.01em}
+
+  .title{margin-top:10px}
+  .title .team{font-family:var(--display);font-size:66px;line-height:.95;letter-spacing:.01em;color:var(--ink);
+    -webkit-text-stroke:1.5px var(--gold);text-shadow:0 3px 0 var(--red),0 6px 14px rgba(0,0,0,.18)}
+  .title .event{font-family:var(--serif);font-weight:700;font-size:40px;line-height:1;color:var(--wine);margin-top:6px;letter-spacing:0;white-space:nowrap}
+  .title .tag{font-family:var(--serif);font-style:italic;font-weight:700;font-size:25px;color:var(--ink);margin-top:8px;display:flex;align-items:center;gap:14px;max-width:560px}
+  .title .tag::before,.title .tag::after{content:"";flex:1;height:2px;background:var(--gold)}
+  .title .age{font-family:var(--serif);font-weight:700;font-size:16px;color:var(--wine);margin-top:6px;padding-left:4px}
+
+  .when{display:grid;grid-template-columns:1fr 250px;gap:20px;align-items:center;margin-top:8px;max-width:700px}
+  .facts{display:flex;flex-direction:column;gap:10px}
+  .fact{display:flex;gap:14px;align-items:flex-start}
+  .fact svg{width:32px;height:32px;flex:none;fill:var(--wine)}
+  .fact b{display:block;font-family:var(--serif);font-weight:700;font-size:20px;color:var(--wine);line-height:1.1}
+  .fact span{display:block;font-size:18px;color:var(--ink);margin-top:2px;line-height:1.25}
+  .price{position:relative;height:96px;display:flex;align-items:center;justify-content:center;gap:12px;color:#fff;
+    transform:rotate(-2deg)}
+  .price::before{content:"";position:absolute;inset:0;background:var(--wine);border-radius:58% 42% 55% 45%/48% 52% 48% 52%;
+    box-shadow:6px 6px 0 rgba(201,162,74,.65)}
+  .price > *{position:relative}
+  .price .amt{font-family:var(--serif);font-weight:700;font-size:62px;line-height:1}
+  .price .amt sup{font-size:30px;vertical-align:top;line-height:1.4}
+  .price .per{font-family:var(--serif);font-weight:700;font-size:20px;line-height:1.05;letter-spacing:.04em}
+
+  .cards{display:grid;grid-template-columns:1fr 1.25fr;gap:22px;margin-top:12px;align-items:start}
+  .ribbon{display:inline-block;font-family:var(--serif);font-weight:700;font-size:16px;letter-spacing:.14em;white-space:nowrap;text-transform:uppercase;color:var(--ink);
+    background:linear-gradient(90deg,var(--gold-light),var(--gold));padding:7px 24px 7px 36px;clip-path:polygon(0 0,100% 0,96% 50%,100% 100%,0 100%,4% 50%)}
+  .inc{list-style:none;margin-top:12px;display:flex;flex-direction:column;gap:9px;padding-left:4px}
+  .inc li{display:flex;align-items:center;gap:12px;font-size:20px;color:var(--ink);line-height:1.15}
+  .inc li small{font-size:14.5px;color:var(--ink-2)}
+  .inc .dot{flex:none;width:34px;height:34px;border-radius:50%;background:var(--wine);display:grid;place-items:center}
+  .inc .dot svg{width:19px;height:19px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .prize{border:2px solid var(--gold);border-radius:18px;background:rgba(255,255,255,.8);overflow:hidden;box-shadow:0 10px 26px rgba(92,12,34,.08)}
+  .prize .hd{background:var(--wine);color:#fff;text-align:center;font-family:var(--serif);font-weight:700;font-size:21px;letter-spacing:.16em;padding:6px 10px}
+  .prize .bd{display:grid;grid-template-columns:100px 1fr;gap:12px;align-items:center;padding:12px 14px 8px}
+  .prize .bd img{width:100px;height:100px}
+  .prize h3{font-family:var(--serif);font-weight:700;font-size:18px;color:var(--red);line-height:1.1}
+  .prize ul{list-style:none;margin-top:6px;display:flex;flex-direction:column;gap:3px}
+  .prize li{display:flex;gap:9px;align-items:center;font-size:16px;color:var(--ink)}
+  .prize li::before{content:"";flex:none;width:9px;height:9px;border-radius:50%;background:var(--gold)}
+  .prize .note{margin:0 14px 10px;padding-top:8px;border-top:1.5px solid var(--gold);text-align:center;font-style:italic;font-size:15px;color:var(--ink-2)}
+
+  .band{margin-top:10px;text-align:center}
+  .band .line{font-family:var(--serif);font-style:italic;font-weight:700;font-size:26px;white-space:nowrap;color:var(--wine);display:flex;align-items:center;justify-content:center;gap:16px}
+  .band .line::before,.band .line::after{content:"";flex:1;max-width:90px;height:2px;background:var(--gold)}
+
+  .foot{display:grid;grid-template-columns:1.3fr 1fr;gap:24px;margin-top:10px;align-items:stretch}
+  .venmo{border:2px solid var(--wine);border-radius:18px;overflow:hidden;background:#fff}
+  .venmo .hd{background:var(--wine);color:#fff;text-align:center;font-family:var(--serif);font-weight:700;font-size:21px;letter-spacing:.2em;padding:6px;white-space:nowrap}
+  .venmo .bd{display:grid;grid-template-columns:132px 1fr;gap:12px;align-items:center;padding:10px 12px 10px}
+  .venmo .qr{text-align:center}
+  .venmo .qr img{width:122px;height:122px;display:block;margin:0 auto}
+  .venmo .qr b{display:block;font-family:var(--cond);font-weight:800;font-size:14px;color:var(--ink);margin-top:4px}
+  .venmo .amt{font-family:var(--serif);font-weight:700;font-size:46px;line-height:1;color:var(--wine);text-align:center}
+  .venmo .amt sup{font-size:24px;vertical-align:top;line-height:1.3}
+  .venmo .per{font-family:var(--serif);font-weight:700;font-size:14px;letter-spacing:.1em;color:var(--wine);text-align:center;margin-top:2px}
+  .venmo .handle{font-family:var(--cond);font-weight:800;font-size:23px;color:var(--ink);text-align:center;margin-top:4px}
+  .venmo .how{font-size:13px;color:var(--ink-2);text-align:center;line-height:1.4;margin-top:6px}
+  .web{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:8px}
+  .web .join{font-family:var(--cond);font-weight:800;font-size:26px;line-height:1;color:var(--red);text-transform:uppercase}
+  .web .rule{width:70%;height:2px;background:var(--gold)}
+  .web .url{font-family:var(--serif);font-weight:700;font-size:16px;color:var(--ink);white-space:nowrap}
+  .web .url small{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.2em;color:var(--wine);text-transform:uppercase;margin-bottom:3px}
+  .rtc{display:inline-flex;flex-direction:column;align-items:center;background:var(--navy);border:3px solid var(--gold);border-radius:14px;padding:6px 22px 8px}
+  .rtc .r{font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.32em;color:#fff}
+  .rtc .c{font-family:var(--cond);font-weight:800;font-size:28px;letter-spacing:.04em;color:#fff;line-height:1}
+  .rtc .y{font-family:var(--cond);font-weight:800;font-size:18px;letter-spacing:.3em;color:var(--gold);line-height:1;margin-top:3px}
+</style>
+</head>
+<body>
+<div class="flyer">
+  <svg class="glasses" viewBox="0 0 150 150" fill="none" aria-hidden="true">
+    <g stroke="#A8842F" stroke-width="2.6" stroke-linecap="round">
+      <path d="M38 22 L92 36 C96 62 84 84 62 90 C40 96 22 82 20 56 Z" fill="#7A1230"/>
+      <path d="M62 90 L52 134"/><path d="M34 139 L72 128"/>
+      <path d="M112 18 L146 50 C132 72 116 80 102 76 C88 72 80 56 86 36 Z" fill="#7A1230"/>
+      <path d="M102 76 L118 122"/><path d="M100 128 L136 116"/>
+    </g>
+    <g stroke="#C9A24A" stroke-width="2" stroke-linecap="round"><path d="M100 6v8M92 12l6 5M110 10l-6 6M86 22h8"/></g>
+  </svg>
+  <svg class="ball" viewBox="0 0 100 100" aria-hidden="true">
+    <circle cx="50" cy="50" r="46" fill="#FFFDF7" stroke="#D9CBB0" stroke-width="2"/>
+    <path d="M22 10 C40 35 40 65 22 90" fill="none" stroke="#B3122E" stroke-width="3"/>
+    <path d="M78 10 C60 35 60 65 78 90" fill="none" stroke="#B3122E" stroke-width="3"/>
+    <g stroke="#B3122E" stroke-width="2" stroke-linecap="round">
+      <path d="M26 22l6-3M29 34l7-2M30 46l7 0M30 58l7 1M29 70l7 2M26 80l6 3M74 22l-6-3M71 34l-7-2M70 46l-7 0M70 58l-7 1M71 70l-7 2M74 80l-6 3"/>
+    </g>
+  </svg>
+  <div class="inner">
+    <div class="logos">
+      <img class="addys" src="../img/addys-logo.png" alt="Addy's Fine Wine & Spirits">
+      <div class="bar"></div>
+      <div class="mark">
+        <img src="../img/logo-on-light.png" alt="">
+        <div class="word"><small>CLARENCE</small><b>THUNDER</b></div>
+      </div>
+    </div>
+
+    <div class="title">
+      <div class="team">CLARENCE THUNDER</div>
+      <div class="event">WINE TASTING FUNDRAISER</div>
+      <div class="tag">Sip, Snack &amp; Support the Thunder!</div>
+      <div class="age">Must be 21 or older to attend.</div>
+    </div>
+
+    <div class="when">
+      <div class="facts">
+        <div class="fact">
+          <svg viewBox="0 0 24 24"><path d="M7 2h2v2h6V2h2v2h3a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3zm-2 7v11h14V9zm2 2h3v3H7zm5 0h3v3h-3zm-5 5h3v3H7zm5 0h3v3h-3z"/></svg>
+          <div><b>Saturday, December 5, 2026</b><span>6:00 PM &ndash; 8:00 PM</span></div>
+        </div>
+        <div class="fact">
+          <svg viewBox="0 0 24 24"><path d="M12 2a8 8 0 0 0-8 8c0 5.5 8 12 8 12s8-6.5 8-12a8 8 0 0 0-8-8zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+          <div><b>Addy's Fine Wine &amp; Spirits</b><span>8268 Transit Road<br>Williamsville, NY</span></div>
+        </div>
+      </div>
+      <div class="price"><div class="amt"><sup>$</sup>20</div><div class="per">PER<br>PERSON</div></div>
+    </div>
+
+    <div class="cards">
+      <div>
+        <span class="ribbon">What's Included</span>
+        <ul class="inc">
+          <li><span class="dot"><svg viewBox="0 0 24 24"><path d="M8 2h8l-1 9a3 3 0 0 1-6 0zM12 14v7M8 21h8"/></svg></span>Wine Tasting</li>
+          <li><span class="dot"><svg viewBox="0 0 24 24"><path d="M3 11h18M5 11a7 7 0 0 1 14 0M4 15h16l-1 4H5z"/></svg></span>Light Snacks</li>
+          <li><span class="dot"><svg viewBox="0 0 24 24"><path d="M12 3 3 20h18zM12 3a9 9 0 0 1 9 17"/><circle cx="12" cy="14" r="1.2"/><circle cx="9" cy="17" r="1.2"/><circle cx="15" cy="17" r="1.2"/></svg></span><span>Slice of Pizza Included<br><small>(Pre-Sale Only)</small></span></li>
+          <li><span class="dot"><svg viewBox="0 0 24 24"><path d="M3 9a2 2 0 0 0 0 6v3a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-3a2 2 0 0 0 0-6V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1z"/><path d="M13 5v14"/></svg></span><span>Basket Raffle<br><small>(Available to Purchase)</small></span></li>
+        </ul>
+      </div>
+      <div class="prize">
+        <div class="hd">DOOR PRIZE</div>
+        <div class="bd">
+          <img src="../img/sabres-logo.png" alt="Buffalo Sabres">
+          <div>
+            <h3>Win a Buffalo Sabres<br>Night Out!</h3>
+            <ul>
+              <li>2 Buffalo Sabres Tickets</li>
+              <li>200 Club Level</li>
+              <li>Parking Pass Included</li>
+              <li>$100 Gift Card</li>
+            </ul>
+          </div>
+        </div>
+        <div class="note">You do not need to be present to win!</div>
+      </div>
+    </div>
+
+    <div class="band"><div class="line">One Team. One Goal. One Unforgettable Season.</div></div>
+
+    <div class="foot">
+      <div class="venmo">
+        <div class="hd">PAY WITH VENMO</div>
+        <div class="bd">
+          <div class="qr"><img src="../img/venmo-qr-hires.png" alt="Venmo QR code for @ClarenceThunder"><b>@ClarenceThunder</b></div>
+          <div>
+            <div class="amt"><sup>$</sup>20</div>
+            <div class="per">PER PERSON</div>
+            <div class="handle">@ClarenceThunder</div>
+            <div class="how">Scan to pay &amp; support the Thunder<br>In note: Name + Number of Tickets</div>
+          </div>
+        </div>
+      </div>
+      <div class="web">
+        <div class="join">Join us for a great night,<br>for a great cause!</div>
+        <div class="rule"></div>
+        <div class="url"><small>Reserve your tickets online</small>ClarenceThunder.com/wine-tasting</div>
+        <div class="rtc"><span class="r">ROAD TO</span><span class="c">COOPERSTOWN</span><span class="y">2027</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
